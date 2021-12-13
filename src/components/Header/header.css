@@ -1,0 +1,22 @@
+.main-title {
+  color: #22b573;
+  font: Poppins;
+  font-weight: bold;
+  font-size: 22pt;
+  width: 109px;
+  height: 31px;
+  position: absolute;
+  bottom: 768px;
+  left: 30px;
+}
+
+.second-title {
+  color: #22b573;
+  font: Poppins;
+  font-size: 14pt;
+
+  height: 20px;
+  position: absolute;
+  bottom: 746px;
+  left: 30px;
+}

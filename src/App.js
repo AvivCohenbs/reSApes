@@ -8,12 +8,12 @@ import NavigationBar from "./components/NavigationBar/NavigationBar";
 function App() {
   return (
     <div className="pages">
-      <NavigationBar />
       <Routes>
         <Route path="/Chat" element={<Chat />} />
         <Route path="/" element={<Home />} />
         <Route path="/Favorites" element={<Favorites />} />
       </Routes>
+      <NavigationBar />
     </div>
   );
 }
