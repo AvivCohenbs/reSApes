@@ -1,0 +1,10 @@
+.links {
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  width: "100%";
+  height: 60px;
+  background-color: white;
+  padding-bottom: 50px;
+}
