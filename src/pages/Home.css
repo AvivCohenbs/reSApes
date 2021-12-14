@@ -6,3 +6,10 @@ a {
 a:visited {
   color: unset;
 }
+
+body {
+  font-family: "Comforter Brush", cursive;
+  font-family: "Dancing Script", cursive;
+  font-family: "Fuzzy Bubbles", cursive;
+  font-family: "Open Sans Condensed", sans-serif;
+}

@@ -1,5 +1,7 @@
 import "./Recipe.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { ReactComponent as Button } from "./button.svg";
+import { ReactComponent as Rating } from "./rating.svg";
 
 function Recipe({ title, description, time, rating }) {
   return (
@@ -7,14 +9,18 @@ function Recipe({ title, description, time, rating }) {
       {/* <div className="recipe-image"><img>{recipe.image}</img></div> */}
       <div className="recipe-info">
         {/* <Link to={`/Recipes/${id}`}> */}
-        <h3>{title}</h3>
+        <h3 className="recipe-title">{title}</h3>
         {/* </Link> */}
-        <h5 className="description">{description}</h5>
+        <h5>{description}</h5>
         <h6>{time}</h6>
       </div>
       <div className="info">
-        <h6>{rating}</h6>
-        <button className="btn-start">Start </button>
+        <h6>
+          <Rating />
+        </h6>
+        <button className="btn-start">
+          <Button />{" "}
+        </button>
       </div>
     </div>
   );
