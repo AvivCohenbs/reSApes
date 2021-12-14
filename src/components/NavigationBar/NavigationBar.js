@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Bookmark } from "./bookmark.svg";
 import { ReactComponent as Chat } from "./chat.svg";
 import { ReactComponent as Home } from "./home.svg";
+// import { ReactComponent as BottonBack } from "./botton-back.svg";
 
 function NavigationBar() {
   return (
@@ -14,6 +15,9 @@ function NavigationBar() {
       <Link to="/">
         <Home />
       </Link>
+      {/* <div className="BottonBack">
+        <img src={BottonBack} />
+      </div> */}
 
       <Link to="/Chat">
         <Chat />
