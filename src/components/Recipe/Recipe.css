@@ -12,11 +12,14 @@
 
 .recipe-info {
   line-height: 1;
+  position: absolute;
+  right: 117px;
 }
 
 .info {
-  left: 260px;
+  left: 262px;
   position: absolute;
+  top: 23px;
 }
 
 .btn-start {
@@ -26,4 +29,28 @@
 
 .recipe-title {
   font-size: 15px;
+  margin-bottom: -15px;
+}
+
+.desc {
+  font-size: 10pt;
+}
+
+.time {
+  position: absolute;
+}
+
+img {
+  width: 96px;
+  height: 94px;
+  border-radius: 10px;
+  position: absolute;
+  right: 219px;
+  top: 14px;
+}
+
+.star {
+  position: relative;
+  left: 20px;
+  bottom: 30px;
 }

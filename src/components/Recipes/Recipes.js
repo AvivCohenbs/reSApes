@@ -9,8 +9,8 @@ function Recipes() {
       description: "easy to make",
       time: "45 minute",
       rating: "*",
-      //   image:
-      //     "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
+      image:
+        "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     },
     {
       id: 2,
@@ -18,8 +18,8 @@ function Recipes() {
       description: "easy to make",
       time: "45 minute",
       rating: "*",
-      //   image:
-      //     "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
+      image:
+        "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     },
     {
       id: 3,
@@ -27,8 +27,8 @@ function Recipes() {
       description: "easy to make",
       time: "45 minute",
       rating: "*",
-      //   image:
-      //     "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
+      image:
+        "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     },
     {
       id: 4,
@@ -36,8 +36,8 @@ function Recipes() {
       description: "easy to make",
       time: "45 minute",
       rating: "*",
-      //   image:
-      //     "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
+      image:
+        "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     },
     {
       id: 5,
@@ -45,19 +45,19 @@ function Recipes() {
       description: "easy to make",
       time: "45 minute",
       rating: "*",
-      //   image:
-      //     "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
+      image:
+        "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     },
   ];
   return (
     <div className="recipes-dsgn">
-      {recipes.map(({ id, title, description, rating, time }) => (
+      {recipes.map(({ id, title, description, rating, time, image }) => (
         <Recipe
           key={id}
           id={id}
           title={title}
           description={description}
-          //   image={recipe.image}
+          image={image}
           rating={rating}
           time={time}
         />
