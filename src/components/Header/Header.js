@@ -12,6 +12,7 @@ function Header() {
       <Ingredients className="greentext">
         <Text verticalAnchor="Ingredients">{""}</Text>
       </Ingredients>
+      <div className="popular"> Popular Recipes</div>
     </div>
   );
 }
