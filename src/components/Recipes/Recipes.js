@@ -66,12 +66,3 @@ function Recipes() {
   );
 }
 export default Recipes;
-
-// key={id}
-// id={id}
-// title={title}
-// description={description}
-// image={image}
-// rating={rating}
-// time={time}
-// botton={botton}
