@@ -24,6 +24,7 @@
 
 .btn-start {
   border: none;
+  cursor: pointer;
   background-color: rgb(245, 245, 245);
 }
 
@@ -38,6 +39,8 @@
 
 .time {
   position: absolute;
+  display: flex;
+  top: 67px;
 }
 
 img {
@@ -51,6 +54,11 @@ img {
 
 .star {
   position: relative;
-  left: 20px;
+  left: 13px;
   bottom: 30px;
+}
+
+.minute {
+  padding-left: 5px;
+  padding-top: 1.5px;
 }
