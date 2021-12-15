@@ -1,14 +1,17 @@
 import "./Header.css";
-// import { ReactComponent as Ingredients } from "./ingredients.svg";
+import { ReactComponent as Profile } from "./Profile.svg";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <div className="header">
+      <Link to="/Profile">
+        <Profile />
+      </Link>
       <div className="titles">
         <div className="main-title">Hello, </div>
         <div className="second-title"> Let's start cooking</div>
       </div>
-      {/* <Ingredients className="greentext"></Ingredients> */}
       <form className="search-wrapper cf">
         <label>
           <input type="text" placeholder="Which ingredient do you have?" />
