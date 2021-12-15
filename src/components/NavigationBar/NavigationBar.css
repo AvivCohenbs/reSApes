@@ -3,12 +3,48 @@
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  width: "100%";
+  width: 100%;
   height: 60px;
   background-color: white;
   padding-bottom: 50px;
   position: sticky;
+  background-image: url(circle.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.BottonBack {
+.link1:active {
+  /* background-image: url(circle.svg); */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.link2:active {
+  /* background-image: url(circle.svg); */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.link3:active {
+  /* background-image: url(circle.svg); */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.link1:hover {
+  /* background-image: url(circle.svg); */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.link2:hover {
+  /* background-image: url(circle.svg); */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.link3:hover {
+  /* background-image: url(circle.svg); */
+  background-position: center;
+  background-repeat: no-repeat;
 }

@@ -8,20 +8,23 @@ import { ReactComponent as Home } from "./home.svg";
 function NavigationBar() {
   return (
     <div className="links">
-      <Link to="/Favorites">
-        <Bookmark />
-      </Link>
+      <div className="link1">
+        <Link to="/Favorites">
+          <Bookmark />
+        </Link>
+      </div>
 
-      <Link to="/">
-        <Home />
-      </Link>
-      {/* <div className="BottonBack">
-        <img src={BottonBack} />
-      </div> */}
+      <div className="link2">
+        <Link to="/">
+          <Home />
+        </Link>
+      </div>
 
-      <Link to="/Chat">
-        <Chat />
-      </Link>
+      <div className="link3">
+        <Link to="/Chat">
+          <Chat />
+        </Link>
+      </div>
     </div>
   );
 }
