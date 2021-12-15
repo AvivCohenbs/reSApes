@@ -1,5 +1,5 @@
 import "./Header.css";
-import { ReactComponent as Ingredients } from "./ingredients.svg";
+// import { ReactComponent as Ingredients } from "./ingredients.svg";
 
 function Header() {
   return (
@@ -8,7 +8,16 @@ function Header() {
         <div className="main-title">Hello, </div>
         <div className="second-title"> Let's start cooking</div>
       </div>
-      <Ingredients className="greentext"></Ingredients>
+      {/* <Ingredients className="greentext"></Ingredients> */}
+      <form className="search-wrapper cf">
+        <label>
+          <input type="text" placeholder="Which ingredient do you have?" />
+          <button className="plus" type="submit">
+            +
+          </button>
+        </label>
+      </form>
+
       <div className="popular"> Popular Recipes</div>
     </div>
   );
