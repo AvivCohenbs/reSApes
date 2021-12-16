@@ -1,7 +1,7 @@
 .titles {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  /* background-color: white; */
   position: relative;
   left: 30px;
   bottom: 100px;
@@ -12,11 +12,15 @@
   font-size: 22pt;
   padding-bottom: 2px;
   font-weight: bold;
+  position: relative;
+  top: 40px;
 }
 
 .second-title {
   color: #22b573;
   font-size: 14pt;
+  position: relative;
+  top: 41px;
 }
 
 .popular {
@@ -121,4 +125,10 @@
 
 .plus {
   font-size: 22px;
+}
+
+.user {
+  position: relative;
+  left: 325px;
+  bottom: 112px;
 }
