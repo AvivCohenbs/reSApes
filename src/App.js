@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import Profile from "./components/Header/Profile";
+import RecipesDetails from "./pages/RecipeDetails";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/Chat" element={<Chat />} />
         <Route path="/" element={<Home />} />
         <Route path="/Favorites" element={<Favorites />} />
+        <Route path="/Recipes/:title" element={<RecipesDetails />} />
       </Routes>
       <NavigationBar />
     </div>
