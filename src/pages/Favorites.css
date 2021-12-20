@@ -12,10 +12,11 @@
   padding-bottom: 2px;
   font-weight: bold;
   position: relative;
+  top: 50px;
 }
 
 .user-favorites {
   position: relative;
   left: 290px;
-  top: 7px;
+  top: 16px;
 }
