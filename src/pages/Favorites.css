@@ -1,0 +1,21 @@
+.bookmark-header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 30px;
+  bottom: 670px;
+}
+
+.main-title {
+  color: #22b573;
+  font-size: 22pt;
+  padding-bottom: 2px;
+  font-weight: bold;
+  position: relative;
+}
+
+.user-favorites {
+  position: relative;
+  left: 290px;
+  top: 7px;
+}
