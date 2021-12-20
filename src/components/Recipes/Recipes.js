@@ -1,19 +1,7 @@
-import { useEffect, useState } from "react";
 import Recipe from "../Recipe/Recipe";
 import "./Recipes.css";
 
-function Recipes() {
-  const [recipes, setRecipes] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/data.json")
-      .then((response) => response.json())
-      .then((recipes) => {
-        console.log(recipes);
-        setRecipes(recipes);
-      });
-  }, []);
-
+function Recipes({ recipes }) {
   return (
     <div className="recipes-dsgn">
       {recipes.map(({ id, title, description, rating, time, image }) => (
