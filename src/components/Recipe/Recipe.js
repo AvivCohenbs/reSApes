@@ -3,8 +3,9 @@ import "./Recipe.css";
 import { ReactComponent as Button } from "./button.svg";
 import { ReactComponent as Rating } from "./rating.svg";
 import { ReactComponent as Clock } from "./clock.svg";
+import { Link } from "react-router-dom";
 
-function Recipe({ title, description, time, image, rating }) {
+function Recipe({ title, description, time, image, rating, id }) {
   return (
     <div className="recipe-card">
       <div className="recipe-image">
@@ -25,9 +26,11 @@ function Recipe({ title, description, time, image, rating }) {
         <h6 className="star">
           <Rating /> {rating}
         </h6>
-        <button className="btn-start">
-          <Button />{" "}
-        </button>
+        <Link to={`/products/${id}`}>
+          <button className="btn-start">
+            <Button />{" "}
+          </button>
+        </Link>
       </div>
     </div>
   );

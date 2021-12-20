@@ -15,7 +15,7 @@ function App() {
         <Route path="/Chat" element={<Chat />} />
         <Route path="/" element={<Home />} />
         <Route path="/Favorites" element={<Favorites />} />
-        <Route path="/Recipe/:title" element={<RecipeDetails />} />
+        <Route path="/recipes/:id" element={<RecipeDetails />} />
       </Routes>
       <NavigationBar />
     </div>
