@@ -11,26 +11,24 @@ function RecipeDetails() {
   const [recipe, setRecipe] = useState(null);
 
   useEffect(() => {
-    fetch(`/recipes/${id}`)
+    fetch(`http://localhost:3000/data.json`)
       .then((res) => res.json())
-      .then((recipe) => setRecipe(recipe));
+      .then((recipe) => {
+        setRecipe(recipe.recipes[id - 1]);
+      });
   }, [id]);
 
   return (
-    <>
-      <h1 className="details">Recipe Details:</h1>
-      <br />
-      <br />
-      <br />
+    <div className="det">
       <div className="card">
         {recipe && (
           <card>
             <CardMedia
               sx={{
-                width: 300,
+                width: 200,
                 objectFit: "scale-down",
-                height: 400,
-                margin: "0 auto",
+                height: 200,
+                margin: "auto",
               }}
               component="img"
               image={recipe.image}
@@ -41,13 +39,13 @@ function RecipeDetails() {
                 <div className="titlefont">{recipe.title}</div>
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                <div className="des"> {recipe.descriprion}</div>
+                <div className="des"> {recipe.description}</div>
               </Typography>
             </CardContent>
           </card>
         )}
       </div>
-    </>
+    </div>
   );
 }
 export default RecipeDetails;

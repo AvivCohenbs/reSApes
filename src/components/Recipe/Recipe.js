@@ -13,9 +13,7 @@ function Recipe({ title, description, time, image, rating, id }) {
       </div>
 
       <div className="recipe-info">
-        {/* <Link to={`/Recipes/${id}`}> */}
-        <h3 className="recipe-title">{title}</h3>
-        {/* </Link> */}
+        <h3 className="recipe-title">{title}</h3>{" "}
         <h5 className="desc">{description}</h5>
         <h6 className="time">
           <Clock />
@@ -26,7 +24,7 @@ function Recipe({ title, description, time, image, rating, id }) {
         <h6 className="star">
           <Rating /> {rating}
         </h6>
-        <Link to={`/products/${id}`}>
+        <Link to={`/recipes/${id}`}>
           <button className="btn-start">
             <Button />{" "}
           </button>
