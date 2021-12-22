@@ -1,0 +1,236 @@
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  /* background-color: white; */
+  position: relative;
+  left: 30px;
+  bottom: 100px;
+}
+
+.sing-In {
+  color: #22b573;
+  font-size: 22pt;
+  padding-bottom: 2px;
+  font-weight: bold;
+  position: relative;
+  bottom: 310px;
+}
+
+.login-email:before,
+.login-email:after {
+  content: "";
+  display: table;
+}
+
+.login-email:after {
+  clear: both;
+}
+
+.login-email {
+  zoom: 1;
+}
+
+.login-email {
+  position: relative;
+  width: 330px;
+  border-radius: 40px;
+  background: transparent;
+  bottom: 280px;
+  border: 1px solid #22b573;
+}
+
+.login-email input {
+  width: 240px;
+  height: 14px;
+  padding: 10px 5px;
+  float: left;
+  border: 0;
+  border-radius: 40px;
+  border-top-style: none;
+}
+
+.login-email input:focus {
+  outline: 0;
+  background: #fff;
+}
+
+.login-email input::-webkit-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  padding-left: 20px;
+}
+
+.login-email input:-moz-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.login-email input:-ms-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  border-style: none;
+}
+
+.login-email button {
+  overflow: visible;
+  position: relative;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 35px;
+  width: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  background: #22b573;
+  border-radius: 40px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.login-email button:active,
+.login-email button:focus {
+  background: #22b573;
+  outline: 0;
+}
+
+.login-email button:focus:before,
+.login-email button:active:before {
+  border-right-color: #22b573;
+}
+
+.login-email button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.login-pas:before,
+.login-pas:after {
+  content: "";
+  display: table;
+}
+
+.login-pas:after {
+  clear: both;
+}
+
+.login-pas {
+  zoom: 1;
+}
+
+.login-pas {
+  position: relative;
+  width: 330px;
+  border-radius: 40px;
+  background: transparent;
+  bottom: 260px;
+  border: 1px solid #22b573;
+}
+
+.login-pas input {
+  width: 240px;
+  height: 14px;
+  padding: 10px 5px;
+  float: left;
+  border: 0;
+  border-radius: 40px;
+  border-top-style: none;
+}
+
+.login-pas input:focus {
+  outline: 0;
+  background: #fff;
+}
+
+.login-pas input::-webkit-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  padding-left: 20px;
+}
+
+.login-pas input:-moz-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.login-pas input:-ms-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  border-style: none;
+}
+
+.login-pas button {
+  overflow: visible;
+  position: relative;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 35px;
+  width: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  background: #22b573;
+  border-radius: 40px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.login-pas button:active,
+.login-pas button:focus {
+  background: #22b573;
+  outline: 0;
+}
+
+.login-pas button:focus:before,
+.login-pas button:active:before {
+  border-right-color: #22b573;
+}
+
+.login-pas button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.toggle-password {
+  float: right;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: -25px;
+}
+
+.iconMan {
+  position: relative;
+  left: 41px;
+  top: 6px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn {
+  display: flex;
+  background-color: #22b573;
+  color: white;
+  font-size: 16px;
+  padding: 16px 30px;
+  border: 2px;
+  border-radius: 40px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: white;
+  color: #22b573;
+}
