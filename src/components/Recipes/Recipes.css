@@ -1,4 +1,7 @@
 .recipes-dsgn {
   overflow: scroll;
   height: 486px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

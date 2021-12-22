@@ -3,10 +3,11 @@
     {
       "id": 1,
       "title": "Pizza pie ",
-      "description": "easy to make",
-      "time": "20 minutes",
+      "description": "Wholemeal pizza pie with eggplant and tahini",
+      "time": "1 hour",
       "rating": "4.8",
-      "image": "https://medias.hashulchan.co.il/www/uploads/2020/12/IMG_1995-600x600-1635776554.jpg"
+      "image": "https://medias.hashulchan.co.il/www/uploads/2020/12/IMG_1995-600x600-1635776554.jpg",
+      "instructions": ["dsadad", "dasdasdas", "dsadsada"]
     },
     {
       "id": 2,
@@ -40,5 +41,6 @@
       "rating": "4.2",
       "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg"
     }
-  ]
+  ],
+  "ingredients": [{}]
 }

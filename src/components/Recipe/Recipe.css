@@ -2,24 +2,22 @@
   width: 330px;
   height: 123px;
   background-color: rgb(245, 245, 245);
-  position: relative;
-  left: 30px;
   border-radius: 15px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin-bottom: 20px;
 }
 
 .recipe-info {
   line-height: 1;
-  position: absolute;
   right: 117px;
 }
 
 .info {
-  left: 262px;
-  position: absolute;
-  top: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .btn-start {
@@ -34,28 +32,33 @@
 }
 
 .desc {
-  font-size: 10pt;
+  font-size: 8pt;
+  overflow: hidden;
+  width: 100px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .time {
-  position: absolute;
   display: flex;
   top: 67px;
+}
+
+.recipe-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
   width: 96px;
   height: 94px;
   border-radius: 10px;
-  position: absolute;
-  right: 219px;
-  top: 14px;
 }
 
 .star {
-  position: relative;
-  left: 13px;
-  bottom: 30px;
+  margin: 0;
 }
 
 .minute {

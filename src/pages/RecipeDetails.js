@@ -1,10 +1,8 @@
 import "./RecipeDetails.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import * as React from "react";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
+import { ReactComponent as Rating } from "./rating.svg";
+import { ReactComponent as Clock } from "./clock.svg";
 
 function RecipeDetails() {
   const { id } = useParams();
@@ -19,33 +17,38 @@ function RecipeDetails() {
   }, [id]);
 
   return (
-    <div className="det">
-      <div className="card">
-        {recipe && (
-          <card>
-            <CardMedia
-              sx={{
-                width: 200,
-                objectFit: "scale-down",
-                height: 200,
-                margin: "auto",
-              }}
-              component="img"
-              image={recipe.image}
-              alt="img"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                <div className="titlefont">{recipe.title}</div>
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                <div className="des"> {recipe.description}</div>
-              </Typography>
-            </CardContent>
-          </card>
-        )}
-      </div>
+    <div className="card">
+      {recipe && (
+        <>
+          <div className="titledet">{recipe.title}</div>
+
+          <img className="imgdet" src={recipe.image} alt="img" />
+          <div className="rat-min">
+            <div>
+              <Clock />
+              <span className="res-min">{recipe.time}</span>
+            </div>
+            <div>
+              <Rating />
+              <span className="res-rat">{recipe.rating}</span>{" "}
+            </div>
+          </div>
+          <div className="res-des">
+            Description <br /> {recipe.description} <br /> The recipe is adapted
+            for two pizzas measuring 30 × 40 cm.
+          </div>
+          <div className="ingre">
+            Ingredients <br /> {recipe.ingredients}
+          </div>
+        </>
+      )}
     </div>
   );
 }
 export default RecipeDetails;
+
+//       title
+// image
+// rating  + time
+
+//       description

@@ -11,6 +11,7 @@
   background-image: url(circle.svg);
   background-repeat: no-repeat;
   background-position: center;
+  bottom: 0;
 }
 
 .link1:active {
