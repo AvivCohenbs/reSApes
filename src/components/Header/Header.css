@@ -34,11 +34,6 @@
 } */
 body {
   margin: 0;
-  font-family: Helvetica, sans-serif;
-}
-
-Link {
-  color: #000;
 }
 
 /* header */
@@ -49,6 +44,7 @@ Link {
   position: fixed;
   width: 100%;
   border-bottom: 1px solid #969d9c;
+  top: 50px;
 }
 
 .header ul {
@@ -57,26 +53,22 @@ Link {
   list-style: none;
   overflow: hidden;
   background-color: #fff;
-}
-
-.header li a {
-  display: block;
-  padding: 20px 20px;
-  border-right: 1px solid #f4f4f4;
-  text-decoration: none;
-}
-
-.header li a:hover,
-.header .menu-btn:hover {
-  background-color: #f4f4f4;
+  color: #969d9c;
 }
 
 .header .logo {
   display: block;
   float: left;
-  font-size: 2em;
+  font-size: 30pt;
   padding: 10px 20px;
   text-decoration: none;
+  color: #22b573;
+  font-family: Impact;
+}
+
+.header .signup {
+  float: right;
+  padding: 10px 25px;
 }
 
 /* menu */
@@ -99,7 +91,7 @@ Link {
 }
 
 .header .menu-icon .navicon {
-  background: #333;
+  background: #969d9c;
   display: block;
   height: 2px;
   position: relative;
@@ -109,7 +101,7 @@ Link {
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-  background: #333;
+  background: #969d9c;
   content: "";
   display: block;
   height: 100%;
