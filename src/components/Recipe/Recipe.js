@@ -9,7 +9,7 @@ function Recipe({ title, description, time, image, rating, id }) {
     <div className="recipe-recipe">
       <div className="recipe-card">
         <div className="recipe-image">
-          <img src={image} alt="img" />
+          <img className="imgrec" src={image} alt="img" />
         </div>
       </div>
       <div className="recipe-info">

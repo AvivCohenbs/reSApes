@@ -23,7 +23,7 @@
   align-items: center;
   width: 180px;
   height: 40px;
-  background-color: white;
+
   border-bottom: 1px solid #f4f4f4;
 }
 
@@ -65,7 +65,7 @@
   align-items: center;
 }
 
-img {
+.imgrec {
   width: 258px;
   height: 178px;
   border-radius: 10px;
