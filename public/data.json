@@ -7,7 +7,8 @@
       "time": "1 hour",
       "rating": "4.8",
       "image": "https://medias.hashulchan.co.il/www/uploads/2020/12/IMG_1995-600x600-1635776554.jpg",
-      "instructions": ["dsadad", "dasdasdas", "dsadsada"]
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
     },
     {
       "id": 2,
@@ -15,7 +16,9 @@
       "description": "easy to make",
       "time": "30 minutes",
       "rating": "3.6",
-      "image": "https://www.chef-lavan.co.il/uploads/images/9218960b2dd3d8e18af09b87469dc82a.jpg"
+      "image": "https://www.chef-lavan.co.il/uploads/images/9218960b2dd3d8e18af09b87469dc82a.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
     },
     {
       "id": 3,
@@ -23,7 +26,9 @@
       "description": "easy to make",
       "time": "1 hour",
       "rating": "5.2",
-      "image": "https://medias.hashulchan.co.il/www/uploads/2019/01/IMG_1841-2000x1125-1551182049.jpg"
+      "image": "https://medias.hashulchan.co.il/www/uploads/2019/01/IMG_1841-2000x1125-1551182049.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
     },
     {
       "id": 4,
@@ -31,7 +36,9 @@
       "description": "easy to make",
       "time": "20 minutes",
       "rating": "3.5",
-      "image": "https://medias.hashulchan.co.il/www/uploads/2021/08/IMG_1737-2000x1125-1629727261.jpg"
+      "image": "https://medias.hashulchan.co.il/www/uploads/2021/08/IMG_1737-2000x1125-1629727261.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
     },
     {
       "id": 5,
@@ -39,8 +46,194 @@
       "description": "easy to make",
       "time": "2 hours",
       "rating": "4.2",
+      "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 6,
+      "title": "Pizza pie ",
+      "description": "Wholemeal pizza pie with eggplant and tahini",
+      "time": "1 hour",
+      "rating": "4.8",
+      "image": "https://medias.hashulchan.co.il/www/uploads/2020/12/IMG_1995-600x600-1635776554.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 7,
+      "title": "Pasta Rose",
+      "description": "easy to make",
+      "time": "30 minutes",
+      "rating": "3.6",
+      "image": "https://www.chef-lavan.co.il/uploads/images/9218960b2dd3d8e18af09b87469dc82a.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 8,
+      "title": "Brioche",
+      "description": "easy to make",
+      "time": "1 hour",
+      "rating": "5.2",
+      "image": "https://medias.hashulchan.co.il/www/uploads/2019/01/IMG_1841-2000x1125-1551182049.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 9,
+      "title": "Fig salad",
+      "description": "easy to make",
+      "time": "20 minutes",
+      "rating": "3.5",
+      "image": "https://medias.hashulchan.co.il/www/uploads/2021/08/IMG_1737-2000x1125-1629727261.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 10,
+      "title": "Italian soup",
+      "description": "easy to make",
+      "time": "2 hours",
+      "rating": "4.2",
+      "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 11,
+      "title": "Italian soup",
+      "description": "easy to make",
+      "time": "2 hours",
+      "rating": "4.2",
+      "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 12,
+      "title": "Pizza pie ",
+      "description": "Wholemeal pizza pie with eggplant and tahini",
+      "time": "1 hour",
+      "rating": "4.8",
+      "image": "https://medias.hashulchan.co.il/www/uploads/2020/12/IMG_1995-600x600-1635776554.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 13,
+      "title": "Pasta Rose",
+      "description": "easy to make",
+      "time": "30 minutes",
+      "rating": "3.6",
+      "image": "https://www.chef-lavan.co.il/uploads/images/9218960b2dd3d8e18af09b87469dc82a.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 14,
+      "title": "Brioche",
+      "description": "easy to make",
+      "time": "1 hour",
+      "rating": "5.2",
+      "image": "https://medias.hashulchan.co.il/www/uploads/2019/01/IMG_1841-2000x1125-1551182049.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 15,
+      "title": "Fig salad",
+      "description": "easy to make",
+      "time": "20 minutes",
+      "rating": "3.5",
+      "image": "https://medias.hashulchan.co.il/www/uploads/2021/08/IMG_1737-2000x1125-1629727261.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 16,
+      "title": "Italian soup",
+      "description": "easy to make",
+      "time": "2 hours",
+      "rating": "4.2",
+      "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 17,
+      "title": "Brioche",
+      "description": "easy to make",
+      "time": "1 hour",
+      "rating": "5.2",
+      "image": "https://medias.hashulchan.co.il/www/uploads/2019/01/IMG_1841-2000x1125-1551182049.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 18,
+      "title": "Fig salad",
+      "description": "easy to make",
+      "time": "20 minutes",
+      "rating": "3.5",
+      "image": "https://medias.hashulchan.co.il/www/uploads/2021/08/IMG_1737-2000x1125-1629727261.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 19,
+      "title": "Italian soup",
+      "description": "easy to make",
+      "time": "2 hours",
+      "rating": "4.2",
+      "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg",
+      "ingredients": [2, 3],
+      "instructions": ["put a lemon", "buy a babnana"]
+    },
+    {
+      "id": 20,
+      "title": "Italian soup",
+      "description": "easy to make",
+      "time": "2 hours",
+      "rating": "4.2",
       "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg"
     }
   ],
-  "ingredients": [{}]
+  "ingredients": [
+    { "id": 1, "name": "Salt" },
+    { "id": 2, "name": "Black pepper" },
+    { "id": 3, "name": "flour" },
+    { "id": 4, "name": "Sugar" },
+    { "id": 5, "name": "Flour" },
+    { "id": 6, "name": "Olive oil" },
+    { "id": 7, "name": "Garlic clove" },
+    { "id": 8, "name": "Eggplant" },
+    { "id": 9, "name": "Tehina" },
+    { "id": 10, "name": "Parsley" },
+    { "id": 11, "name": "Coriander" },
+    { "id": 12, "name": "Cucumber" },
+    { "id": 13, "name": "Carrot" },
+    { "id": 14, "name": "Tomato" },
+    { "id": 15, "name": "Red pepper" },
+    { "id": 16, "name": "Onion" },
+    { "id": 17, "name": "Cherry tomato" },
+    { "id": 18, "name": "Lettuce" },
+    { "id": 19, "name": "Corn" },
+    { "id": 20, "name": "Salt" },
+    { "id": 21, "name": "Salt" },
+    { "id": 22, "name": "Salt" },
+    { "id": 23, "name": "Salt" },
+    { "id": 24, "name": "Salt" },
+    { "id": 25, "name": "Salt" },
+    { "id": 26, "name": "Salt" },
+    { "id": 27, "name": "Salt" },
+    { "id": 28, "name": "Salt" },
+    { "id": 29, "name": "Salt" },
+    { "id": 30, "name": "Salt" },
+    { "id": 31, "name": "Salt" },
+    { "id": 32, "name": "Salt" },
+    { "id": 33, "name": "Salt" },
+    { "id": 34, "name": "Salt" },
+    { "id": 35, "name": "Salt" }
+  ]
 }

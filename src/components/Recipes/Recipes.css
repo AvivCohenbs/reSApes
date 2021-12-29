@@ -1,7 +1,134 @@
 .recipes-dsgn {
   overflow: scroll;
-  height: 486px;
+  height: 650px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.popular {
+  color: #22b573;
+  font-size: 14pt;
+  margin-left: 50px;
+  margin-top: 136px;
+  margin-bottom: 28px;
+  font-weight: bold;
+}
+
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  zoom: 1;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  padding-left: 6px;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 330px;
+  border-radius: 40px;
+  background: transparent;
+  left: 35px;
+  top: 110px;
+  border: 1px solid #22b573;
+}
+
+.search-wrapper input {
+  width: 240px;
+  height: 14px;
+  padding: 10px 5px;
+  float: left;
+  border: 0;
+  border-radius: 40px;
+  border-top-style: none;
+}
+
+.search-wrapper input:focus {
+  outline: 0;
+  background: #fff;
+}
+
+.search-wrapper input::-webkit-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  padding-left: 20px;
+}
+
+.search-wrapper input:-moz-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.search-wrapper input:-ms-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  border-style: none;
+}
+
+.search-wrapper button {
+  overflow: visible;
+  position: relative;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 35px;
+  width: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  background: #22b573;
+  border-radius: 40px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.search-wrapper button:active,
+.search-wrapper button:focus {
+  background: #22b573;
+  outline: 0;
+}
+
+.search-wrapper button:focus:before,
+.search-wrapper button:active:before {
+  border-right-color: #22b573;
+}
+
+.search-wrapper button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* 
+.find {
+  width: 180px;
+  margin: 0 auto;
+  justify-content: center;
+  border-bottom: 0.3px solid;
+  border-bottom-color: #22b573;
+  display: flex;
+  text-align: center;
+  font-size: 13px;
+} */
+
+.search {
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  padding-left: 6px;
 }

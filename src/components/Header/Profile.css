@@ -1,10 +1,10 @@
 .profile-page {
   display: flex;
   flex-direction: column;
-  /* background-color: white; */
-  position: relative;
-  left: 30px;
-  bottom: 100px;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  height: 850px;
 }
 
 .sing-In {
@@ -12,8 +12,9 @@
   font-size: 22pt;
   padding-bottom: 2px;
   font-weight: bold;
-  position: relative;
+  display: flex;
   bottom: 310px;
+  text-align: center;
 }
 
 .login-email:before,
@@ -31,16 +32,18 @@
 }
 
 .login-email {
-  position: relative;
-  width: 330px;
+  display: flex;
   border-radius: 40px;
   background: transparent;
-  bottom: 280px;
   border: 1px solid #22b573;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
 }
 
 .login-email input {
   width: 240px;
+  display: flex;
   height: 14px;
   padding: 10px 5px;
   float: left;
@@ -88,6 +91,7 @@
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
+  align-items: center;
 }
 
 .login-email button:active,
@@ -105,118 +109,26 @@
   border: 0;
   padding: 0;
 }
-.login-pas:before,
-.login-pas:after {
-  content: "";
-  display: table;
-}
-
-.login-pas:after {
-  clear: both;
-}
-
-.login-pas {
-  zoom: 1;
-}
-
-.login-pas {
-  position: relative;
-  width: 330px;
-  border-radius: 40px;
-  background: transparent;
-  bottom: 260px;
-  border: 1px solid #22b573;
-}
-
-.login-pas input {
-  width: 240px;
-  height: 14px;
-  padding: 10px 5px;
-  float: left;
-  border: 0;
-  border-radius: 40px;
-  border-top-style: none;
-}
-
-.login-pas input:focus {
-  outline: 0;
-  background: #fff;
-}
-
-.login-pas input::-webkit-input-placeholder {
-  color: #999;
-  font-weight: normal;
-  padding-left: 20px;
-}
-
-.login-pas input:-moz-placeholder {
-  color: #999;
-  font-weight: normal;
-  font-style: italic;
-}
-
-.login-pas input:-ms-input-placeholder {
-  color: #999;
-  font-weight: normal;
-  border-style: none;
-}
-
-.login-pas button {
-  overflow: visible;
-  position: relative;
-  float: right;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  height: 35px;
-  width: 50px;
-  color: #fff;
-  text-transform: uppercase;
-  background: #22b573;
-  border-radius: 40px;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-}
-
-.login-pas button:active,
-.login-pas button:focus {
-  background: #22b573;
-  outline: 0;
-}
-
-.login-pas button:focus:before,
-.login-pas button:active:before {
-  border-right-color: #22b573;
-}
-
-.login-pas button::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-.toggle-password {
-  float: right;
-  cursor: pointer;
-  margin-right: 10px;
-  margin-top: -25px;
-}
 
 .iconMan {
-  position: relative;
-  left: 41px;
-  top: 6px;
+  width: 30px;
+  display: flex;
+  height: 20px;
 }
 
 .container {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
 }
 
 .container img {
+  display: flex;
+  align-items: center;
   width: 100%;
   height: auto;
+  text-align: center;
 }
 
 .container .btn {
@@ -227,10 +139,81 @@
   padding: 16px 30px;
   border: 2px;
   border-radius: 40px;
-  text-align: center;
+
+  align-items: center;
 }
 
 .container .btn:hover {
   background-color: white;
   color: #22b573;
+}
+
+.pwd-container :before,
+.pwd-container:after {
+  content: "";
+  display: table;
+}
+
+.pwd-container:after {
+  clear: both;
+}
+
+.pwd-container {
+  zoom: 1;
+}
+
+.pwd-container {
+  display: flex;
+  border-radius: 40px;
+  background: transparent;
+  border: 1px solid #22b573;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: 300px;
+}
+
+.pwd-container input {
+  width: 240px;
+  display: flex;
+
+  height: 14px;
+  padding: 10px 5px;
+  float: left;
+  border: 0;
+  border-radius: 40px;
+  border-top-style: none;
+}
+
+.pwd-container input:focus {
+  outline: 0;
+  background: #fff;
+}
+
+.pwd-container input::-webkit-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  padding-left: 20px;
+}
+
+.pwd-container input:-moz-placeholder {
+  color: #999;
+  display: flex;
+
+  font-weight: normal;
+  font-style: italic;
+}
+
+.img-pass {
+  width: 30px;
+  display: flex;
+
+  height: 30px;
+  left: 50px;
+  top: 2px;
+}
+
+.arrow-svg {
+  display: flex;
+  margin-left: 330px;
 }

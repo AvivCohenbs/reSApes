@@ -9,6 +9,7 @@ div.card {
   flex-direction: column;
   align-items: center;
   overflow: scroll;
+  height: 700px;
 }
 
 .res-rat {

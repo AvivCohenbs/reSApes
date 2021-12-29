@@ -1,29 +1,35 @@
 import "./Header.css";
-import { ReactComponent as Profile } from "./Profile.svg";
 import { Link } from "react-router-dom";
+import React from "react";
 
 function Header() {
   return (
     <div className="header">
-      <div className="titles">
-        <div className="main-title">Hello, </div>
-        <div className="second-title"> Let's start cooking</div>
-      </div>
-      <div className="user">
-        <Link to="/Profile">
-          <Profile />
-        </Link>
-      </div>
-      <form className="search-wrapper cf">
-        <label>
-          <input type="text" placeholder="Which ingredient do you have?" />
-          <button className="plus" type="submit">
-            +
-          </button>
-        </label>
-      </form>
+      <Link className="Logo" to="/">
+        <div>reSApes</div>
+      </Link>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn">
+        <span class="navicon"></span>
+      </label>
 
-      <div className="popular"> Popular Recipes</div>
+      <ul className="menu">
+        <li>
+          {" "}
+          <Link to="/Favorites">My recipes</Link>{" "}
+        </li>
+        <li>
+          <Link to="/Chat">Chat</Link>{" "}
+        </li>
+        <li>
+          <Link to="/Profile">Community</Link>
+        </li>
+
+        <li>
+          {" "}
+          <Link to="/Profile">Sign Up</Link>
+        </li>
+      </ul>
     </div>
   );
 }

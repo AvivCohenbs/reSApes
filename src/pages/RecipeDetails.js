@@ -1,12 +1,14 @@
 import "./RecipeDetails.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { ReactComponent as Rating } from "./rating.svg";
 import { ReactComponent as Clock } from "./clock.svg";
+import IngredientsContext from "../IngredientsContext";
 
 function RecipeDetails() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
+  const { ingredients } = useContext(IngredientsContext);
 
   useEffect(() => {
     fetch(`http://localhost:3000/data.json`)
@@ -18,10 +20,9 @@ function RecipeDetails() {
 
   return (
     <div className="card">
-      {recipe && (
+      {ingredients.length && recipe && (
         <>
           <div className="titledet">{recipe.title}</div>
-
           <img className="imgdet" src={recipe.image} alt="img" />
           <div className="rat-min">
             <div>
@@ -34,11 +35,25 @@ function RecipeDetails() {
             </div>
           </div>
           <div className="res-des">
-            Description <br /> {recipe.description} <br /> The recipe is adapted
-            for two pizzas measuring 30 × 40 cm.
+            Description <br /> {recipe.description} <br />
           </div>
           <div className="ingre">
-            Ingredients <br /> {recipe.ingredients}
+            {recipe.ingredients.map((singleIngredientId) => {
+              const foundIngredient = ingredients.find(
+                (element) => element.id === singleIngredientId
+              );
+              return <div>{foundIngredient.name}</div>;
+            })}
+          </div>
+          <div>
+            {" "}
+            Instructions <br />
+            {recipe.instructions.map((step, index) => (
+              <div>
+                <h3>Step {index + 1}</h3>
+                <p>{step}</p>
+              </div>
+            ))}
           </div>
         </>
       )}
@@ -46,9 +61,3 @@ function RecipeDetails() {
   );
 }
 export default RecipeDetails;
-
-//       title
-// image
-// rating  + time
-
-//       description

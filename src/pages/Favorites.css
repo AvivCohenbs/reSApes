@@ -1,22 +1,18 @@
 .bookmark-header {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  left: 30px;
-  bottom: 670px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .main-title-fav {
   color: #22b573;
   font-size: 22pt;
-  padding-bottom: 2px;
+
   font-weight: bold;
-  position: relative;
-  top: 50px;
+  display: flex;
 }
 
 .user-favorites {
-  position: relative;
-  left: 290px;
-  top: 16px;
+  display: flex;
 }

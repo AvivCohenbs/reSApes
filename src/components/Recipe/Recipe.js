@@ -6,23 +6,24 @@ import { Link } from "react-router-dom";
 
 function Recipe({ title, description, time, image, rating, id }) {
   return (
-    <div className="recipe-card">
-      <div className="recipe-image">
-        <img src={image} alt="img" />
+    <div className="recipe-recipe">
+      <div className="recipe-card">
+        <div className="recipe-image">
+          <img src={image} alt="img" />
+        </div>
       </div>
-
       <div className="recipe-info">
         <h3 className="recipe-title">{title}</h3>{" "}
-        <h5 className="desc">{description}</h5>
-        <h6 className="time">
-          <Clock />
-          <span className="minute">{time}</span>
-        </h6>
-      </div>
-      <div className="info">
         <h6 className="star">
           <Rating /> {rating}
         </h6>
+      </div>
+      {/* <h5 className="desc">{description}</h5> */}
+      <h6 className="time">
+        <Clock />
+        <span className="minute">{time}</span>
+      </h6>
+      <div className="info">
         <Link to={`/recipes/${id}`}>
           <button className="btn-start">
             <Button />{" "}
