@@ -22,38 +22,45 @@ function RecipeDetails() {
     <div className="card">
       {ingredients.length && recipe && (
         <>
-          <div className="titledet">{recipe.title}</div>
-          <img className="imgdet" src={recipe.image} alt="img" />
-          <div className="rat-min">
-            <div>
-              <Clock />
-              <span className="res-min">{recipe.time}</span>
-            </div>
+          <div className="img-side">
+            <img className="imgdet" src={recipe.image} alt="img" />
+          </div>
+
+          <div className="about">
+            <div className="titledet">{recipe.title}</div>
             <div>
               <Rating />
               <span className="res-rat">{recipe.rating}</span>{" "}
             </div>
-          </div>
-          <div className="res-des">
-            Description <br /> {recipe.description} <br />
-          </div>
-          <div className="ingre">
-            {recipe.ingredients.map((singleIngredientId) => {
-              const foundIngredient = ingredients.find(
-                (element) => element.id === singleIngredientId
-              );
-              return <div>{foundIngredient.name}</div>;
-            })}
-          </div>
-          <div>
-            {" "}
-            Instructions <br />
-            {recipe.instructions.map((step, index) => (
+
+            <div className="rat-min">
               <div>
-                <h3>Step {index + 1}</h3>
-                <p>{step}</p>
+                <Clock />
+                <span className="res-min">{recipe.time}</span>
               </div>
-            ))}
+            </div>
+
+            <div className="res-des">
+              Description <br /> {recipe.description} <br />
+            </div>
+            <div className="ingre">
+              {recipe.ingredients.map((singleIngredientId) => {
+                const foundIngredient = ingredients.find(
+                  (element) => element.id === singleIngredientId
+                );
+                return <div>{foundIngredient.name}</div>;
+              })}
+            </div>
+            <div>
+              {" "}
+              Instructions <br />
+              {recipe.instructions.map((step, index) => (
+                <div>
+                  <h3>Step {index + 1}</h3>
+                  <p>{step}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </>
       )}

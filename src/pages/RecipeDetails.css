@@ -6,10 +6,25 @@
 
 div.card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   overflow: scroll;
   height: 700px;
+  padding: 0 20px;
+}
+
+.img-side {
+  display: flex;
+  flex-direction: column;
+  flex: 0.25;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  height: 80px;
+  flex: 6;
 }
 
 .res-rat {
