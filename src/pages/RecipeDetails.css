@@ -3,6 +3,7 @@
   height: 370px;
   width: 370px;
   display: flex;
+  flex-direction: column;
 }
 
 .rat-tim {
@@ -10,17 +11,6 @@
   flex-direction: row;
   line-height: 3;
 }
-
-/* .card {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: scroll;
-  height: 650px;
-  padding: 20px;
-  width: 800px;
-} */
 
 .recipe-details-card {
   display: flex;
@@ -83,4 +73,13 @@
 .ingre {
   display: flex;
   width: 198px;
+}
+
+@media (max-width: 48em) {
+  .img-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 500px;
+  }
 }

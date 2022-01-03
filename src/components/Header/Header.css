@@ -6,9 +6,9 @@ body {
 /* header */
 
 .header {
-  display: block;
+  /* display: block; */
   background-color: #fff;
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   border-bottom: 1px solid #969d9c;
 }

@@ -19,6 +19,13 @@ function Recipe({ title, description, time, image, rating, id }) {
         <h6 className="star">
           <Rating /> {rating}
         </h6>
+        <div>
+          <Link to={`/recipes/${id}`}>
+            <button className="btn-start">
+              <Button />{" "}
+            </button>
+          </Link>
+        </div>
       </div>
       <div className="icons-recipe">
         <Timeclock />
@@ -31,13 +38,6 @@ function Recipe({ title, description, time, image, rating, id }) {
         <Clock />
         <span className="minute">{time}</span>
       </h6> */}
-      <div className="info">
-        <Link to={`/recipes/${id}`}>
-          <button className="btn-start">
-            <Button />{" "}
-          </button>
-        </Link>
-      </div>
     </div>
   );
 }

@@ -17,6 +17,7 @@
 
 .recipe-info {
   line-height: 1;
+  margin-top: 3px;
   right: 117px;
   display: flex;
   justify-content: space-between;
@@ -36,20 +37,13 @@
   align-items: center;
   width: 260px;
   height: 40px;
-  margin-top: 7px;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  margin-top: 3px;
 }
 
 .btn-start {
   border: none;
   cursor: pointer;
-  background-color: white;
+  background-color: transparent;
 }
 
 .recipe-title {
@@ -57,7 +51,7 @@
   color: #22b573;
 }
 
-.desc {
+/* .desc {
   font-size: 8pt;
   overflow: hidden;
   width: 100px;
@@ -69,7 +63,7 @@
 .time {
   display: flex;
   top: 67px;
-}
+} */
 
 .recipe-image {
   display: flex;
@@ -88,7 +82,7 @@
   margin: 0;
 }
 
-.minute {
+/* .minute {
   padding-left: 5px;
   padding-top: 1.5px;
-}
+} */
