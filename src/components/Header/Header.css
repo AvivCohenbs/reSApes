@@ -45,7 +45,7 @@ body {
   position: fixed;
   width: 100%;
   border-bottom: 1px solid #969d9c;
-  top: 10px;
+  /* top: 10px; */
 }
 
 .header ul {
