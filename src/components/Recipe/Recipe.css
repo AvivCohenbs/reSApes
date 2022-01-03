@@ -22,9 +22,21 @@
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  width: 236px;
+  width: 250px;
   height: 40px;
   border-bottom: 1px solid #f4f4f4;
+}
+
+.icons-recipe {
+  line-height: 1;
+  right: 117px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  width: 260px;
+  height: 40px;
+  margin-top: 7px;
 }
 
 .info {
