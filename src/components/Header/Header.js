@@ -2,20 +2,27 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import React from "react";
 import { ReactComponent as Profile } from "./Profile.svg";
+import { ReactComponent as Logo } from "./logo.svg";
+import { ReactComponent as Bell } from "./Bell.svg";
 
 function Header() {
   return (
     <div className="header">
       <Link className="logo" to="/">
-        <div>reSApes</div>
+        <Logo />
       </Link>
       <input class="menu-btn" type="checkbox" id="menu-btn" />
       <label class="menu-icon" for="menu-btn">
         <span class="navicon"></span>
       </label>
-      <Link className="signup" to="/Profile">
-        <Profile />
-      </Link>
+      <div className="lefticones">
+        <Link className="signup" to="/Profile">
+          <Profile />
+        </Link>
+        <Link className="bell" to="/notes">
+          <Bell />
+        </Link>
+      </div>
       <ul className="menu">
         <li>
           {" "}
