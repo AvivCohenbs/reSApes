@@ -35,6 +35,7 @@ body {
 .menu-icons {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding-top: 60px;
   padding-right: 55px;
 }
