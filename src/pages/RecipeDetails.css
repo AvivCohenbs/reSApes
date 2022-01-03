@@ -23,9 +23,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  overflow: scroll;
   padding: 0 20px;
-  height: 750px;
   width: 1000px;
 }
 
@@ -37,7 +35,8 @@
   display: flex;
   flex-direction: column;
   padding-left: 50px;
-  height: 80px;
+  height: calc(100vh - 112px);
+  overflow: scroll;
 }
 
 .res-rat {
@@ -59,7 +58,6 @@
 
 .titledet {
   line-height: 3;
-  margin-top: -150px;
 }
 
 .ingre {
