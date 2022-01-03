@@ -28,8 +28,10 @@ function Recipe({ title, description, time, image, rating, id }) {
         </div>
       </div>
       <div className="icons-recipe">
-        <Timeclock />
-        {/* <span className="minute">{time}</span> */}
+        <div className="time-min">
+          <Timeclock />
+          <span className="minute">{time}</span>
+        </div>
         <Cook />
         <Favo />
       </div>

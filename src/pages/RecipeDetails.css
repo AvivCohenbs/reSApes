@@ -78,8 +78,15 @@
 @media (max-width: 48em) {
   .img-text {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     height: 500px;
+  }
+  .imgdet {
+    border-radius: 10px;
+    height: 220px;
+    width: 220px;
+    display: flex;
+    margin-bottom: 110px;
   }
 }

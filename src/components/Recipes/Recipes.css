@@ -1,21 +1,32 @@
 .recipes-dsgn {
   overflow: scroll;
-  height: 650px;
+  height: 510px;
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  padding: 0 40px;
   justify-content: space-evenly;
 }
 
+.recipes-wrapper {
+  padding: 0 40px;
+}
+
 .popular {
-  color: #22b573;
+  color: black;
   font-size: 14pt;
-  margin-left: 50px;
-  margin-top: 193px;
   margin-bottom: 38px;
   font-weight: bold;
+  margin: 30px 40px;
+}
+
+.switches {
+  display: flex;
+  flex-direction: row;
+}
+
+.switch2 {
+  padding-left: 5px;
 }
 
 .cf:before,
@@ -40,16 +51,15 @@
 
 .search-wrapper {
   position: relative;
-  width: 330px;
-  border-radius: 40px;
+  width: 340px;
+  border-radius: 10px;
   background: transparent;
-  left: 35px;
-  top: 165px;
-  border: 1px solid #22b573;
+
+  border: 1px solid #969d9c;
 }
 
 .search-wrapper input {
-  width: 240px;
+  width: 250px;
   height: 14px;
   padding: 10px 5px;
   float: left;
@@ -81,6 +91,18 @@
   border-style: none;
 }
 
+.collection-sort {
+  border-color: white;
+}
+
+.row-search-switch {
+  display: flex;
+  flex-direction: row;
+  margin-top: 45px;
+  justify-content: space-between;
+  margin: 45px 40px;
+}
+
 .search-wrapper button {
   overflow: visible;
   position: relative;
@@ -92,7 +114,7 @@
   width: 50px;
   color: #fff;
   text-transform: uppercase;
-  background: #22b573;
+  background: transparent;
   border-radius: 40px;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
   border-bottom-left-radius: 0;
@@ -101,13 +123,7 @@
 
 .search-wrapper button:active,
 .search-wrapper button:focus {
-  background: #22b573;
   outline: 0;
-}
-
-.search-wrapper button:focus:before,
-.search-wrapper button:active:before {
-  border-right-color: #22b573;
 }
 
 .search-wrapper button::-moz-focus-inner {
@@ -115,21 +131,21 @@
   padding: 0;
 }
 
-/* 
-.find {
-  width: 180px;
-  margin: 0 auto;
-  justify-content: center;
-  border-bottom: 0.3px solid;
-  border-bottom-color: #22b573;
-  display: flex;
-  text-align: center;
-  font-size: 13px;
-} */
-
 .search {
   display: flex;
   justify-content: center;
   padding-top: 5px;
   padding-left: 6px;
+}
+
+@media (max-width: 48em) {
+  .popular {
+    display: flex;
+  }
+  .row-search-switch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 }
