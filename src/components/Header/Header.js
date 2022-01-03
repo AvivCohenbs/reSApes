@@ -12,9 +12,19 @@ function Header() {
         <Logo />
       </Link>
       <input class="menu-btn" type="checkbox" id="menu-btn" />
-      <label class="menu-icon" for="menu-btn">
-        <span class="navicon"></span>
-      </label>
+      <div className="menu-icons">
+        <label class="menu-icon" for="menu-btn">
+          <span class="navicon"></span>
+        </label>
+        <div className="lefticones">
+          <Link className="bell" to="/notes">
+            <Bell />
+          </Link>
+          <Link className="signup" to="/Profile">
+            <Profile />
+          </Link>
+        </div>
+      </div>
       <ul className="menu">
         <li>
           {" "}
@@ -26,14 +36,6 @@ function Header() {
         <li>
           <Link to="/Profile">Community</Link>
         </li>
-        <div className="lefticones">
-          <Link className="signup" to="/Profile">
-            <Profile />
-          </Link>
-          <Link className="bell" to="/notes">
-            <Bell />
-          </Link>
-        </div>
       </ul>
     </div>
   );
