@@ -34,28 +34,25 @@ body {
   margin-bottom: 5px;
 }
 
-.header .lefticones {
+/* .menu .lefticones {
   display: flex;
   justify-content: end;
   align-items: center;
-  margin-right: 55px;
-  margin-top: -45px;
-  margin-bottom: 40px;
 }
 
 .header .signup {
   display: flex;
   justify-content: end;
   align-items: end;
-  margin-right: -135px;
-}
+  /* margin-right: -135px; */
+/* }
 
 .header .bell {
   display: flex;
   justify-content: end;
-  align-items: end;
-  margin-right: 132px;
-}
+  align-items: end; */
+/* margin-right: 132px; */
+/* }  */
 
 /* menu */
 
@@ -149,5 +146,9 @@ body {
   }
   .header .menu-icon {
     display: none;
+  }
+  .menu .lefticones {
+    display: flex;
+    justify-content: end;
   }
 }

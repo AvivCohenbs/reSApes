@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router";
-import Chat from "./pages/Chat";
+import About from "./pages/About";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Profile from "./components/Header/Profile";
@@ -8,6 +8,7 @@ import RecipeDetails from "./pages/RecipeDetails";
 import IngredientsContext from "./IngredientsContext";
 import { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
+import Notes from "./components/Header/Notes";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -29,7 +30,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Profile" element={<Profile />} />
-          <Route path="/Chat" element={<Chat />} />
+          <Route path="/Notes" element={<Notes />} />
+          <Route path="/About" element={<About />} />
           <Route path="/Favorites" element={<Favorites />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />
         </Routes>
