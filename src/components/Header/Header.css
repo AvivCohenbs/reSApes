@@ -34,6 +34,7 @@
 } */
 body {
   margin: 0;
+  background-color: white;
 }
 
 /* header */
@@ -44,7 +45,7 @@ body {
   position: fixed;
   width: 100%;
   border-bottom: 1px solid #969d9c;
-  top: 50px;
+  top: 10px;
 }
 
 .header ul {
@@ -58,7 +59,9 @@ body {
 
 .header .logo {
   display: block;
-  float: left;
+  position: relative;
+  top: 20px;
+  /* left: 25px; */
   font-size: 30pt;
   padding: 10px 20px;
   text-decoration: none;
@@ -67,8 +70,12 @@ body {
 }
 
 .header .signup {
-  float: right;
+  /* float: right; */
+  display: block;
   padding: 10px 25px;
+  position: relative;
+  bottom: 30px;
+  left: 1846px;
 }
 
 /* menu */
