@@ -1,16 +1,17 @@
 .imgdet {
   border-radius: 10px;
-  height: 400px;
-  width: 400px;
+  height: 370px;
+  width: 370px;
   display: flex;
 }
 
 .rat-tim {
   display: flex;
   flex-direction: row;
+  line-height: 3;
 }
 
-.card {
+/* .card {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -19,22 +20,38 @@
   height: 650px;
   padding: 20px;
   width: 800px;
+} */
+
+.recipe-details-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.img-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+  padding: 0 20px;
+  height: 750px;
+  width: 1000px;
 }
 
 .img-side {
   display: flex;
-  flex-direction: column;
-  flex: 0.25;
 }
 
 .about {
   display: flex;
   flex-direction: column;
-  padding-left: 80px;
+  padding-left: 50px;
   height: 80px;
 }
 
 .res-rat {
+  padding-right: 15px;
   padding-left: 5px;
 }
 
@@ -52,6 +69,7 @@
 
 .titledet {
   line-height: 3;
+  margin-top: -150px;
 }
 
 .ingre {
@@ -60,7 +78,6 @@
 
 .res-des {
   display: flex;
-  width: 198px;
 }
 
 .ingre {

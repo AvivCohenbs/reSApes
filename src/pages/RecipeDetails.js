@@ -19,9 +19,9 @@ function RecipeDetails() {
   }, [id]);
 
   return (
-    <div className="card">
+    <div className="recipe-details-card">
       {ingredients.length && recipe && (
-        <>
+        <div className="img-text">
           <div className="img-side">
             <img className="imgdet" src={recipe.image} alt="img" />
           </div>
@@ -35,7 +35,7 @@ function RecipeDetails() {
                 <span className="res-rat">{recipe.rating}</span>{" "}
               </div>
 
-              <div className="rat-min">
+              <div>
                 <div>
                   <Clock />
                   <span className="res-min">{recipe.time}</span>
@@ -65,7 +65,7 @@ function RecipeDetails() {
               ))}
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
