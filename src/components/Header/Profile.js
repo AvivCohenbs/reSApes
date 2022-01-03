@@ -3,8 +3,6 @@ import { ReactComponent as Singin } from "./singin.svg";
 import React, { useState } from "react";
 import showPwdImg from "./showpsd.svg";
 import hidePwdImg from "./hidepsd.svg";
-import { ReactComponent as Arrow } from "./Arrow.svg";
-import { Link } from "react-router-dom";
 
 function Profile() {
   const [pwd, setPwd] = useState("");
@@ -12,11 +10,6 @@ function Profile() {
 
   return (
     <div className="profile-page">
-      <div className="arrow-svg">
-        <Link to="/">
-          <Arrow />
-        </Link>
-      </div>
       <div className="sing-In">Sign In Now</div>
       <div className="login">
         <div className="login-email">

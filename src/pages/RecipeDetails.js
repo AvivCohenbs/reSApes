@@ -28,15 +28,18 @@ function RecipeDetails() {
 
           <div className="about">
             <div className="titledet">{recipe.title}</div>
-            <div>
-              <Rating />
-              <span className="res-rat">{recipe.rating}</span>{" "}
-            </div>
 
-            <div className="rat-min">
+            <div className="rat-tim">
               <div>
-                <Clock />
-                <span className="res-min">{recipe.time}</span>
+                <Rating />
+                <span className="res-rat">{recipe.rating}</span>{" "}
+              </div>
+
+              <div className="rat-min">
+                <div>
+                  <Clock />
+                  <span className="res-min">{recipe.time}</span>
+                </div>
               </div>
             </div>
 

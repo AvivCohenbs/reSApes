@@ -1,16 +1,24 @@
 .imgdet {
-  border-radius: 120px;
-  height: 250px;
-  width: 250px;
+  border-radius: 10px;
+  height: 400px;
+  width: 400px;
+  display: flex;
 }
 
-div.card {
+.rat-tim {
   display: flex;
   flex-direction: row;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   overflow: scroll;
-  height: 700px;
-  padding: 0 20px;
+  height: 650px;
+  padding: 20px;
+  width: 800px;
 }
 
 .img-side {
@@ -22,9 +30,8 @@ div.card {
 .about {
   display: flex;
   flex-direction: column;
-  padding-left: 50px;
+  padding-left: 80px;
   height: 80px;
-  flex: 6;
 }
 
 .res-rat {
