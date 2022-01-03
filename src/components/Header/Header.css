@@ -6,23 +6,23 @@ body {
 /* header */
 
 .header {
-  /* display: block; */
+  display: block;
   background-color: #fff;
-  /* position: fixed; */
   width: 100%;
   border-bottom: 1px solid #969d9c;
 }
 
 .header ul {
-  display: block;
+  /* display: block; */
   margin: 0;
   padding: 0;
   list-style: none;
   overflow: hidden;
   background-color: #fff;
   color: #969d9c;
-  margin-top: -80px;
-  margin-bottom: 60px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  margin-left: 60px;
 }
 
 .header .logo {
@@ -30,29 +30,19 @@ body {
   justify-content: start;
   align-items: start;
   margin: 55px;
-  margin-left: 65px;
-  margin-bottom: 5px;
+  margin-bottom: -115px;
 }
-
-/* .menu .lefticones {
+.menu-icons {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
+  padding-top: 60px;
+  padding-right: 55px;
 }
-
-.header .signup {
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  /* margin-right: -135px; */
-/* }
 
 .header .bell {
-  display: flex;
-  justify-content: end;
-  align-items: end; */
-/* margin-right: 132px; */
-/* }  */
+  padding: 15px;
+}
 
 /* menu */
 
@@ -65,11 +55,13 @@ body {
 /* menu icon */
 
 .header .menu-icon {
+  display: flex;
+  justify-content: right;
   cursor: pointer;
-  display: inline-block;
-  float: right;
-  padding: 28px 20px;
-  position: relative;
+  /* display: inline-block; */
+  /* float: right; */
+  padding: 20px 15px;
+  /* position: relative; */
   user-select: none;
 }
 
@@ -111,20 +103,20 @@ body {
   max-height: 240px;
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon {
+.header .menu-btn:checked ~ .menu-icons .menu-icon .navicon {
   background: transparent;
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
+.header .menu-btn:checked ~ .menu-icons .menu-icon .navicon:before {
   transform: rotate(-45deg);
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
+.header .menu-btn:checked ~ .menu-icons .menu-icon .navicon:after {
   transform: rotate(45deg);
 }
 
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+.header .menu-btn:checked ~ .menu-icons .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icons .menu-icon:not(.steps) .navicon:after {
   top: 0;
 }
 
@@ -132,7 +124,9 @@ body {
 
 @media (min-width: 48em) {
   .header li {
-    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .header li a {
     padding: 20px 30px;
@@ -143,7 +137,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -60px;
   }
+
   .header .menu-icon {
     display: none;
   }
