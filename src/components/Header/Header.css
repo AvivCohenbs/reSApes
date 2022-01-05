@@ -4,7 +4,9 @@ body {
 }
 
 .header {
-  display: block;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
   background-color: #116530;
   width: 100%;
   border-bottom: 1px solid #116530;
@@ -56,7 +58,28 @@ body {
   user-select: none;
 }
 
-.header .menu-icon .navicon {
+.header li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header li a {
+  padding: 20px 30px;
+}
+.header .menu {
+  clear: none;
+  max-height: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #116530;
+}
+
+.lefticones {
+  display: flex;
+}
+
+/* .header .menu-icon .navicon {
   background: #fefbf3;
   display: block;
   height: 2px;
@@ -135,4 +158,4 @@ body {
     display: flex;
     justify-content: end;
   }
-}
+} */
