@@ -11,11 +11,11 @@ function Header() {
       <Link className="logo" to="/">
         <Logo />
       </Link>
-      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      {/* <input class="menu-btn" type="checkbox" id="menu-btn" /> */}
       <div className="menu-icons">
-        <label class="menu-icon" for="menu-btn">
+        {/* <label class="menu-icon" for="menu-btn">
           <span class="navicon"></span>
-        </label>
+        </label> */}
         <div className="lefticones">
           <Link className="bell" to="/notes">
             <Bell />
