@@ -7,7 +7,9 @@ body {
   display: block;
   background-color: #116530;
   width: 100%;
-  border-bottom: 1px solid #969d9c;
+  border-bottom: 1px solid #116530;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .header ul {
@@ -26,14 +28,12 @@ body {
   display: flex;
   justify-content: start;
   align-items: start;
-  margin: 55px;
-  margin-bottom: -90px;
 }
 .menu-icons {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-top: 50px;
+  /* padding-top: 50px; */
   padding-right: 84px;
 }
 
@@ -57,7 +57,7 @@ body {
 }
 
 .header .menu-icon .navicon {
-  background: #969d9c;
+  background: #fefbf3;
   display: block;
   height: 2px;
   position: relative;
@@ -67,7 +67,7 @@ body {
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-  background: #969d9c;
+  background: #fefbf3;
   content: "";
   display: block;
   height: 100%;
