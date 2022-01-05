@@ -1,4 +1,3 @@
-import Header from "../components/Header/Header";
 import Recipes from "../components/Recipes/Recipes";
 import "./Home.css";
 import { useContext } from "react";
