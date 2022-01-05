@@ -1,0 +1,16 @@
+.tips-page {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title-tips {
+  font-size: 28px;
+  line-height: 40px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  letter-spacing: 1px;
+}

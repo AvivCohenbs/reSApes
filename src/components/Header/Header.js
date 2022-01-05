@@ -27,9 +27,6 @@ function Header() {
       </div>
       <ul className="menu">
         <li>
-          <Link to="/About">About</Link>{" "}
-        </li>
-        <li>
           <Link to="/Favorites">My recipes</Link>{" "}
         </li>
         <li>
@@ -37,6 +34,9 @@ function Header() {
         </li>
         <li>
           <Link to="/Community">Community</Link>
+        </li>
+        <li>
+          <Link to="/About">About</Link>{" "}
         </li>
       </ul>
     </div>
