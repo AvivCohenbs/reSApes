@@ -64,9 +64,11 @@ function Recipes({ recipes }) {
                     onChange={handleChange}
                     size="small"
                   >
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value={5}>None</MenuItem>
+                    <MenuItem value={10}>Milk</MenuItem>
+                    <MenuItem value={20}>Eggs</MenuItem>
+                    <MenuItem value={30}>Gluten</MenuItem>
+                    <MenuItem value={40}>Peanuts and Nuts</MenuItem>
                   </Select>
                 </FormControl>
               </Box>
@@ -76,17 +78,20 @@ function Recipes({ recipes }) {
           <div className="popular"> Popular Recipes</div>
 
           <div className="recipes-dsgn">
-            {recipes.map(({ id, title, description, rating, time, image }) => (
-              <Recipe
-                key={id}
-                id={id}
-                title={title}
-                description={description}
-                image={image}
-                rating={rating}
-                time={time}
-              />
-            ))}
+            {recipes.map(
+              ({ id, title, description, rating, time, image, difficulty }) => (
+                <Recipe
+                  key={id}
+                  id={id}
+                  title={title}
+                  description={description}
+                  image={image}
+                  rating={rating}
+                  time={time}
+                  difficulty={difficulty}
+                />
+              )
+            )}
           </div>
         </div>
       </ThemeProvider>

@@ -5,9 +5,9 @@
       "title": "Pizza pie ",
       "description": "Wholemeal pizza pie with eggplant and tahini",
       "time": "1 hour",
-      "rating": "4.8",
       "image": "https://medias.hashulchan.co.il/www/uploads/2020/12/IMG_1995-600x600-1635776554.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": [
         "Pour water into a mixer bowl and crumble yeast into them. Sift flour into a separate bowl and add to the kneading bowl with salt and olive oil. Put using a kneading hook at low speed for 3 minutes to combine the ingredients. Increase the kneading speed to medium and put another 4 minutes until a relatively hard dough is obtained. If the dough is soft, add 3-2 tablespoons of flour in the kneading step.",
         "Form the dough into a ball and place in a lightly floured bowl. Cover with a kitchen towel (or cling film) and puff for 40 minutes until the dough almost doubles in volume.",
@@ -28,9 +28,9 @@
       "title": "Pasta Rose",
       "description": "easy to make",
       "time": "30 min",
-      "rating": "3.6",
       "image": "https://www.chef-lavan.co.il/uploads/images/9218960b2dd3d8e18af09b87469dc82a.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -38,9 +38,9 @@
       "title": "Brioche",
       "description": "easy to make",
       "time": "1 hour",
-      "rating": "5.2",
       "image": "https://medias.hashulchan.co.il/www/uploads/2019/01/IMG_1841-2000x1125-1551182049.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -48,9 +48,9 @@
       "title": "Fig salad",
       "description": "easy to make",
       "time": "20 min",
-      "rating": "3.5",
       "image": "https://medias.hashulchan.co.il/www/uploads/2021/08/IMG_1737-2000x1125-1629727261.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -58,9 +58,9 @@
       "title": "Italian soup",
       "description": "easy to make",
       "time": "2 hours",
-      "rating": "4.2",
       "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -68,9 +68,9 @@
       "title": "Pizza pie ",
       "description": "Wholemeal pizza pie with eggplant and tahini",
       "time": "1 hour",
-      "rating": "4.8",
       "image": "https://medias.hashulchan.co.il/www/uploads/2020/12/IMG_1995-600x600-1635776554.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -78,9 +78,9 @@
       "title": "Pasta Rose",
       "description": "easy to make",
       "time": "30 min",
-      "rating": "3.6",
       "image": "https://www.chef-lavan.co.il/uploads/images/9218960b2dd3d8e18af09b87469dc82a.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -88,9 +88,9 @@
       "title": "Brioche",
       "description": "easy to make",
       "time": "1 hour",
-      "rating": "5.2",
       "image": "https://medias.hashulchan.co.il/www/uploads/2019/01/IMG_1841-2000x1125-1551182049.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -98,9 +98,9 @@
       "title": "Fig salad",
       "description": "easy to make",
       "time": "20 min",
-      "rating": "3.5",
       "image": "https://medias.hashulchan.co.il/www/uploads/2021/08/IMG_1737-2000x1125-1629727261.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -108,9 +108,9 @@
       "title": "Italian soup",
       "description": "easy to make",
       "time": "2 hours",
-      "rating": "4.2",
       "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -118,9 +118,9 @@
       "title": "Italian soup",
       "description": "easy to make",
       "time": "2 hours",
-      "rating": "4.2",
       "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -128,9 +128,9 @@
       "title": "Pizza pie ",
       "description": "Wholemeal pizza pie with eggplant and tahini",
       "time": "1 hour",
-      "rating": "4.8",
       "image": "https://medias.hashulchan.co.il/www/uploads/2020/12/IMG_1995-600x600-1635776554.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -138,9 +138,9 @@
       "title": "Pasta Rose",
       "description": "easy to make",
       "time": "30 min",
-      "rating": "3.6",
       "image": "https://www.chef-lavan.co.il/uploads/images/9218960b2dd3d8e18af09b87469dc82a.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -148,9 +148,9 @@
       "title": "Brioche",
       "description": "easy to make",
       "time": "1 hour",
-      "rating": "5.2",
       "image": "https://medias.hashulchan.co.il/www/uploads/2019/01/IMG_1841-2000x1125-1551182049.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -158,9 +158,9 @@
       "title": "Fig salad",
       "description": "easy to make",
       "time": "20 min",
-      "rating": "3.5",
       "image": "https://medias.hashulchan.co.il/www/uploads/2021/08/IMG_1737-2000x1125-1629727261.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -168,9 +168,9 @@
       "title": "Italian soup",
       "description": "easy to make",
       "time": "2 hours",
-      "rating": "4.2",
       "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -178,9 +178,9 @@
       "title": "Brioche",
       "description": "easy to make",
       "time": "1 hour",
-      "rating": "5.2",
       "image": "https://medias.hashulchan.co.il/www/uploads/2019/01/IMG_1841-2000x1125-1551182049.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -188,9 +188,9 @@
       "title": "Fig salad",
       "description": "easy to make",
       "time": "20 min",
-      "rating": "3.5",
       "image": "https://medias.hashulchan.co.il/www/uploads/2021/08/IMG_1737-2000x1125-1629727261.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -198,9 +198,9 @@
       "title": "Italian soup",
       "description": "easy to make",
       "time": "2 hours",
-      "rating": "4.2",
       "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg",
       "ingredients": [2, 3],
+      "difficulty": "Intermediate",
       "instructions": ["put a lemon", "buy a babnana"]
     },
     {
@@ -208,8 +208,10 @@
       "title": "Italian soup",
       "description": "easy to make",
       "time": "2 hours",
-      "rating": "4.2",
-      "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg"
+      "image": "https://medias.hashulchan.co.il/www/uploads/2016/01/650_500-153-2000x1125.jpg",
+      "ingredients": [2, 3],
+      "difficulty": "Intermediate",
+      "instructions": ["put a lemon", "buy a babnana"]
     }
   ],
   "ingredients": [

@@ -1,12 +1,12 @@
 import "./Recipe.css";
 import { ReactComponent as Button } from "./button.svg";
-import { ReactComponent as Rating } from "./rating.svg";
+// import { ReactComponent as Rating } from "./rating.svg";
 import { Link } from "react-router-dom";
 import { ReactComponent as Timeclock } from "./Timeclock.svg";
 import { ReactComponent as Cook } from "./Cook.svg";
 import { ReactComponent as Favo } from "./Favo.svg";
 
-function Recipe({ title, description, time, image, rating, id }) {
+function Recipe({ title, time, image, rating, id, difficulty }) {
   return (
     <div className="recipe-recipe">
       <div className="recipe-card">
@@ -16,9 +16,9 @@ function Recipe({ title, description, time, image, rating, id }) {
       </div>
       <div className="recipe-info">
         <h3 className="recipe-title">{title}</h3>{" "}
-        <h6 className="star">
+        {/* <h6 className="star">
           <Rating /> {rating}
-        </h6>
+        </h6> */}
         <div>
           <Link to={`/recipes/${id}`}>
             <button className="btn-start">
@@ -32,14 +32,12 @@ function Recipe({ title, description, time, image, rating, id }) {
           <Timeclock />
           <span className="minute">{time}</span>
         </div>
-        <Cook />
+        <div className="cook-difficulty">
+          <Cook />
+          <span className="dif">{difficulty}</span>
+        </div>
         <Favo />
       </div>
-      {/* <h5 className="desc">{description}</h5> */}
-      {/* <h6 className="time">
-        <Clock />
-        <span className="minute">{time}</span>
-      </h6> */}
     </div>
   );
 }

@@ -34,7 +34,7 @@ function Header() {
           <Link to="/About">About</Link>{" "}
         </li>
         <li>
-          <Link to="/Profile">Community</Link>
+          <Link to="/Community">Community</Link>
         </li>
       </ul>
     </div>

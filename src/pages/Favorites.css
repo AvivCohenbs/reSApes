@@ -8,11 +8,8 @@
 .main-title-fav {
   color: #22b573;
   font-size: 22pt;
-
+  align-items: center;
   font-weight: bold;
   display: flex;
-}
-
-.user-favorites {
-  display: flex;
+  padding-top: 10px;
 }

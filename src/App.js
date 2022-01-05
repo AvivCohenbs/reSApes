@@ -9,6 +9,7 @@ import IngredientsContext from "./IngredientsContext";
 import { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
 import Notes from "./components/Header/Notes";
+import Community from "./pages/Community";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Notes" element={<Notes />} />
+          <Route path="/Community" element={<Community />} />
           <Route path="/About" element={<About />} />
           <Route path="/Favorites" element={<Favorites />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />
