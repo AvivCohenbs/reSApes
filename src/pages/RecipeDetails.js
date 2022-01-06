@@ -31,11 +31,6 @@ function RecipeDetails() {
 
             <div className="rat-tim">
               <div>
-                <Rating />
-                <span className="res-rat">{recipe.rating}</span>{" "}
-              </div>
-
-              <div>
                 <div>
                   <Clock />
                   <span className="res-min">{recipe.time}</span>
