@@ -17,14 +17,13 @@
 .recipe-info {
   line-height: 1;
   margin-top: 3px;
-  right: 117px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  width: 260px;
+  width: 285px;
   height: 40px;
-  border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid #dfdddd;
 }
 
 .icons-recipe {
@@ -35,6 +34,7 @@
   align-items: center;
   width: 260px;
   height: 40px;
+  font-size: 13px;
 }
 
 .btn-start {
@@ -44,8 +44,8 @@
 }
 
 .recipe-title {
-  font-size: 15px;
-  color: #22b573;
+  font-size: 16px;
+  color: #116530;
 }
 
 /* .desc {
@@ -81,7 +81,6 @@
 .minute {
   padding-left: 4px;
   padding-top: 5px;
-  font-size: 11px;
   color: #969d9c;
 }
 
@@ -100,6 +99,5 @@
 .dif {
   padding-left: 4px;
   padding-top: 5px;
-  font-size: 11px;
   color: #969d9c;
 }

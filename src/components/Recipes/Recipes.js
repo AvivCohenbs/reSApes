@@ -15,7 +15,7 @@ function Recipes({ recipes }) {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#22b573",
+        main: "#116530",
       },
     },
   });

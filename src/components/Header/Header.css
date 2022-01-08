@@ -35,12 +35,11 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  /* padding-top: 50px; */
   padding-right: 84px;
 }
 
 .header .bell {
-  padding: 15px;
+  padding: 0 15px;
 }
 
 .header .menu {

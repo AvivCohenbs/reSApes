@@ -1,8 +1,20 @@
 .tips-page {
   display: flex;
+  line-height: 3;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px;
+  overflow: scroll;
+  height: calc(100vh - 112px);
+  padding-top: 20px;
+}
+
+.title-page {
+  display: flex;
+  flex-direction: row;
   text-align: center;
   justify-content: center;
-  flex-direction: column;
+  line-height: 3;
 }
 
 .title-tips {
@@ -13,4 +25,26 @@
   text-align: center;
   justify-content: center;
   letter-spacing: 1px;
+  line-height: 2;
+}
+
+.img-hala {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+.img-salad {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+.p {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  line-height: 2.2;
 }
