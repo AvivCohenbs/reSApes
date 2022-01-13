@@ -5,7 +5,7 @@ import { ReactComponent as Tableimg } from "./Tableimg.svg";
 function Tips() {
   return (
     <div className="tips-page">
-      <div className="title-page">Tiiiiips and Tricks</div>
+      <div className="title-page">Tips and Tricks</div>
       <div className="title-tips">Hosts (almost) without cooking </div>
 
       <div className="img-salad">
