@@ -42,22 +42,17 @@ function RecipeDetails() {
               Description <br /> {recipe.description} <br />
             </div>
             <br />
-            {/* <div className="ingre">
-              {Recipes.map((recipe) => (
-                <div>{recipe.ingredients}</div>
-              ))}
-            </div> */}
             <div>
               Ingredients
               <ul>
-                {recipe.ingredients.map((ingredient) => (
-                  <li key={ingredient.id}> {ingredient.name}</li>
+                {recipe.ingredients.map((ingredient, index) => (
+                  <li key={index}> {ingredient.name}</li>
                 ))}
               </ul>
             </div>
             Instructions <br />
             {recipe.instructions.map((step, index) => (
-              <div>
+              <div key={index}>
                 <h3>Step {index + 1}</h3>
                 <p>{step}</p>
               </div>
