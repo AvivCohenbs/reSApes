@@ -8,7 +8,7 @@ import Recipes from "../components/Recipes/Recipes";
 function RecipeDetails() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
-  const { ingredients } = useContext(IngredientsContext);
+  //const { ingredients } = useContext(IngredientsContext);
   const [recipeIngredient, setRecipeIngredient] = useState(null);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function RecipeDetails() {
 
   return (
     <div className="recipe-details-card">
-      {ingredients.length && recipe && (
+      {recipe && (
         <div className="img-text">
           <div className="img-side">
             <img className="imgdet" src={recipe.image} alt="img" />
