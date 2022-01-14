@@ -29,7 +29,7 @@ function Recipes({ recipes }) {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <div class="recipes-wrapper">
+        <div className="recipes-wrapper">
           <div className="row-search-switch">
             <form className="search-wrapper cf">
               <label>
@@ -79,7 +79,16 @@ function Recipes({ recipes }) {
 
           <div className="recipes-dsgn">
             {recipes.map(
-              ({ id, title, description, rating, time, image, difficulty }) => (
+              ({
+                _id: id,
+                title,
+                description,
+                rating,
+                time,
+                image,
+                difficulty,
+                instructions,
+              }) => (
                 <Recipe
                   key={id}
                   id={id}
@@ -89,6 +98,7 @@ function Recipes({ recipes }) {
                   rating={rating}
                   time={time}
                   difficulty={difficulty}
+                  instructions={instructions}
                 />
               )
             )}

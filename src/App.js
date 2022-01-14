@@ -17,11 +17,20 @@ function App() {
   const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/data.json")
+    fetch("/recipes")
       .then((response) => response.json())
       .then((data) => {
-        setRecipes(data.recipes);
-        setIngredients(data.ingredients);
+        console.log(data);
+        setRecipes(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("/ingredients")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setIngredients(data);
       });
   }, []);
 

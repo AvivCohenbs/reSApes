@@ -30,7 +30,7 @@ function Recipe({ title, time, image, rating, id, difficulty }) {
       <div className="icons-recipe">
         <div className="time-min">
           <Timeclock />
-          <span className="minute">{time}</span>
+          <span className="minute">{time} min </span>
         </div>
         <div className="cook-difficulty">
           <Cook />

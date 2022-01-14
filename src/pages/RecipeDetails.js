@@ -1,26 +1,28 @@
 import "./RecipeDetails.css";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { ReactComponent as Rating } from "./rating.svg";
 import { ReactComponent as Clock } from "./clock.svg";
 import IngredientsContext from "../IngredientsContext";
+import Recipes from "../components/Recipes/Recipes";
 
 function RecipeDetails() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
-  const { ingredients } = useContext(IngredientsContext);
+  //const { ingredients } = useContext(IngredientsContext);
+  const [recipeIngredient, setRecipeIngredient] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/data.json`)
+    fetch(`/recipes/${id}`)
       .then((res) => res.json())
-      .then((recipe) => {
-        setRecipe(recipe.recipes[id - 1]);
+      .then((data) => {
+        setRecipe(data);
+        setRecipeIngredient(data);
       });
   }, [id]);
 
   return (
     <div className="recipe-details-card">
-      {ingredients.length && recipe && (
+      {recipe && (
         <div className="img-text">
           <div className="img-side">
             <img className="imgdet" src={recipe.image} alt="img" />
@@ -28,37 +30,33 @@ function RecipeDetails() {
 
           <div className="about">
             <div className="titledet">{recipe.title}</div>
-
             <div className="rat-tim">
               <div>
                 <div>
                   <Clock />
-                  <span className="res-min">{recipe.time}</span>
+                  <span className="res-min">{recipe.time} min</span>
                 </div>
               </div>
             </div>
-
             <div className="res-des">
               Description <br /> {recipe.description} <br />
             </div>
-            <div className="ingre">
-              {recipe.ingredients.map((singleIngredientId) => {
-                const foundIngredient = ingredients.find(
-                  (element) => element.id === singleIngredientId
-                );
-                return <div>{foundIngredient.name}</div>;
-              })}
-            </div>
+            <br />
             <div>
-              {" "}
-              Instructions <br />
-              {recipe.instructions.map((step, index) => (
-                <div>
-                  <h3>Step {index + 1}</h3>
-                  <p>{step}</p>
-                </div>
-              ))}
+              Ingredients
+              <ul>
+                {recipe.ingredients.map((ingredient, index) => (
+                  <li key={index}> {ingredient.name}</li>
+                ))}
+              </ul>
             </div>
+            Instructions <br />
+            {recipe.instructions.map((step, index) => (
+              <div key={index}>
+                <h3>Step {index + 1}</h3>
+                <p>{step}</p>
+              </div>
+            ))}
           </div>
         </div>
       )}
