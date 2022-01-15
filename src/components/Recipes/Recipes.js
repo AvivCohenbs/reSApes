@@ -65,7 +65,7 @@ function Recipes({ recipes }) {
                     size="small"
                   >
                     <MenuItem value={5}>None</MenuItem>
-                    <MenuItem value={10}>Milk</MenuItem>
+                    <MenuItem value={10}>Dairy products</MenuItem>
                     <MenuItem value={20}>Eggs</MenuItem>
                     <MenuItem value={30}>Gluten</MenuItem>
                     <MenuItem value={40}>Peanuts and Nuts</MenuItem>
@@ -75,6 +75,11 @@ function Recipes({ recipes }) {
             </div>
           </div>
 
+          <div className="weknow">
+            We know the deal. We feel your pain. Here are our superstar
+            workhorse recipes, designed and tested to help you <br /> cook a
+            great meal.
+          </div>
           <div className="popular"> Popular Recipes</div>
 
           <div className="recipes-dsgn">

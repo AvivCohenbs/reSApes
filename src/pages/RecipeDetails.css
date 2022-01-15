@@ -65,17 +65,21 @@
   font-size: 20px;
 }
 
-.ingre {
-  line-height: 2.5;
-}
-
-.res-des {
-  display: flex;
+.desc {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .ingre {
+  font-size: 18px;
   display: flex;
-  width: 198px;
+}
+
+.instru {
+  display: flex;
+  margin-top: 15px;
+  font-size: 18px;
 }
 
 @media (max-width: 48em) {
