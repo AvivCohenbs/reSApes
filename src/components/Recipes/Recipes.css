@@ -54,7 +54,6 @@
   width: 340px;
   border-radius: 10px;
   background: transparent;
-
   border: 1px solid #969d9c;
 }
 
@@ -66,11 +65,12 @@
   border: 0;
   border-radius: 40px;
   border-top-style: none;
+  background-color: #fefbf3;
 }
 
 .search-wrapper input:focus {
   outline: 0;
-  background: #fff;
+  background-color: #fefbf3;
 }
 
 .search-wrapper input::-webkit-input-placeholder {
@@ -136,6 +136,13 @@
   justify-content: center;
   padding-top: 5px;
   padding-left: 6px;
+}
+
+.weknow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
 }
 
 @media (max-width: 48em) {
