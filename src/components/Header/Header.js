@@ -16,6 +16,7 @@ function Header() {
             <span className="line line2"></span>
             <span className="line line3"></span>
           </div>
+
           <ul className="menu-items">
             <li>
               <Link to="/Favorites">My recipes</Link>{" "}
@@ -29,15 +30,17 @@ function Header() {
             <li>
               <Link to="/About">About</Link>{" "}
             </li>
-          </ul>
-          <div className="righticones">
-            <Link className="Bell" to="/notes">
-              <Link className="Profile" to="/Profile">
+            <li>
+              <Link className="Bell" to="/notes">
                 <Bell />
+              </Link>
+            </li>
+            <li>
+              <Link className="Profile" to="/Profile">
                 <Profile />
               </Link>
-            </Link>
-          </div>
+            </li>
+          </ul>
           <Link className="logo" to="/">
             <Logo />
           </Link>
@@ -64,15 +67,17 @@ function Header() {
             <li>
               <Link to="/About">About</Link>{" "}
             </li>
-          </ul>
-          <div className="righticones">
-            <Link className="bell" to="/notes">
-              <Link className="Profile" to="/Profile">
+            <li>
+              <Link className="Bell" to="/notes">
                 <Bell />
+              </Link>
+            </li>
+            <li>
+              <Link className="Profile" to="/Profile">
                 <Profile />
               </Link>
-            </Link>
-          </div>
+            </li>
+          </ul>
           <Link className="logo" to="/">
             <Logo />
           </Link>
