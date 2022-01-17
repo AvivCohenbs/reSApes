@@ -1,6 +1,4 @@
 import "./Tips.css";
-import { ReactComponent as Filo } from "./Filo.svg";
-import { ReactComponent as Tableimg } from "./Tableimg.svg";
 
 function Tips() {
   return (
@@ -8,9 +6,11 @@ function Tips() {
       <div className="title-page">Tips and Tricks</div>
       <div className="title-tips">Hosts (almost) without cooking </div>
 
-      <div className="img-salad">
-        <Tableimg />
-      </div>
+      <img
+        src="https://medias.hashulchan.co.il/www/uploads/2020/11/22%D7%A1%D7%A0%D7%98%D7%94-%D7%A7%D7%AA%D7%A8%D7%99%D7%A0%D7%94-%D7%A6%D7%99%D7%9C%D7%95%D7%9D-%D7%99%D7%A4%D7%99%D7%AA-%D7%A9%D7%9E%D7%97%D7%94-2000x1125.jpg"
+        alt="table"
+        className="img-salad"
+      ></img>
 
       <div className="p-1">
         When you love food, it does not mean that you have to be addicted to the
@@ -120,9 +120,11 @@ function Tips() {
           </ul>
         </div>
       </div>
-      <div className="img-bread">
-        <Filo />
-      </div>
+      <img
+        src="https://medias.hashulchan.co.il/www/uploads/2015/11/650_50086-2000x1125.jpg"
+        alt="bread"
+        className="img-bread"
+      ></img>
       <div className="pp">
         <div className="p-11">
           <b>Salads and spreads</b> such as pesto, artichoke spread, sun-dried
