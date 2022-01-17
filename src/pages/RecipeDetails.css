@@ -86,16 +86,29 @@
 @media (max-width: 48em) {
   .img-text {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
-    height: 600px;
+    height: 630px;
+    width: 300px;
   }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-right: 60px;
+  }
+
+  .titledet {
+    width: 280px;
+    line-height: 1.6;
+  }
+
   .imgdet {
     border-radius: 25px;
     height: 200px;
-    width: 200px;
+    width: 230px;
     display: flex;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-right: 165px;
   }
 }
