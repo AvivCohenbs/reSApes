@@ -223,9 +223,10 @@
   background-color: #fff;
   width: 100%;
   max-width: 328px;
-  margin: 345px auto;
+  margin: 241px auto;
   display: flex;
   flex-direction: column;
+  border-radius: 20px;
 }
 
 .accountPage__title {

@@ -5,6 +5,7 @@
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
+  height: 40vh;
   justify-content: space-evenly;
 }
 
@@ -17,7 +18,7 @@
   font-size: 14pt;
   margin-bottom: 38px;
   font-weight: bold;
-  margin: 30px 40px;
+  margin: 18px 59px;
 }
 
 .switches {
@@ -50,10 +51,10 @@
 }
 
 .search-wrapper {
-  position: relative;
-  width: 340px;
+  width: 460px;
   border-radius: 10px;
   background: transparent;
+  height: 38px;
   border: 1px solid #969d9c;
 }
 
@@ -100,7 +101,10 @@
   flex-direction: row;
   margin-top: 45px;
   justify-content: space-between;
-  margin: 35px 40px;
+  margin: 0 40px;
+  margin-top: 25px;
+  padding-left: 23px;
+  padding-right: 10px;
 }
 
 .search-wrapper button {
@@ -149,10 +153,41 @@
   font-weight: bolder;
 }
 
+.text {
+  display: flex;
+  flex-direction: column;
+  width: 650px;
+  margin-top: 20px;
+  font-size: 25px;
+  padding: 0 65px;
+}
+
+.change-color {
+  display: flex;
+  line-height: 1.4;
+  color: #116530;
+  font-weight: bolder;
+}
+
+.workhorse {
+  line-height: 1.2;
+  display: flex;
+  font-weight: bolder;
+}
+
 @media (max-width: 48em) {
-  .popular {
+  .text {
     display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+    font-size: 18px;
+    width: 400px;
   }
+
+  .search-wrapper {
+    width: 350px;
+  }
+
   .row-search-switch {
     display: flex;
     flex-direction: column;

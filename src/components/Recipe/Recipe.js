@@ -6,7 +6,7 @@ import { ReactComponent as Timeclock } from "./Timeclock.svg";
 import { ReactComponent as Cook } from "./Cook.svg";
 import { ReactComponent as Favo } from "./Favo.svg";
 
-function Recipe({ title, time, image, rating, id, difficulty }) {
+function Recipe({ title, time, image, id, difficulty }) {
   return (
     <div className="recipe-recipe">
       <div className="recipe-card">
@@ -16,9 +16,6 @@ function Recipe({ title, time, image, rating, id, difficulty }) {
       </div>
       <div className="recipe-info">
         <h3 className="recipe-title">{title}</h3>{" "}
-        {/* <h6 className="star">
-          <Rating /> {rating}
-        </h6> */}
         <div>
           <Link to={`/recipes/${id}`}>
             <button className="btn-start">

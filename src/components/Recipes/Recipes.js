@@ -4,13 +4,22 @@ import * as React from "react";
 import Switch from "@mui/material/Switch";
 import { ReactComponent as Search } from "./Search.svg";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Box from "@mui/material/Box";
+import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
+import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
+import Checkbox from "@mui/material/Checkbox";
 
 function Recipes({ recipes }) {
+  // const allergieChange = recipes.filter(
+  //   (recipe) =>
+  //     !recipe.ingredients
+  //       .map((ingredient) => (ingredient.allergie === allergie ? true : false))
+  //       .includes(true)
+  // );
+
   const label = { inputProps: { "aria-label": "Switch demo" } };
   const theme = createTheme({
     palette: {
@@ -20,21 +29,47 @@ function Recipes({ recipes }) {
     },
   });
 
-  const [age, setAge] = React.useState("");
+  const ITEM_HEIGHT = 48;
+  const ITEM_PADDING_TOP = 8;
+  const MenuProps = {
+    PaperProps: {
+      style: {
+        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+        width: 250,
+      },
+    },
+  };
+
+  const allergies = ["None", "Lactose", "Eggs", "Gluten", "Peanuts", "Nuts"];
+
+  const [allergieName, setAllergieName] = React.useState([]);
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    const {
+      target: { value },
+    } = event;
+    setAllergieName(typeof value === "string" ? value.split(",") : value);
   };
 
   return (
     <>
       <ThemeProvider theme={theme}>
         <div className="recipes-wrapper">
-          <div className="weknow">
-            We know the deal. We feel your pain. Here are our superstar
-            workhorse recipes, designed and tested to help you cook a great
-            meal.
+          <div className="text">
+            <span className="change-color">
+              <b>
+                We know the deal.
+                <br /> We feel your pain.{" "}
+              </b>
+            </span>
+            <span className="workhorse">
+              <br /> Here are our superstar workhorse recipes, <br /> designed
+              and tasted to help you cook a great meal. <br />
+              Add the ingredients you have in your fridge and find the recipie
+              that suits you best!
+            </span>
           </div>
+
           <div className="row-search-switch">
             <form className="search-wrapper cf">
               <label>
@@ -56,27 +91,33 @@ function Recipes({ recipes }) {
               <div className="switch2">
                 Vageterian <Switch {...label} />
               </div>
-              <Box sx={{ minWidth: 110 }}>
-                <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">
+
+              <div>
+                <FormControl sx={{ m: 1, width: 150 }}>
+                  <InputLabel id="demo-multiple-checkbox-label">
                     Allergies
                   </InputLabel>
                   <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={age}
-                    label="Allergies"
+                    labelId="demo-multiple-checkbox-label"
+                    id="demo-multiple-checkbox"
+                    multiple
+                    value={allergieName}
                     onChange={handleChange}
-                    size="small"
+                    input={<OutlinedInput label="Allergies" />}
+                    renderValue={(selected) => selected.join(", ")}
+                    MenuProps={MenuProps}
                   >
-                    <MenuItem value={5}>None</MenuItem>
-                    <MenuItem value={10}>Dairy products</MenuItem>
-                    <MenuItem value={20}>Eggs</MenuItem>
-                    <MenuItem value={30}>Gluten</MenuItem>
-                    <MenuItem value={40}>Peanuts and Nuts</MenuItem>
+                    {allergies.map((allergie) => (
+                      <MenuItem key={allergie} value={allergie}>
+                        <Checkbox
+                          checked={allergieName.indexOf(allergie) > -1}
+                        />
+                        <ListItemText primary={allergie} />
+                      </MenuItem>
+                    ))}
                   </Select>
                 </FormControl>
-              </Box>
+              </div>
             </div>
           </div>
 
