@@ -30,6 +30,11 @@ function Recipes({ recipes }) {
     <>
       <ThemeProvider theme={theme}>
         <div className="recipes-wrapper">
+          <div className="weknow">
+            We know the deal. We feel your pain. Here are our superstar
+            workhorse recipes, designed and tested to help you cook a great
+            meal.
+          </div>
           <div className="row-search-switch">
             <form className="search-wrapper cf">
               <label>
@@ -75,11 +80,6 @@ function Recipes({ recipes }) {
             </div>
           </div>
 
-          <div className="weknow">
-            We know the deal. We feel your pain. Here are our superstar
-            workhorse recipes, designed and tested to help you <br /> cook a
-            great meal.
-          </div>
           <div className="popular"> Popular Recipes</div>
 
           <div className="recipes-dsgn">

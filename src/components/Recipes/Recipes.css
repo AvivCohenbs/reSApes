@@ -9,7 +9,7 @@
 }
 
 .recipes-wrapper {
-  padding: 0 40px;
+  padding: 120px 40px;
 }
 
 .popular {
@@ -100,7 +100,7 @@
   flex-direction: row;
   margin-top: 45px;
   justify-content: space-between;
-  margin: 45px 40px;
+  margin: 35px 40px;
 }
 
 .search-wrapper button {
@@ -141,8 +141,12 @@
 .weknow {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+  margin-top: 65px;
+  padding-left: 44px;
+  color: #116530;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 @media (max-width: 48em) {

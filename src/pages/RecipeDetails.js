@@ -24,10 +24,6 @@ function RecipeDetails() {
     <div className="recipe-details-card">
       {recipe && (
         <div className="img-text">
-          <div className="img-side">
-            <img className="imgdet" src={recipe.image} alt="img" />
-          </div>
-
           <div className="about">
             <div className="titledet">{recipe.title}</div>
             <div className="rat-tim">
@@ -65,6 +61,9 @@ function RecipeDetails() {
                 <p>{step}</p>
               </div>
             ))}
+          </div>
+          <div className="img-side">
+            <img className="imgdet" src={recipe.image} alt="img" />
           </div>
         </div>
       )}
