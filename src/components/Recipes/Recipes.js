@@ -11,8 +11,9 @@ import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
+import { useRef, useEffect, useState } from "react";
 
-function Recipes({ recipes }) {
+function Recipes() {
   // const allergieChange = recipes.filter(
   //   (recipe) =>
   //     !recipe.ingredients
@@ -51,6 +52,19 @@ function Recipes({ recipes }) {
     setAllergieName(typeof value === "string" ? value.split(",") : value);
   };
 
+  const [recipes, setRecipes] = useState([]);
+
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    fetch("/recipes")
+      .then((response) => response.json())
+      .then((data) => {
+        setRecipes(data);
+      });
+    inputRef.current.focus();
+  }, []);
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -76,6 +90,7 @@ function Recipes({ recipes }) {
                 <input
                   type="text"
                   placeholder="Which ingredients do you have?"
+                  ref={inputRef}
                 />
                 <button type="submit">
                   <div className="search">
