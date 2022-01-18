@@ -1,5 +1,23 @@
-.newrecipe {
-  color: #116530;
+.addnew {
   display: flex;
-  margin-top: 200px;
+}
+
+.maintitle {
+  display: block;
+  margin-top: 120px;
+}
+
+.firsttitle {
+  color: #116530;
+  font-size: 35pt;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  margin-left: 70px;
+}
+
+.sectitle {
+  font-size: 15pt;
+  font-family: "Poppins", sans-serif;
+  color: #116530;
+  margin-left: 70px;
 }
