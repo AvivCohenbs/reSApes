@@ -18,7 +18,7 @@
   position: fixed;
   width: 100%;
   background: #116530;
-  height: 120px;
+  height: 150px;
   z-index: 12;
   border-bottom-left-radius: 17px;
   border-bottom-right-radius: 17px;
@@ -28,7 +28,7 @@
 .navbar-container {
   display: flex;
   justify-content: space-between;
-  /* height: 64px; */
+  height: 64px;
   align-items: center;
 }
 
@@ -54,6 +54,11 @@
 .menu-items a:hover {
   color: #61a078;
   transition: color 0.3s ease-in-out;
+}
+
+.menu-items a:focus {
+  color: #61a078;
+  outline: none;
 }
 
 .logo {
