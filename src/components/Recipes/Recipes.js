@@ -11,15 +11,47 @@ import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useContext, useState } from "react";
+import IngredientsContext from "../../IngredientsContext";
 
 function Recipes() {
-  // const allergieChange = recipes.filter(
-  //   (recipe) =>
-  //     !recipe.ingredients
-  //       .map((ingredient) => (ingredient.allergie === allergie ? true : false))
-  //       .includes(true)
-  // );
+  const { ingredients } = useContext(IngredientsContext);
+  const { recipes } = useContext(IngredientsContext);
+  const [allergieName, setAllergieName] = useState([]);
+
+  const allergies = ingredients
+    .map((ingredient) => ingredient.allergie)
+    .filter((value, index, array) => array.indexOf(value) === index);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  const inputRef = useRef(null);
+
+  const allergieChange = allergieName.includes("None")
+    ? recipes
+    : recipes.filter(
+        (recipe) =>
+          !recipe.ingredients
+            .map((ingredient) =>
+              allergieName.includes(ingredient.allergie) ? true : false
+            )
+            .includes(true)
+      );
+
+  // const handleInput = (e) => {
+  //   const filterIngredients =
+  //     recipes &&
+  //     recipes.filter((recipe) =>
+  //       recipe.ingredients.map((ingredient) =>
+  //         ingredient.name.toLowerCase().startsWith(e.target.value)
+
+  //       )
+  //     );
+  //   console.log(filterIngredients);
+  //   setSearchIngredient(filterIngredients);
+  // };
 
   const label = { inputProps: { "aria-label": "Switch demo" } };
   const theme = createTheme({
@@ -41,29 +73,12 @@ function Recipes() {
     },
   };
 
-  const allergies = ["None", "Lactose", "Eggs", "Gluten", "Peanuts", "Nuts"];
-
-  const [allergieName, setAllergieName] = React.useState([]);
-
   const handleChange = (event) => {
     const {
       target: { value },
     } = event;
     setAllergieName(typeof value === "string" ? value.split(",") : value);
   };
-
-  const [recipes, setRecipes] = useState([]);
-
-  const inputRef = useRef(null);
-
-  useEffect(() => {
-    fetch("/recipes")
-      .then((response) => response.json())
-      .then((data) => {
-        setRecipes(data);
-      });
-    inputRef.current.focus();
-  }, []);
 
   return (
     <>
@@ -91,6 +106,7 @@ function Recipes() {
                   type="text"
                   placeholder="Which ingredients do you have?"
                   ref={inputRef}
+                  // onChange={handleInput}
                 />
                 <button type="submit">
                   <div className="search">
@@ -139,7 +155,7 @@ function Recipes() {
           <div className="popular"> Popular Recipes</div>
 
           <div className="recipes-dsgn">
-            {recipes.map(
+            {allergieChange.map(
               ({
                 _id: id,
                 title,
@@ -149,6 +165,7 @@ function Recipes() {
                 image,
                 difficulty,
                 instructions,
+                ingredients,
               }) => (
                 <Recipe
                   key={id}
@@ -160,6 +177,7 @@ function Recipes() {
                   time={time}
                   difficulty={difficulty}
                   instructions={instructions}
+                  ingredients={ingredients}
                 />
               )
             )}

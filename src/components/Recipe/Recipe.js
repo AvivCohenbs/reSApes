@@ -1,12 +1,14 @@
 import "./Recipe.css";
 import { ReactComponent as Button } from "./button.svg";
-// import { ReactComponent as Rating } from "./rating.svg";
 import { Link } from "react-router-dom";
 import { ReactComponent as Timeclock } from "./Timeclock.svg";
 import { ReactComponent as Cook } from "./Cook.svg";
-import { ReactComponent as Favo } from "./Favo.svg";
+import React, { useState } from "react";
+import Heart from "react-heart";
 
 function Recipe({ title, time, image, id, difficulty }) {
+  const [active, setActive] = useState(false);
+
   return (
     <div className="recipe-recipe">
       <div className="recipe-card">
@@ -29,11 +31,15 @@ function Recipe({ title, time, image, id, difficulty }) {
           <Timeclock />
           <span className="minute">{time} min </span>
         </div>
+
+        <div style={{ width: "1.2rem", opacity: "0.6" }}>
+          <Heart isActive={active} onClick={() => setActive(!active)} />
+        </div>
+
         <div className="cook-difficulty">
           <Cook />
           <span className="dif">{difficulty}</span>
         </div>
-        <Favo />
       </div>
     </div>
   );
