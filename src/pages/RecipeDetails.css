@@ -94,8 +94,8 @@
   .about {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    margin-right: 60px;
+    width: 100%;
+    font-size: large;
   }
 
   .titledet {
@@ -106,8 +106,6 @@
   .imgdet {
     border-radius: 25px;
     height: 200px;
-    width: 230px;
     display: flex;
-    margin-right: 165px;
   }
 }

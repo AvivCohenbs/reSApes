@@ -1,6 +1,7 @@
 .tips-page {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   overflow: scroll;
   height: 100vh;
   margin-top: 120px;
@@ -10,7 +11,6 @@
   display: flex;
   flex-direction: row;
   text-align: center;
-  justify-content: center;
   line-height: 1.5;
   font-size: 60px;
   font-weight: bolder;
@@ -22,7 +22,6 @@
   display: flex;
   flex-direction: row;
   text-align: center;
-  justify-content: center;
   letter-spacing: 1px;
   line-height: 2;
   color: #116530;
@@ -30,11 +29,22 @@
 
 .img-salad {
   display: flex;
-  padding-bottom: 10px;
+  padding-top: 17px;
+  width: 400px;
+  border-radius: 45px;
+}
+
+.img-cheers {
+  display: flex;
   padding-top: 20px;
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 400px;
+  border-radius: 45px;
+}
+
+.img-table {
+  display: flex;
+  padding-top: 20px;
+  width: 400px;
   border-radius: 45px;
 }
 
@@ -43,23 +53,12 @@
   flex-direction: column;
   padding-bottom: 140px;
   width: 680px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.pp {
-  display: flex;
-  flex-direction: column;
-  padding: 0 350px;
-  line-height: 3;
 }
 
 .p-1 {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   border-bottom: 1px solid #dfdddd;
-  text-align: center;
   font-weight: bolder;
   line-height: 2;
   align-items: center;
@@ -159,26 +158,54 @@
   margin-bottom: 20px;
 }
 
+.text-left {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  margin-top: 13px;
+}
+
+.images-tips {
+  display: flex;
+  flex-direction: column;
+  object-fit: cover;
+}
+
 @media (max-width: 48em) {
   .p {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 420px;
+    width: 400px;
+    padding: 0 20px;
+    font-size: 15px;
+  }
+
+  .tips-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 85vh;
+    margin-top: 120px;
+    overflow: scroll;
   }
 
   .img-salad {
-    height: 500px;
-    width: 400px;
-    display: flex;
-    padding: 0 15px;
-    margin-bottom: 15px;
-    margin-top: 5px;
+    padding: 0 5px;
+    width: 120px;
+  }
+  .img-cheers {
+    padding: 0 5px;
+    width: 120px;
+  }
+  .img-table {
+    padding: 0 5px;
+    width: 120px;
   }
   .p-1 {
     display: flex;
-    padding: 0 15px;
-    align-items: center;
+    padding: 0 20px;
+    font-size: 15.5px;
+    line-height: 27px;
     width: 420px;
   }
   .title-page {
@@ -186,10 +213,28 @@
     flex-direction: row;
     font-size: 30px;
     margin-top: 15px;
+    padding: 0 20px;
   }
   .title-tips {
     display: flex;
     flex-direction: row;
     font-size: 25px;
+    padding: 0 20px;
+  }
+  .text-left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: large;
+    padding-bottom: 10px;
+  }
+  .images-tips {
+    border-radius: 25px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+    padding-top: 10px;
   }
 }
