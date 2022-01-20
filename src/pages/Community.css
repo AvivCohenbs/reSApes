@@ -4,7 +4,7 @@
 
 .maintitle {
   display: block;
-  margin-top: 120px;
+  margin-top: 160px;
 }
 
 .firsttitle {
@@ -12,12 +12,50 @@
   font-size: 35pt;
   font-weight: bold;
   font-family: "Poppins", sans-serif;
-  margin-left: 70px;
+  margin-left: 90px;
 }
 
 .sectitle {
   font-size: 15pt;
   font-family: "Poppins", sans-serif;
   color: #116530;
+  margin-left: 90px;
+}
+
+.form-wrapper {
+  margin-right: 260px;
   margin-left: 70px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.red {
+  color: #116530;
+}
+
+.form-col {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  max-width: 1120;
+  padding-left: 10px;
+}
+
+.form__item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.time__input {
+  max-width: 100px;
+  margin-right: 25px;
 }
