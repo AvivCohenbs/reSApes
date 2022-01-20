@@ -1,7 +1,7 @@
 /* ///////////..utility classes../////////// */
 
 .container {
-  max-width: 1301px;
+  max-width: 1250px;
   width: 100%;
   margin: auto;
 }
@@ -18,7 +18,7 @@
   position: fixed;
   width: 100%;
   background: #116530;
-  height: 130px;
+  /* height: 130px; */
   z-index: 12;
   border-bottom-left-radius: 17px;
   border-bottom-right-radius: 17px;
@@ -28,7 +28,7 @@
 .navbar-container {
   display: flex;
   justify-content: space-between;
-  height: 64px;
+  height: 120px;
   align-items: center;
 }
 
@@ -47,17 +47,16 @@
 .menu-items a {
   text-decoration: none;
   color: #fefbf3;
-  font-weight: 500;
   transition: color 0.3s ease-in-out;
 }
 
 .menu-items a:hover {
-  color: #61a078;
+  color: #ffca40;
   transition: color 0.3s ease-in-out;
 }
 
 .menu-items a:focus {
-  color: #61a078;
+  color: #FFCA40;
   outline: none;
 }
 
@@ -81,7 +80,7 @@
   .navbar-container {
     display: block;
     position: relative;
-    height: 64px;
+    height: 120px;
   }
 
   .navbar-container input[type="checkbox"] {
@@ -101,7 +100,7 @@
     width: 35px;
     position: absolute;
     top: 35px;
-    left: 20px;
+    left: 45px;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -138,23 +137,21 @@
     transform: translate(-150%);
     display: flex;
     flex-direction: column;
-    /* margin-left: -40px; */
     padding-left: 10px;
     transition: transform 0.5s ease-in-out;
-    box-shadow: 5px 0px 10px 0px #aaa;
+    box-shadow: 1px 0px 10px 0px;
   }
 
   .navbar .menu-items li {
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-    font-weight: 500;
+    list-style: none;
+    margin-left: 15px;
+    margin-top: 35px;
   }
 
   .logo {
     position: absolute;
     top: 5px;
     right: 15px;
-    font-size: 2rem;
   }
 
   .navbar-container input[type="checkbox"]:checked ~ .menu-items {
@@ -232,15 +229,11 @@
 
   .logo {
     position: absolute;
-    top: 06px;
-    right: 15px;
-    font-size: 3rem;
+    right: 35px;
   }
 
   .navbar .menu-items li {
-    margin-bottom: 2.5rem;
-    font-size: 1.8rem;
-    font-weight: 500;
+    font-size: 15pt;
   }
 }
 
