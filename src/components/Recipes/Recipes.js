@@ -106,28 +106,12 @@ function Recipes() {
           </div>
 
           <div className="row-search-switch">
-            {/* <form className="search-wrapper cf">
-              <label>
-                <input
-                  type="text"
-                  placeholder="Which ingredients do you have?"
-                  ref={inputRef}
-                  // onChange={handleInput}
-                />
-                <button type="submit">
-                  <div className="search">
-                    <Search />
-                  </div>
-                </button>
-              </label>
-            </form> */}
             <Stack spacing={3} sx={{ width: 500 }}>
               <Autocomplete
                 multiple
                 id="tags-standard"
                 options={ingredients}
                 getOptionLabel={(ingredient) => ingredient.name}
-                // defaultValue={[ingredients[13]]}
                 renderInput={(params) => (
                   <TextField
                     {...params}
@@ -153,6 +137,7 @@ function Recipes() {
                     Allergies
                   </InputLabel>
                   <Select
+                    className="selectaler"
                     labelId="demo-multiple-checkbox-label"
                     id="demo-multiple-checkbox"
                     multiple
@@ -165,7 +150,10 @@ function Recipes() {
                     {allergiesList.map((allergie) => (
                       <MenuItem key={allergie} value={allergie}>
                         <Checkbox checked={allergies.indexOf(allergie) > -1} />
-                        <ListItemText primary={allergie} />
+                        <ListItemText
+                          className="selectaler"
+                          primary={allergie}
+                        />
                       </MenuItem>
                     ))}
                   </Select>

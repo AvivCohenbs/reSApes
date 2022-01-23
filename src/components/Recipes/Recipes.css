@@ -184,14 +184,14 @@
     width: 400px;
   }
 
-  .search-wrapper {
-    width: 350px;
-  }
-
   .row-search-switch {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+  .selectaler {
+    width: 120px;
   }
 }
