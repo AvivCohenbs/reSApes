@@ -208,6 +208,33 @@
     line-height: 27px;
     width: 420px;
   }
+
+  .p-8 {
+    font-size: 14px;
+  }
+
+  .p-9 {
+    font-size: 14px;
+  }
+
+  .p-10 {
+    font-size: 14px;
+  }
+
+  .p-11 {
+    font-size: 14px;
+  }
+  .p-12 {
+    font-size: 14px;
+  }
+  .p-13 {
+    font-size: 14px;
+  }
+
+  .paragraph {
+    font-size: 14px;
+  }
+
   .title-page {
     display: flex;
     flex-direction: row;
@@ -236,5 +263,8 @@
     justify-content: space-evenly;
     padding-bottom: 10px;
     padding-top: 10px;
+  }
+  .titles-acor {
+    font-size: 13px;
   }
 }

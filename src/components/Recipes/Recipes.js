@@ -1,6 +1,6 @@
 import Recipe from "../Recipe/Recipe";
 import "./Recipes.css";
-import * as React from "react";
+import React from "react";
 import Switch from "@mui/material/Switch";
 import { ReactComponent as Search } from "./Search.svg";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -11,17 +11,23 @@ import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
-import { useRef, useEffect, useContext, useState } from "react";
+import { useRef, useEffect, useContext, useState, useMemo } from "react";
 import IngredientsContext from "../../IngredientsContext";
 
-function Recipes() {
-  const { ingredients } = useContext(IngredientsContext);
-  const { recipes } = useContext(IngredientsContext);
-  const [allergieName, setAllergieName] = useState([]);
+import Chip from "@mui/material/Chip";
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
+import Stack from "@mui/material/Stack";
 
-  const allergies = ingredients
-    .map((ingredient) => ingredient.allergie)
-    .filter((value, index, array) => array.indexOf(value) === index);
+function Recipes() {
+  const {
+    ingredients,
+    recipes,
+    getRecipes,
+    setAllergies,
+    allergies,
+    allergiesList,
+  } = useContext(IngredientsContext);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -29,16 +35,16 @@ function Recipes() {
 
   const inputRef = useRef(null);
 
-  const allergieChange = allergieName.includes("None")
-    ? recipes
-    : recipes.filter(
-        (recipe) =>
-          !recipe.ingredients
-            .map((ingredient) =>
-              allergieName.includes(ingredient.allergie) ? true : false
-            )
-            .includes(true)
-      );
+  // const allergieChange = allergieName.includes("None")
+  //   ? recipes
+  //   : recipes.filter(
+  //       (recipe) =>
+  //         !recipe.ingredients
+  //           .map((ingredient) =>
+  //             allergieName.includes(ingredient.allergie) ? true : false
+  //           )
+  //           .includes(true)
+  //     );
 
   // const handleInput = (e) => {
   //   const filterIngredients =
@@ -77,7 +83,7 @@ function Recipes() {
     const {
       target: { value },
     } = event;
-    setAllergieName(typeof value === "string" ? value.split(",") : value);
+    setAllergies(typeof value === "string" ? value.split(",") : value);
   };
 
   return (
@@ -100,7 +106,7 @@ function Recipes() {
           </div>
 
           <div className="row-search-switch">
-            <form className="search-wrapper cf">
+            {/* <form className="search-wrapper cf">
               <label>
                 <input
                   type="text"
@@ -114,7 +120,25 @@ function Recipes() {
                   </div>
                 </button>
               </label>
-            </form>
+            </form> */}
+            <Stack spacing={3} sx={{ width: 500 }}>
+              <Autocomplete
+                multiple
+                id="tags-standard"
+                options={ingredients}
+                getOptionLabel={(ingredient) => ingredient.name}
+                // defaultValue={[ingredients[13]]}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    variant="standard"
+                    label="Ingredients"
+                    placeholder="Which ingredients do you have?"
+                    ref={inputRef}
+                  />
+                )}
+              />
+            </Stack>
             <div className="switches">
               <div className="switch1">
                 Veagen <Switch {...label} />
@@ -132,17 +156,15 @@ function Recipes() {
                     labelId="demo-multiple-checkbox-label"
                     id="demo-multiple-checkbox"
                     multiple
-                    value={allergieName}
+                    value={allergies}
                     onChange={handleChange}
                     input={<OutlinedInput label="Allergies" />}
                     renderValue={(selected) => selected.join(", ")}
                     MenuProps={MenuProps}
                   >
-                    {allergies.map((allergie) => (
+                    {allergiesList.map((allergie) => (
                       <MenuItem key={allergie} value={allergie}>
-                        <Checkbox
-                          checked={allergieName.indexOf(allergie) > -1}
-                        />
+                        <Checkbox checked={allergies.indexOf(allergie) > -1} />
                         <ListItemText primary={allergie} />
                       </MenuItem>
                     ))}
@@ -155,7 +177,7 @@ function Recipes() {
           <div className="popular"> Popular Recipes</div>
 
           <div className="recipes-dsgn">
-            {allergieChange.map(
+            {recipes.map(
               ({
                 _id: id,
                 title,
