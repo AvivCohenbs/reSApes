@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
-// import Profile from "./components/Header/Profile";
 import RecipeDetails from "./pages/RecipeDetails";
 import IngredientsContext from "./IngredientsContext";
 import { useCallback, useEffect, useState, useMemo } from "react";
@@ -16,6 +15,7 @@ function App() {
   const [recipes, setRecipes] = useState([]);
   const [ingredients, setIngredients] = useState([]);
   const [allergies, setAllergies] = useState([]);
+  const [ingredientsFilter, setIngredientsFilter] = useState([]);
 
   const allergiesList = useMemo(() => {
     return ingredients
@@ -33,8 +33,8 @@ function App() {
       const allergiesQuery = allergies.length
         ? `allergies=${allergies.join(",")}`
         : "";
-      const ingridentsQuery = ingredients.length
-        ? `ingredients=${ingredients.join(",")}`
+      const ingridentsQuery = ingredientsFilter.length
+        ? `ingredients=${ingredientsFilter.join(",")}`
         : "";
 
       fetch(`/recipes?${allergiesQuery}&${ingridentsQuery}`)
@@ -43,8 +43,12 @@ function App() {
           setRecipes(data);
         });
     },
-    [allergies]
+    [allergies, ingredientsFilter]
   );
+
+  const addIngredient = useCallback((ingredient) => {
+    setIngredientsFilter((prevFilter) => [...prevFilter, ingredient]);
+  }, []);
 
   useEffect(() => {
     getRecipes();
@@ -69,12 +73,13 @@ function App() {
           allergiesList,
           setAllergies,
           allergies,
+          addIngredient,
+          setIngredientsFilter,
         }}
       >
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/Profile" element={<Profile />} /> */}
           <Route path="/Notes" element={<Notes />} />
           <Route path="/Community" element={<Community />} />
           <Route path="/About" element={<About />} />

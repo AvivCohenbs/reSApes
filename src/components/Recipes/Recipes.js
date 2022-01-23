@@ -2,7 +2,6 @@ import Recipe from "../Recipe/Recipe";
 import "./Recipes.css";
 import React from "react";
 import Switch from "@mui/material/Switch";
-import { ReactComponent as Search } from "./Search.svg";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
@@ -11,10 +10,9 @@ import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
-import { useRef, useEffect, useContext, useState, useMemo } from "react";
+import { useRef, useEffect, useContext } from "react";
 import IngredientsContext from "../../IngredientsContext";
 
-import Chip from "@mui/material/Chip";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
@@ -23,10 +21,10 @@ function Recipes() {
   const {
     ingredients,
     recipes,
-    getRecipes,
     setAllergies,
     allergies,
     allergiesList,
+    setIngredientsFilter,
   } = useContext(IngredientsContext);
 
   useEffect(() => {
@@ -34,30 +32,6 @@ function Recipes() {
   }, []);
 
   const inputRef = useRef(null);
-
-  // const allergieChange = allergieName.includes("None")
-  //   ? recipes
-  //   : recipes.filter(
-  //       (recipe) =>
-  //         !recipe.ingredients
-  //           .map((ingredient) =>
-  //             allergieName.includes(ingredient.allergie) ? true : false
-  //           )
-  //           .includes(true)
-  //     );
-
-  // const handleInput = (e) => {
-  //   const filterIngredients =
-  //     recipes &&
-  //     recipes.filter((recipe) =>
-  //       recipe.ingredients.map((ingredient) =>
-  //         ingredient.name.toLowerCase().startsWith(e.target.value)
-
-  //       )
-  //     );
-  //   console.log(filterIngredients);
-  //   setSearchIngredient(filterIngredients);
-  // };
 
   const label = { inputProps: { "aria-label": "Switch demo" } };
   const theme = createTheme({
@@ -86,6 +60,10 @@ function Recipes() {
     setAllergies(typeof value === "string" ? value.split(",") : value);
   };
 
+  const handleIngredientsChange = (values) => {
+    setIngredientsFilter(values.map((value) => value.name));
+  };
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -110,6 +88,7 @@ function Recipes() {
               <Autocomplete
                 multiple
                 id="tags-standard"
+                onChange={(e, values) => handleIngredientsChange(values)}
                 options={ingredients}
                 getOptionLabel={(ingredient) => ingredient.name}
                 renderInput={(params) => (
@@ -125,10 +104,10 @@ function Recipes() {
             </Stack>
             <div className="switches">
               <div className="switch1">
-                Veagen <Switch {...label} />
+                Vegan <Switch {...label} />
               </div>
               <div className="switch2">
-                Vageterian <Switch {...label} />
+                Vegetarian <Switch {...label} />
               </div>
 
               <div>
