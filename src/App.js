@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
-import Profile from "./components/Header/Profile";
+// import Profile from "./components/Header/Profile";
 import RecipeDetails from "./pages/RecipeDetails";
 import IngredientsContext from "./IngredientsContext";
 import { useCallback, useEffect, useState, useMemo } from "react";
