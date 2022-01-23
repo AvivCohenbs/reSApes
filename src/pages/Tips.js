@@ -60,33 +60,38 @@ function Tips() {
                 sx={{ backgroundColor: "#fefbf3" }}
               >
                 <Typography sx={{ color: "#116530" }}>
-                  <b> 1. Choose a concept</b>
+                  <div className="titles-acor">
+                    <b> 1. Choose a concept</b>
+                  </div>
                 </Typography>
               </AccordionSummary>
               <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
                 <Typography>
-                  When planning a meal one should first decide on a guideline.
-                  It does not have to be a super-tight concept, but you do have
-                  to make sure the different dishes fit together. This is true,
-                  of course, of any meal you plan, but especially true of meals
-                  that are based primarily on purchased products; It's terribly
-                  easy to buy excellent focaccia, a and quality cheeses, but if
-                  you're not careful, your meal may turn out to be "shawarma
-                  next to sushi next to ravioli". So how do you decide? Think of
-                  one dish or one ingredient that you want to serve and plan the
-                  meal around them: if you want an evening on the purity of the
-                  cheeses - invest in a nice selection of hard cheeses and
-                  cheeses to pair with baguettes, butter, nuts and fruit; If you
-                  want a New York-style breakfast buffet - also arrange cream
-                  cheeses, pickled fish, egg salad, capers and fresh and pickled
-                  vegetables on the table; If you have good hummus next to you -
-                  stay with the local concept with pitas, tahini, lavana and
-                  local salads like tabula; And if you want to make the pasta or
-                  lasagna that everyone always asks for her recipe - also serve
-                  a caprese salad with quality mozzarella and tomatoes, focaccia
-                  (completely bought will do the job) on which you will arrange
-                  vegetables and cheeses and add a patented tiramisu without
-                  eggs for dessert.
+                  <div className="paragraph">
+                    When planning a meal one should first decide on a guideline.
+                    It does not have to be a super-tight concept, but you do
+                    have to make sure the different dishes fit together. This is
+                    true, of course, of any meal you plan, but especially true
+                    of meals that are based primarily on purchased products;
+                    It's terribly easy to buy excellent focaccia, a and quality
+                    cheeses, but if you're not careful, your meal may turn out
+                    to be "shawarma next to sushi next to ravioli". So how do
+                    you decide? Think of one dish or one ingredient that you
+                    want to serve and plan the meal around them: if you want an
+                    evening on the purity of the cheeses - invest in a nice
+                    selection of hard cheeses and cheeses to pair with
+                    baguettes, butter, nuts and fruit; If you want a New
+                    York-style breakfast buffet - also arrange cream cheeses,
+                    pickled fish, egg salad, capers and fresh and pickled
+                    vegetables on the table; If you have good hummus next to you
+                    - stay with the local concept with pitas, tahini, lavana and
+                    local salads like tabula; And if you want to make the pasta
+                    or lasagna that everyone always asks for her recipe - also
+                    serve a caprese salad with quality mozzarella and tomatoes,
+                    focaccia (completely bought will do the job) on which you
+                    will arrange vegetables and cheeses and add a patented
+                    tiramisu without eggs for dessert.
+                  </div>
                 </Typography>
               </AccordionDetails>
             </Accordion>
@@ -98,7 +103,9 @@ function Tips() {
                 sx={{ backgroundColor: "#fefbf3" }}
               >
                 <Typography sx={{ color: "#116530" }}>
-                  <b> 2. Equip the pantry</b>
+                  <div className="titles-acor">
+                    <b> 2. Equip the pantry</b>
+                  </div>
                 </Typography>
               </AccordionSummary>
               <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
@@ -194,19 +201,23 @@ function Tips() {
                 sx={{ backgroundColor: "#fefbf3" }}
               >
                 <Typography sx={{ color: "#116530" }}>
-                  <b>
-                    {" "}
-                    3. Winning pair - creative uses for doughs and cheeses{" "}
-                  </b>
+                  <div className="titles-acor">
+                    <b>
+                      {" "}
+                      3. Winning pair - creative uses for doughs and cheeses{" "}
+                    </b>
+                  </div>
                 </Typography>
               </AccordionSummary>
               <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
                 <Typography>
-                  Ready-made doughs are the basis for countless games and
-                  impressive hospitality dishes. All you have to do is thaw them
-                  according to the manufacturer's instructions, mix them with
-                  vegetables and cheeses and create dishes with your personal
-                  touch.
+                  <div className="paragraph">
+                    Ready-made doughs are the basis for countless games and
+                    impressive hospitality dishes. All you have to do is thaw
+                    them according to the manufacturer's instructions, mix them
+                    with vegetables and cheeses and create dishes with your
+                    personal touch.
+                  </div>
                 </Typography>
               </AccordionDetails>
             </Accordion>
