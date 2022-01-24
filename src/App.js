@@ -2,7 +2,7 @@ import "./App.css";
 import { Route, Routes } from "react-router";
 import About from "./pages/About";
 import Home from "./pages/Home";
-import Favorites from "./pages/Favorites";
+import Favorites from "./pages/Favorites/Favorites";
 import RecipeDetails from "./pages/RecipeDetails";
 import IngredientsContext from "./IngredientsContext";
 import { useCallback, useEffect, useState, useMemo } from "react";
@@ -10,12 +10,16 @@ import Header from "./components/Header/Header";
 import Notes from "./components/Header/Notes";
 import Community from "./pages/Community";
 import Tips from "./pages/Tips";
+import FavContext from "./FavContext";
+import TotalContext from "./TotalContext";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [ingredients, setIngredients] = useState([]);
   const [allergies, setAllergies] = useState([]);
   const [ingredientsFilter, setIngredientsFilter] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [favorites, setFavorites] = useState([]);
 
   const allergiesList = useMemo(() => {
     return ingredients
@@ -65,29 +69,33 @@ function App() {
 
   return (
     <div className="pages">
-      <IngredientsContext.Provider
-        value={{
-          ingredients,
-          recipes,
-          getRecipes,
-          allergiesList,
-          setAllergies,
-          allergies,
-          addIngredient,
-          setIngredientsFilter,
-        }}
-      >
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Notes" element={<Notes />} />
-          <Route path="/Community" element={<Community />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Tips" element={<Tips />} />
-          <Route path="/Favorites" element={<Favorites />} />
-          <Route path="/recipes/:id" element={<RecipeDetails />} />
-        </Routes>
-      </IngredientsContext.Provider>
+      <FavContext.Provider value={[favorites, setFavorites]}>
+        <TotalContext.Provider value={[total, setTotal]}>
+          <IngredientsContext.Provider
+            value={{
+              ingredients,
+              recipes,
+              getRecipes,
+              allergiesList,
+              setAllergies,
+              allergies,
+              addIngredient,
+              setIngredientsFilter,
+            }}
+          >
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Notes" element={<Notes />} />
+              <Route path="/Community" element={<Community />} />
+              <Route path="/About" element={<About />} />
+              <Route path="/Tips" element={<Tips />} />
+              <Route path="/Favorites" element={<Favorites />} />
+              <Route path="/recipes/:id" element={<RecipeDetails />} />
+            </Routes>
+          </IngredientsContext.Provider>
+        </TotalContext.Provider>
+      </FavContext.Provider>
     </div>
   );
 }

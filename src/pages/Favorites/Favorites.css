@@ -1,0 +1,85 @@
+.recipe-fav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.recipe-fav-img {
+  width: 260px;
+  height: 180px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20px;
+}
+
+.recipe-fav-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe-info-fav {
+  line-height: 1;
+  margin-top: 3px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  width: 285px;
+  height: 40px;
+  border-bottom: 1px solid #dfdddd;
+}
+
+.recipe-title-fav {
+  font-size: 16px;
+  color: #116530;
+}
+
+.btn-start-fav {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.icons-recipe-fav {
+  line-height: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  width: 260px;
+  height: 40px;
+  font-size: 13px;
+}
+
+.time-min-fav {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.minute-fav {
+  padding-left: 4px;
+  padding-top: 5px;
+  color: #969d9c;
+}
+
+.cook-difficulty-fav {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.dif-fav {
+  padding-left: 4px;
+  padding-top: 5px;
+  color: #969d9c;
+}
+
+.imgrec-fav {
+  width: 290px;
+  height: 180px;
+  border-radius: 10px;
+}
