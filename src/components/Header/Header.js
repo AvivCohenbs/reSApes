@@ -18,16 +18,9 @@ function Header() {
     setOpen(false);
   };
 
-  const styles = {
-    position: "absolute",
-    // top: 40,
-    // right: 0,
-    // left: -350,
-    // zIndex: 1,
-    // border: "1px solid",
-    // pb: "350px",
-    // bgcolor: "background.paper",
-  };
+  // const styles = {
+  //   position: "absolute",
+  // };
 
   return (
     <div className="header">
@@ -40,7 +33,7 @@ function Header() {
             <span className="line line3"></span>
           </div>
 
-          <ul className="menu-items">
+          <ul className="menu-itemss">
             <li>
               <Link to="/Favorites">My recipes</Link>{" "}
             </li>
@@ -72,7 +65,7 @@ function Header() {
             <span className="line line2"></span>
             <span className="line line3"></span>
           </div>
-          <ul className="menu-items">
+          <ul className="menu-itemss">
             <li>
               <Link to="/Favorites">My recipes</Link>{" "}
             </li>
@@ -96,41 +89,49 @@ function Header() {
                 touchEvent="onTouchStart"
                 onClickAway={handleClickAway}
               >
-                <Box sx={{ position: "relative" }}>
-                  <button
-                    className="profile"
-                    // type="button"
-                    onClick={handleClick}
-                  >
+                <Box>
+                  <button className="profile" onClick={handleClick}>
+                    {" "}
                     <Profile />
                   </button>
                   {open ? (
-                    <Box sx={styles}>
-                      <div className="formlog">
-                        <div className="form">
-                          <img
-                            className="googleimg"
-                            src="http://www.androidpolice.com/wp-content/themes/ap2/ap_resize/ap_resize.php?src=http%3A%2F%2Fwww.androidpolice.com%2Fwp-content%2Fuploads%2F2015%2F10%2Fnexus2cee_Search-Thumb-150x150.png&w=150&h=150&zc=3"
-                          />
-
-                          <input
-                            className="email"
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                          />
-
-                          <input
-                            className="pass"
-                            type="password"
-                            name="Password"
-                            placeholder="Password"
-                          />
-
-                          <button className="submit">Sign in</button>
-
-                          <a href="https://www.google.com/">Create account</a>
+                    <Box>
+                      <div className="login-container">
+                        <div className="intro-text">
+                          <h1 className="signintitle">Sign in</h1>
+                          <p className="secotitle">
+                            Stay tuned with our new recipes{" "}
+                          </p>
                         </div>
+                        <div className="inputs">
+                          <div className="inputin">
+                            <input
+                              type="text"
+                              name="email"
+                              id="email"
+                              required
+                            />
+                            <label for="email">Email</label>
+                          </div>
+                          <div className="inputin">
+                            <input
+                              type="password"
+                              name="password"
+                              id="password"
+                              required
+                            />
+                            <label className="passlog" for="password">
+                              Password
+                            </label>
+                          </div>
+                        </div>
+                        <div href="/" className="forgot" to="/">
+                          Forgot Your Password?
+                        </div>
+                        <button className="butsignin">Sign in</button>
+                        <p className="join-link">
+                          New at reSApes? <a href="#">Join now</a>
+                        </p>
                       </div>
                     </Box>
                   ) : null}
