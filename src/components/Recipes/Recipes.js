@@ -12,7 +12,6 @@ import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
 import { useRef, useEffect, useContext } from "react";
 import IngredientsContext from "../../IngredientsContext";
-
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";

@@ -1,7 +1,7 @@
 import "./Favorites.css";
 import FavContext from "../../FavContext";
 import TotalContext from "../../TotalContext";
-import React, { useContext, useEffect, useState, useCallback } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ReactComponent as Button } from "./button.svg";
 import { Link } from "react-router-dom";
 import { ReactComponent as Timeclock } from "./Timeclock.svg";
@@ -87,8 +87,8 @@ function Favorites() {
   });
 
   return (
-    <div>
-      <div> My List</div>
+    <div className="fav-page">
+      <div className="title-fav"> My List</div>
       <h6 className="second-title"> You have {total} recipes in list </h6>
       <span className="items">{items}</span>
       <button className="reset" onClick={() => setFavorites(!favorites)}>

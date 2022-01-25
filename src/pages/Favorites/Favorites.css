@@ -83,3 +83,23 @@
   height: 180px;
   border-radius: 10px;
 }
+
+.title-fav {
+  margin-top: 20px;
+  font-size: 25px;
+  position: sticky;
+}
+
+.fav-page {
+  padding: 120px 40px;
+}
+
+.items {
+  overflow: scroll;
+  height: 570px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
