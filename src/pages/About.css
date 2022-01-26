@@ -1,0 +1,41 @@
+.main-title-about {
+  font-size: 2.25em;
+  margin-bottom: 0.5em;
+  padding: 0 65px;
+  margin-top: 0.3em;
+  font-family: "Europa Bold", sans-serif;
+  font-weight: bolder;
+}
+
+.first-title-about {
+  opacity: 1;
+  font-size: 0.75em;
+  font-family: "Europa Bold", sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #b2b3b4;
+  padding: 0 65px;
+  margin-top: 40px;
+}
+
+.about-page {
+  padding: 120px 40px;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.second-title-about {
+  padding: 0 65px;
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+
+.card-about {
+  max-width: 570px;
+  margin-top: 223px;
+}
+
+.titles-about {
+  margin-top: 30px;
+}

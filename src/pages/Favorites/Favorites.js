@@ -2,11 +2,12 @@ import "./Favorites.css";
 import FavContext from "../../FavContext";
 import TotalContext from "../../TotalContext";
 import React, { useContext, useEffect, useState } from "react";
-import { ReactComponent as Button } from "./button.svg";
 import { Link } from "react-router-dom";
 import { ReactComponent as Timeclock } from "./Timeclock.svg";
 import { ReactComponent as Cook } from "./Cook.svg";
 import Heart from "react-heart";
+import Button from "@mui/material/Button";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function Favorites() {
   const [total, setTotal] = useContext(TotalContext);
@@ -49,6 +50,14 @@ function Favorites() {
     setTotal(getTotal(favorites));
   }, [favorites]);
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#116530",
+      },
+    },
+  });
+
   const items = Object.entries(favorites).map(([id, value]) => {
     return (
       <div key={id} className="recipe-fav-card">
@@ -61,9 +70,18 @@ function Favorites() {
           <h3 className="recipe-title-fav">{value.title}</h3>{" "}
           <div>
             <Link to={`/recipes/${id}`}>
-              <button className="btn-start-fav">
-                <Button />{" "}
-              </button>
+              <Button
+                variant="contained"
+                sx={{
+                  bgcolor: "#FFCA40",
+                  width: "12px",
+                  height: "25px",
+                  boxShadow: "none",
+                  fontSize: "0.85rem",
+                }}
+              >
+                Start
+              </Button>
             </Link>
           </div>
         </div>
@@ -87,14 +105,39 @@ function Favorites() {
   });
 
   return (
-    <div className="fav-page">
-      <div className="title-fav"> My List</div>
-      <h6 className="second-title"> You have {total} recipes in list </h6>
-      <span className="items">{items}</span>
-      <button className="reset" onClick={() => setFavorites(!favorites)}>
-        Delete all recipes from your list
-      </button>
-    </div>
+    <>
+      <ThemeProvider theme={theme}>
+        <div className="fav-page">
+          <div className="title-fav"> My Favorites 🖤</div>
+          <div className="second-title-fav">
+            {" "}
+            You have {total} recipes in your list{" "}
+          </div>
+          <span className="items">{items}</span>
+          {/* <div className="reset"> */}
+          {/* <button onClick={() => setFavorites(!favorites)}>
+              Delete all recipes from your list
+            </button> */}
+
+          {/* <div> */}
+          <div className="reset">
+            <Button
+              onClick={() => setFavorites(!favorites)}
+              variant="contained"
+              sx={{
+                bgcolor: "#116530",
+                minWidth: "30px",
+                height: "25px",
+                boxShadow: "none",
+                fontSize: "0.85rem",
+              }}
+            >
+              Delete all recipes from your list
+            </Button>
+          </div>
+        </div>
+      </ThemeProvider>
+    </>
   );
 }
 export default Favorites;

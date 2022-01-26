@@ -1,5 +1,5 @@
 import "./Recipe.css";
-import { ReactComponent as Button } from "./button.svg";
+// import { ReactComponent as Button } from "./button.svg";
 import { Link } from "react-router-dom";
 import { ReactComponent as Timeclock } from "./Timeclock.svg";
 import { ReactComponent as Cook } from "./Cook.svg";
@@ -7,6 +7,7 @@ import { useState, useContext, useEffect, useCallback } from "react";
 import Heart from "react-heart";
 import FavContext from "../../FavContext";
 import TotalContext from "../../TotalContext";
+import Button from "@mui/material/Button";
 
 function Recipe({ title, time, image, id, difficulty, button }) {
   const [favorites, setFavorites] = useContext(FavContext);
@@ -95,9 +96,18 @@ function Recipe({ title, time, image, id, difficulty, button }) {
         <h3 className="recipe-title">{title}</h3>{" "}
         <div>
           <Link to={`/recipes/${id}`}>
-            <button className="btn-start">
-              <Button />{" "}
-            </button>
+            <Button
+              variant="contained"
+              sx={{
+                bgcolor: "#FFCA40",
+                width: "12px",
+                height: "25px",
+                boxShadow: "none",
+                fontSize: "0.85rem",
+              }}
+            >
+              Start
+            </Button>
           </Link>
         </div>
       </div>

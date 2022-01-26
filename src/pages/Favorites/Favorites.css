@@ -86,8 +86,19 @@
 
 .title-fav {
   margin-top: 20px;
-  font-size: 25px;
+  font-size: 35px;
   position: sticky;
+  padding: 0 65px;
+}
+
+.second-title-fav {
+  padding: 0 65px;
+  font-size: 20px;
+  line-height: 2;
+}
+
+.reset {
+  padding: 0 65px;
 }
 
 .fav-page {
@@ -102,4 +113,20 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+@media (max-width: 48em) {
+  .title-fav {
+    padding: 0 5px;
+  }
+  .second-title-fav {
+    padding: 0 5px;
+  }
+  .items {
+    height: 570px;
+  }
+  .reset {
+    padding: 0 5px;
+  }
 }

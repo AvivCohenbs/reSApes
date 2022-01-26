@@ -87,3 +87,6 @@
   padding-top: 5px;
   color: #969d9c;
 }
+
+@media (max-width: 48em) {
+}

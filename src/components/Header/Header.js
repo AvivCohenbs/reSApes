@@ -1,6 +1,6 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import { ReactComponent as Profile } from "./Profile.svg";
 import { ReactComponent as Logo } from "./logo.svg";
 import { ReactComponent as Bell } from "./Bell.svg";
@@ -8,7 +8,9 @@ import Box from "@mui/material/Box";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 
 function Header() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+
+  const [loginContent, setLoginContent] = useState("login");
 
   const handleClick = () => {
     setOpen((prev) => !prev);
@@ -17,10 +19,6 @@ function Header() {
   const handleClickAway = () => {
     setOpen(false);
   };
-
-  // const styles = {
-  //   position: "absolute",
-  // };
 
   return (
     <div className="header">
@@ -97,41 +95,67 @@ function Header() {
                   {open ? (
                     <Box>
                       <div className="login-container">
-                        <div className="intro-text">
-                          <h1 className="signintitle">Sign in</h1>
-                          <p className="secotitle">
-                            Stay tuned with our new recipes{" "}
-                          </p>
-                        </div>
-                        <div className="inputs">
-                          <div className="inputin">
-                            <input
-                              type="text"
-                              name="email"
-                              id="email"
-                              required
-                            />
-                            <label for="email">Email</label>
-                          </div>
-                          <div className="inputin">
-                            <input
-                              type="password"
-                              name="password"
-                              id="password"
-                              required
-                            />
-                            <label className="passlog" for="password">
-                              Password
-                            </label>
-                          </div>
-                        </div>
-                        <div href="/" className="forgot" to="/">
-                          Forgot Your Password?
-                        </div>
-                        <button className="butsignin">Sign in</button>
-                        <p className="join-link">
-                          New at reSApes? <a href="#">Join now</a>
-                        </p>
+                        {loginContent === "login" ? (
+                          <>
+                            <div className="intro-text">
+                              <div className="signintitle">Sign in</div>
+                              <p className="secotitle">
+                                Stay tuned with our new recipes{" "}
+                              </p>
+                            </div>
+                            <div className="inputs">
+                              <div className="inputin">
+                                <input
+                                  type="text"
+                                  name="email"
+                                  id="email"
+                                  required
+                                />
+                                <label for="email">Email</label>
+                              </div>
+                              <div className="inputin">
+                                <input
+                                  type="password"
+                                  name="password"
+                                  id="password"
+                                  required
+                                />
+                                <label className="passlog" for="password">
+                                  Password
+                                </label>
+                              </div>
+                            </div>
+                            <div
+                              className="forgot"
+                              onClick={() => setLoginContent("forgot")}
+                            >
+                              Forgot Your Password?
+                            </div>
+                            <button
+                              className="butsignin"
+                              onClick={() => setLoginContent("profile")}
+                            >
+                              Sign in
+                            </button>
+                            <p className="join-link">
+                              New at reSApes?{" "}
+                              <div
+                                className="jNow"
+                                onClick={() => setLoginContent("join")}
+                              >
+                                Join now
+                              </div>
+                            </p>
+                          </>
+                        ) : loginContent === "join" ? (
+                          <div>join</div>
+                        ) : loginContent === "profile" ? (
+                          <div>profile</div>
+                        ) : loginContent === "forgot" ? (
+                          <div>profile</div>
+                        ) : (
+                          <div>n</div>
+                        )}
                       </div>
                     </Box>
                   ) : null}

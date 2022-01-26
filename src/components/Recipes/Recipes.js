@@ -125,15 +125,19 @@ function Recipes() {
                     renderValue={(selected) => selected.join(", ")}
                     MenuProps={MenuProps}
                   >
-                    {allergiesList.map((allergie) => (
-                      <MenuItem key={allergie} value={allergie}>
-                        <Checkbox checked={allergies.indexOf(allergie) > -1} />
-                        <ListItemText
-                          className="selectaler"
-                          primary={allergie}
-                        />
-                      </MenuItem>
-                    ))}
+                    {allergiesList
+                      .filter((allergie) => allergie !== "None")
+                      .map((allergie) => (
+                        <MenuItem key={allergie} value={allergie}>
+                          <Checkbox
+                            checked={allergies.indexOf(allergie) > -1}
+                          />
+                          <ListItemText
+                            className="selectaler"
+                            primary={allergie}
+                          />
+                        </MenuItem>
+                      ))}
                   </Select>
                 </FormControl>
               </div>
