@@ -32,10 +32,6 @@
   flex-direction: row;
 }
 
-.red {
-  color: #116530;
-}
-
 .form-col {
   display: flex;
   flex: 1;
@@ -58,4 +54,42 @@ label {
 .time__input {
   max-width: 100px;
   margin-right: 25px;
+}
+
+.recipe-name {
+  height: 60px;
+  width: 600px;
+  margin-top: 13px;
+}
+
+.recipe__name {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-size: 15pt;
+}
+
+.max {
+  color: #116530;
+  font-family: "Poppins", sans-serif;
+  font-size: 15pt;
+}
+
+.short-des {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-size: 15pt;
+  margin-top: 10px;
+}
+
+.short-desc {
+  height: 160px;
+  width: 600px;
+  margin-top: 10px;
+}
+
+.ing-list {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-size: 15pt;
+  margin-top: 10px;
 }
