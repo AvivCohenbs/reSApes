@@ -33,6 +33,7 @@ function Recipes() {
   const inputRef = useRef(null);
 
   const label = { inputProps: { "aria-label": "Switch demo" } };
+
   const theme = createTheme({
     palette: {
       primary: {
