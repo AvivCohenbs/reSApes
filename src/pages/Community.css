@@ -10,16 +10,16 @@
 .firsttitle {
   color: #116530;
   font-size: 35pt;
-  font-weight: bold;
+  font-weight: bolder;
   font-family: "Poppins", sans-serif;
-  margin-left: 90px;
+  margin-left: 70px;
 }
 
 .sectitle {
   font-size: 15pt;
   font-family: "Poppins", sans-serif;
   color: #116530;
-  margin-left: 90px;
+  margin-left: 70px;
 }
 
 .form-wrapper {
@@ -36,60 +36,93 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  max-width: 1120;
-  padding-left: 10px;
+  width: 100%;
 }
 
-.form__item {
+.form-inpt {
   display: flex;
   flex-direction: column;
-  padding-top: 15px;
 }
 
-label {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-.time__input {
-  max-width: 100px;
-  margin-right: 25px;
+/* new */
+
+.container-img {
+  top: 182px;
+  left: 524px;
+  width: 340px;
+  height: 303px;
+  border-radius: 10px;
+  border: 2px #1f6e3c solid;
+  background-color: white;
 }
 
-.recipe-name {
-  height: 60px;
-  width: 600px;
-  margin-top: 13px;
+.container-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
+  flex-direction: column;
 }
 
-.recipe__name {
+.container-title {
   font-family: "Poppins", sans-serif;
-  color: black;
   font-size: 15pt;
-}
-
-.max {
   color: #116530;
-  font-family: "Poppins", sans-serif;
-  font-size: 15pt;
 }
 
-.short-des {
-  font-family: "Poppins", sans-serif;
-  color: black;
-  font-size: 15pt;
-  margin-top: 10px;
+.upload-img {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-top: 15px;
 }
 
-.short-desc {
-  height: 160px;
-  width: 600px;
-  margin-top: 10px;
+.upload-img input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }
 
-.ing-list {
-  font-family: "Poppins", sans-serif;
-  color: black;
-  font-size: 15pt;
-  margin-top: 10px;
+.search-bar {
+  margin-top: 30px;
+}
+
+.units {
+  display: flex;
+  margin-left: 200px;
+  margin-top: 40px;
+}
+
+.min {
+  border-radius: 15px;
+  border: none;
+  background-color: #ffca40;
+  cursor: pointer;
+}
+
+.pls {
+  border-radius: 15px;
+  border: none;
+  background-color: #ffca40;
+  cursor: pointer;
+}
+
+.inst-container {
+  top: 182px;
+  left: 524px;
+  width: 1290px;
+  height: 303px;
+  border-radius: 10px;
+  border: 2px #1f6e3c solid;
+  background-color: white;
+  margin-top: 40px;
+}
+
+.reci-name {
+  width: 415px;
+  height: 47px;
+  border-radius: 10px;
+  border: 2px #1f6e3c solid;
+  background-color: white;
 }
