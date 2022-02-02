@@ -152,10 +152,8 @@ function Header() {
                         ) : loginContent === "profile" ? (
                           <div>profile</div>
                         ) : loginContent === "forgot" ? (
-                          <div>profile</div>
-                        ) : (
-                          <div>n</div>
-                        )}
+                          <div>forgot</div>
+                        ) : null}
                       </div>
                     </Box>
                   ) : null}
