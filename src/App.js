@@ -20,6 +20,8 @@ function App() {
   const [ingredientsFilter, setIngredientsFilter] = useState([]);
   const [total, setTotal] = useState(0);
   const [favorites, setFavorites] = useState([]);
+  const [veganFilter, setVeganFilter] = useState(false);
+  const [vegetarianFilter, setVegetarianFilter] = useState(false);
 
   const allergiesList = useMemo(() => {
     return ingredients
@@ -27,28 +29,29 @@ function App() {
       .filter((value, index, array) => array.indexOf(value) === index);
   }, [ingredients]);
 
-  const getRecipes = useCallback(
-    (
-      // allergies = [],
-      ingredients = [],
-      isVegan = false,
-      isVegeterian = false
-    ) => {
+  const getRecipes = useCallback(() =>
+    // allergies = [],
+    // ingredients = []
+    // isegan = false,
+    // isVegeterian = false
+    {
       const allergiesQuery = allergies.length
         ? `allergies=${allergies.join(",")}`
         : "";
       const ingridentsQuery = ingredientsFilter.length
         ? `ingredients=${ingredientsFilter.join(",")}`
         : "";
+      const veganQuery = veganFilter;
+      const vegetarianQuery = vegetarianFilter;
 
-      fetch(`/recipes?${allergiesQuery}&${ingridentsQuery}`)
+      fetch(
+        `/recipes?${allergiesQuery}&${ingridentsQuery}&${veganQuery}&${vegetarianQuery}`
+      )
         .then((response) => response.json())
         .then((data) => {
           setRecipes(data);
         });
-    },
-    [allergies, ingredientsFilter]
-  );
+    }, [allergies, ingredientsFilter, veganFilter, vegetarianFilter]);
 
   const addIngredient = useCallback((ingredient) => {
     setIngredientsFilter((prevFilter) => [...prevFilter, ingredient]);
@@ -62,7 +65,6 @@ function App() {
     fetch("/ingredients")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setIngredients(data);
       });
   }, []);
@@ -81,6 +83,8 @@ function App() {
               allergies,
               addIngredient,
               setIngredientsFilter,
+              setVeganFilter,
+              setVegetarianFilter,
             }}
           >
             <Header />
