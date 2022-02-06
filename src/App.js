@@ -31,9 +31,9 @@ function App() {
 
   const getRecipes = useCallback(() =>
     // allergies = [],
-    // ingredients = []
-    // isegan = false,
-    // isVegeterian = false
+    // ingredients = [],
+    // vegan = false,
+    // Vegetarian = false
     {
       const allergiesQuery = allergies.length
         ? `allergies=${allergies.join(",")}`
@@ -41,8 +41,8 @@ function App() {
       const ingridentsQuery = ingredientsFilter.length
         ? `ingredients=${ingredientsFilter.join(",")}`
         : "";
-      const veganQuery = veganFilter;
-      const vegetarianQuery = vegetarianFilter;
+      const veganQuery = veganFilter ? "vegan=true" : "";
+      const vegetarianQuery = vegetarianFilter ? "vegetarian=true" : "";
 
       fetch(
         `/recipes?${allergiesQuery}&${ingridentsQuery}&${veganQuery}&${vegetarianQuery}`
@@ -85,6 +85,8 @@ function App() {
               setIngredientsFilter,
               setVeganFilter,
               setVegetarianFilter,
+              veganFilter,
+              vegetarianFilter,
             }}
           >
             <Header />

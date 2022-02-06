@@ -34,7 +34,8 @@ function Recipes() {
 
   const inputRef = useRef(null);
 
-  const label = { inputProps: { "aria-label": "Switch demo" } };
+  const veganLabel = { inputProps: { "aria-label": "Switch vegan" } };
+  const vegetarianLabel = { inputProps: { "aria-label": "Switch vegetarian" } };
 
   const theme = createTheme({
     palette: {
@@ -67,11 +68,10 @@ function Recipes() {
   };
 
   const veganChange = (event) => {
-    setVeganFilter(event.target.value);
+    setVeganFilter(event.target.checked);
   };
-
   const vegetarianChange = (event) => {
-    setVegetarianFilter(event.target.value);
+    setVegetarianFilter(event.target.checked);
   };
 
   return (
@@ -114,10 +114,11 @@ function Recipes() {
             </Stack>
             <div className="switches">
               <div className="switch1">
-                Vegan <Switch {...label} onChange={veganChange} />
+                Vegan <Switch {...veganLabel} onChange={veganChange} />
               </div>
               <div className="switch2">
-                Vegetarian <Switch {...label} onChange={vegetarianChange} />
+                Vegetarian{" "}
+                <Switch {...vegetarianLabel} onChange={vegetarianChange} />
               </div>
 
               <div>
@@ -169,6 +170,8 @@ function Recipes() {
                 difficulty,
                 instructions,
                 ingredients,
+                vegan,
+                vegetarian,
               }) => (
                 <Recipe
                   key={id}
@@ -181,6 +184,8 @@ function Recipes() {
                   difficulty={difficulty}
                   instructions={instructions}
                   ingredients={ingredients}
+                  vegan={vegan}
+                  vegetarian={vegetarian}
                 />
               )
             )}

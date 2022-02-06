@@ -9,7 +9,7 @@
 
 .first-title-about {
   opacity: 1;
-  font-size: 0.75em;
+  font-size: 1.2em;
   font-family: "Europa Bold", sans-serif;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -23,17 +23,13 @@
   display: flex;
   flex-direction: row;
   height: 100vh;
+  overflow: scroll;
 }
 
 .second-title-about {
   padding: 0 65px;
   font-size: 1.1em;
-  font-weight: bolder;
-}
-
-.card-about {
-  max-width: 570px;
-  margin-top: 223px;
+  line-height: 1.6;
 }
 
 .titles-about {
