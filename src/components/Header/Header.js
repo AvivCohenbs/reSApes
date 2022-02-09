@@ -118,7 +118,9 @@ function Header() {
 
                           <button className="button-login">Sign in</button>
 
-                          {/* <a href="https://www.google.com/">Create account</a> */}
+                          {/* <a href="https://www.google.com/">
+                            Forgot your password?
+                          </a> */}
                         </div>
                         {/* {loginContent === "login" ? ( */}
                         {/* <>

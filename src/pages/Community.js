@@ -1,6 +1,6 @@
 import "./Community.css";
 import { ReactComponent as Upload } from "./Upload.svg";
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import IngredientsContext from "../IngredientsContext";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -18,13 +18,10 @@ import Checkbox from "@mui/material/Checkbox";
 import MenuItem from "@mui/material/MenuItem";
 
 function Community() {
-  const {
-    ingredients,
-    setIngredientsFilter,
-    allergies,
-    allergiesList,
-    setAllergies,
-  } = useContext(IngredientsContext);
+  const { allergiesList, ingredients } = useContext(IngredientsContext);
+
+  const [allergies, setAllergies] = useState([]);
+  const [, setIngredients] = useState([]);
 
   const handleChangeAller = (event) => {
     const {
@@ -34,7 +31,7 @@ function Community() {
   };
 
   const handleIngredientsChange = (values) => {
-    setIngredientsFilter(values.map((value) => value.name));
+    setIngredients(values.map((value) => value.name));
   };
 
   // const handleAllergiesChange = (values) => {
