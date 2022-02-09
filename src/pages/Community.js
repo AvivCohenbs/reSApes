@@ -90,26 +90,60 @@ function Community() {
                       </div>
                     </div>
                   </div>
-                  <div className="search-bar">
-                    <Stack spacing={3} sx={{ width: 350 }}>
-                      <Autocomplete
-                        multiple
-                        id="tags-standard"
-                        onChange={(e, values) =>
-                          handleIngredientsChange(values)
-                        }
-                        options={ingredients}
-                        getOptionLabel={(ingredient) => ingredient.name}
-                        renderInput={(params) => (
-                          <TextField
-                            {...params}
-                            variant="standard"
-                            label="Add Ingredients"
-                            placeholder="Which ingredients do you have?"
-                          />
-                        )}
-                      />
-                    </Stack>
+                  <div className="ingr-aller">
+                    <div className="search-bar">
+                      <Stack spacing={3} sx={{ width: 350 }}>
+                        <Autocomplete
+                          multiple
+                          id="tags-standard"
+                          onChange={(e, values) =>
+                            handleIngredientsChange(values)
+                          }
+                          options={ingredients}
+                          getOptionLabel={(ingredient) => ingredient.name}
+                          renderInput={(params) => (
+                            <TextField
+                              {...params}
+                              variant="standard"
+                              label="Add Ingredients"
+                              placeholder="Which ingredients do you have?"
+                            />
+                          )}
+                        />
+                      </Stack>
+                    </div>
+                    <div className="search-aller">
+                      <FormControl sx={{ m: 1, width: 150 }}>
+                        <InputLabel id="demo-multiple-checkbox-label">
+                          Allergies
+                        </InputLabel>
+                        <Select
+                          className="select-aller"
+                          labelId="demo-multiple-checkbox-label"
+                          id="demo-multiple-checkbox"
+                          multiple
+                          value={allergies}
+                          onChange={handleChangeAller}
+                          input={<OutlinedInput label="Allergies" />}
+                          renderValue={(selected) => selected.join(", ")}
+                          MenuProps={MenuProps}
+                        >
+                          {allergiesList
+                            .filter((allergie) => allergie !== "None")
+                            .map((allergie) => (
+                              <MenuItem key={allergie} value={allergie}>
+                                <Checkbox
+                                  checked={allergies.indexOf(allergie) > -1}
+                                />
+                                <ListItemText
+                                  className="select-aller"
+                                  primary={allergie}
+                                />
+                              </MenuItem>
+                            ))}
+                        </Select>
+                      </FormControl>
+                    </div>
                   </div>
                   <div className="units">
                     <div className="unit-btn">
@@ -156,8 +190,8 @@ function Community() {
                     name="description"
                     rows="40"
                   ></textarea>
-                  <div className="search-aller">
-                    {/* <Stack spacing={3} sx={{ width: 350 }}>
+
+                  {/* <Stack spacing={3} sx={{ width: 350 }}>
                       <Autocomplete
                         multiple
                         id="tags-standard"
@@ -178,37 +212,6 @@ function Community() {
                         )}
                       />
                     </Stack> */}
-                    <FormControl sx={{ m: 1, width: 150 }}>
-                      <InputLabel id="demo-multiple-checkbox-label">
-                        Allergies
-                      </InputLabel>
-                      <Select
-                        className="select-aller"
-                        labelId="demo-multiple-checkbox-label"
-                        id="demo-multiple-checkbox"
-                        multiple
-                        value={allergies}
-                        onChange={handleChangeAller}
-                        input={<OutlinedInput label="Allergies" />}
-                        renderValue={(selected) => selected.join(", ")}
-                        MenuProps={MenuProps}
-                      >
-                        {allergiesList
-                          .filter((allergie) => allergie !== "None")
-                          .map((allergie) => (
-                            <MenuItem key={allergie} value={allergie}>
-                              <Checkbox
-                                checked={allergies.indexOf(allergie) > -1}
-                              />
-                              <ListItemText
-                                className="select-aller"
-                                primary={allergie}
-                              />
-                            </MenuItem>
-                          ))}
-                      </Select>
-                    </FormControl>
-                  </div>
                 </div>
               </div>
             </div>
