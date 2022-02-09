@@ -224,11 +224,42 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 1rem;
-  margin-left: -105px;
 }
 
-.signintitle {
+.form-login {
+  padding: 0 30px;
+  text-align: center;
+}
+
+.img-login {
+  display: block;
+  width: 80px;
+  margin: 30px auto;
+  box-shadow: 0 5px 10px -7px #333333;
+  border-radius: 50%;
+}
+
+.input-login {
+  border-radius: 100px;
+  padding: 10px 15px;
+  width: 85%;
+  border: 1px solid #d9d9d9;
+  outline: none;
+  display: block;
+  margin: 20px auto 20px auto;
+}
+
+.button-login {
+  border-radius: 100px;
+  border: none;
+  background: #719be6;
+  width: 50%;
+  padding: 10px;
+  color: #ffffff;
+  box-shadow: 0 2px 10px -3px #719be6;
+  cursor: pointer;
+}
+/* .signintitle {
   color: #116530;
   font-size: 20pt;
   font-family: "Poppins", sans-serif;
@@ -242,15 +273,15 @@
 
 .inputs {
   margin-top: 10px;
-}
+} */
 
-.inputin {
+/* .inputin {
   position: relative;
   width: 100%;
   height: 50px;
-}
+} */
 
-.inputin input {
+/* .inputin input {
   width: 255px;
   height: 35px;
   outline: none;
@@ -311,8 +342,8 @@
 
 .butsignin:hover {
   background: #c59928;
-}
-
+} */
+/* 
 .join-link {
   text-align: center;
   font-size: 15px;
@@ -324,4 +355,4 @@
   text-decoration: none;
   font-weight: bold;
   color: #116530;
-}
+} */

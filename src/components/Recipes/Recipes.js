@@ -172,6 +172,7 @@ function Recipes() {
                 ingredients,
                 vegan,
                 vegetarian,
+                ingredientsQuantities,
               }) => (
                 <Recipe
                   key={id}
@@ -186,6 +187,7 @@ function Recipes() {
                   ingredients={ingredients}
                   vegan={vegan}
                   vegetarian={vegetarian}
+                  ingredientsQuantities={ingredientsQuantities}
                 />
               )
             )}
