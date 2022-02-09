@@ -4,25 +4,12 @@
   /* justify-content: space-around; */
   overflow: scroll;
   height: 100vh;
-  margin-top: 120px;
+  margin-top: 60px;
   padding: 120px 40px;
 }
 
-/*לכותרות-
-/*padding: 0 65px;
-
-
-
-
-
-
-/* .addnew {
-  display: flex;
-}
-
 .maintitle {
-  display: block;
-  margin-top: 160px;
+  padding: 0 65px;
 }
 
 .firsttitle {
@@ -30,19 +17,18 @@
   font-size: 35pt;
   font-weight: bolder;
   font-family: "Poppins", sans-serif;
-  margin-left: 70px;
 }
 
 .sectitle {
   font-size: 15pt;
   font-family: "Poppins", sans-serif;
   color: #116530;
-  margin-left: 70px;
+  font-weight: bold;
+  margin-top: 15px;
 }
 
 .form-wrapper {
-  margin-right: 260px;
-  margin-left: 70px;
+  margin-top: 50px;
 }
 
 .row {
@@ -60,13 +46,9 @@
 .form-inpt {
   display: flex;
   flex-direction: column;
-} */
+}
 
-/* new */
-/* 
 .container-img {
-  top: 182px;
-  left: 524px;
   width: 340px;
   height: 303px;
   border-radius: 10px;
@@ -103,13 +85,13 @@
 }
 
 .search-bar {
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .units {
   display: flex;
-  margin-left: 200px;
-  margin-top: 40px;
+  margin-top: 30px;
+  margin-left: 210px;
 }
 
 .min {
@@ -127,9 +109,7 @@
 }
 
 .inst-container {
-  top: 182px;
-  left: 524px;
-  width: 1290px;
+  width: 1200px;
   height: 303px;
   border-radius: 10px;
   border: 2px #1f6e3c solid;
@@ -143,4 +123,18 @@
   border-radius: 10px;
   border: 2px #1f6e3c solid;
   background-color: white;
-} */
+  margin-left: -550px;
+}
+
+.desc-container {
+  width: 415px;
+  height: 213px;
+  border-radius: 10px;
+  border: 2px #1f6e3c solid;
+  background-color: white;
+  margin-left: -550px;
+  margin-top: 35px;
+}
+
+.search-aller {
+}
