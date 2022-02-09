@@ -24,6 +24,8 @@ function Recipes() {
     allergies,
     allergiesList,
     setIngredientsFilter,
+    setVeganFilter,
+    setVegetarianFilter,
   } = useContext(IngredientsContext);
 
   useEffect(() => {
@@ -32,7 +34,8 @@ function Recipes() {
 
   const inputRef = useRef(null);
 
-  const label = { inputProps: { "aria-label": "Switch demo" } };
+  const veganLabel = { inputProps: { "aria-label": "Switch vegan" } };
+  const vegetarianLabel = { inputProps: { "aria-label": "Switch vegetarian" } };
 
   const theme = createTheme({
     palette: {
@@ -64,6 +67,13 @@ function Recipes() {
     setIngredientsFilter(values.map((value) => value.name));
   };
 
+  const veganChange = (event) => {
+    setVeganFilter(event.target.checked);
+  };
+  const vegetarianChange = (event) => {
+    setVegetarianFilter(event.target.checked);
+  };
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -78,7 +88,7 @@ function Recipes() {
             <span className="workhorse">
               <br /> Here are our superstar workhorse recipes, <br /> designed
               and tasted to help you cook a great meal. <br />
-              Add the ingredients you have in your fridge and find the recipie
+              Add the ingredients you have in your fridge and find the recipe
               that suits you best!
             </span>
           </div>
@@ -104,10 +114,11 @@ function Recipes() {
             </Stack>
             <div className="switches">
               <div className="switch1">
-                Vegan <Switch {...label} />
+                Vegan <Switch {...veganLabel} onChange={veganChange} />
               </div>
               <div className="switch2">
-                Vegetarian <Switch {...label} />
+                Vegetarian{" "}
+                <Switch {...vegetarianLabel} onChange={vegetarianChange} />
               </div>
 
               <div>
@@ -159,6 +170,8 @@ function Recipes() {
                 difficulty,
                 instructions,
                 ingredients,
+                vegan,
+                vegetarian,
               }) => (
                 <Recipe
                   key={id}
@@ -171,6 +184,8 @@ function Recipes() {
                   difficulty={difficulty}
                   instructions={instructions}
                   ingredients={ingredients}
+                  vegan={vegan}
+                  vegetarian={vegetarian}
                 />
               )
             )}
