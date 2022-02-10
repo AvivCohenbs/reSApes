@@ -16,9 +16,12 @@ import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
 import MenuItem from "@mui/material/MenuItem";
+import TextareaAutosize from "@mui/material/TextareaAutosize";
+import { green } from "@mui/material/colors";
 
 function Community() {
   const { allergiesList, ingredients } = useContext(IngredientsContext);
+  const [value, setValue] = React.useState("Controlled");
 
   const [allergies, setAllergies] = useState([]);
   const [, setIngredients] = useState([]);
@@ -34,6 +37,9 @@ function Community() {
     setIngredients(values.map((value) => value.name));
   };
 
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
   // const handleAllergiesChange = (values) => {
   //   setAllergiesFilter(values.map((value) => value.name));
   // };
@@ -64,158 +70,207 @@ function Community() {
           <div className="maintitle">
             <div className="firsttitle">Share Your Favorite Recipe With Us</div>
             <div className="sectitle">Add New Recipe</div>
-
-            <div className="form-wrapper">
-              <div className="row">
-                <div className="form-col">
-                  <div className="form-inpt">
-                    <div className="container-img">
-                      <div className="container-items">
-                        <span className="container-title">
-                          {" "}
-                          Upload a stimulating image
-                        </span>
-                        <div className="upload-img">
-                          <Upload />
-                          <input
-                            type="file"
-                            id="img"
-                            name="img"
-                            accept="image/*"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="ingr-aller">
-                    <div className="search-bar">
-                      <Stack spacing={3} sx={{ width: 350 }}>
-                        <Autocomplete
-                          multiple
-                          id="tags-standard"
-                          onChange={(e, values) =>
-                            handleIngredientsChange(values)
-                          }
-                          options={ingredients}
-                          getOptionLabel={(ingredient) => ingredient.name}
-                          renderInput={(params) => (
-                            <TextField
-                              {...params}
-                              variant="standard"
-                              label="Add Ingredients"
-                              placeholder="Which ingredients do you have?"
-                            />
-                          )}
-                        />
-                      </Stack>
-                    </div>
-                    <div className="search-aller">
-                      <FormControl sx={{ m: 1, width: 150 }}>
-                        <InputLabel id="demo-multiple-checkbox-label">
-                          Allergies
-                        </InputLabel>
-                        <Select
-                          className="select-aller"
-                          labelId="demo-multiple-checkbox-label"
-                          id="demo-multiple-checkbox"
-                          multiple
-                          value={allergies}
-                          onChange={handleChangeAller}
-                          input={<OutlinedInput label="Allergies" />}
-                          renderValue={(selected) => selected.join(", ")}
-                          MenuProps={MenuProps}
-                        >
-                          {allergiesList
-                            .filter((allergie) => allergie !== "None")
-                            .map((allergie) => (
-                              <MenuItem key={allergie} value={allergie}>
-                                <Checkbox
-                                  checked={allergies.indexOf(allergie) > -1}
-                                />
-                                <ListItemText
-                                  className="select-aller"
-                                  primary={allergie}
-                                />
-                              </MenuItem>
-                            ))}
-                        </Select>
-                      </FormControl>
-                    </div>
-                  </div>
-                  <div className="units">
-                    <div className="unit-btn">
-                      <button className="min"> - </button>
-                      <span className="unt"> {} </span>
-                      <button className="pls"> + </button>
-                    </div>
-                    <div className="search-unit">
-                      <Box sx={{ width: 100 }}>
-                        <FormControl fullWidth>
-                          <InputLabel
-                            variant="standard"
-                            htmlFor="uncontrolled-native"
-                          >
-                            Units
-                          </InputLabel>
-                          <NativeSelect
-                            defaultValue={30}
-                            inputProps={{
-                              name: "age",
-                              id: "uncontrolled-native",
-                            }}
-                          >
-                            <option value={10}>g</option>
-                            <option value={20}>kg</option>
-                            <option value={30}>ml</option>
-                          </NativeSelect>
-                        </FormControl>
-                      </Box>
-                    </div>
-                  </div>
-                  <textarea
-                    className="inst-container"
-                    name="instructions"
-                    rows="40"
-                  ></textarea>
-                </div>
-                <div className="form-col">
-                  {/* <div className="row"> */}
-                  {/* <div className="left-container"> */}
-                  <input className="reci-name" type="text" />
-                  <textarea
-                    className="desc-container"
-                    name="description"
-                    rows="40"
-                  ></textarea>
-
-                  {/* <Stack spacing={3} sx={{ width: 350 }}>
-                      <Autocomplete
-                        multiple
-                        id="tags-standard"
-                        // onChange={(e, allergies) =>
-                        //   handleIngredientsChange(allergies)
-                        // }
-                        options={allergiesList}
-                        getOptionLabel={(ingredient) =>
-                          ingredient.allergiesList
-                        }
-                        renderInput={(params) => (
-                          <TextField
-                            {...params}
-                            variant="standard"
-                            label="Add Allergies"
-                            placeholder="Allergies"
-                          />
-                        )}
-                      />
-                    </Stack> */}
+          </div>
+          <div className="container-name-des">
+            <div className="container-img">
+              <div className="container-items">
+                <span className="container-title">
+                  {" "}
+                  Upload a stimulating image
+                </span>
+                <div className="upload-img">
+                  <Upload />
+                  <input type="file" id="img" name="img" accept="image/*" />
                 </div>
               </div>
             </div>
+            <div className="name-des">
+              <Box
+                className="reci-name"
+                component="form"
+                sx={{
+                  "& > :not(style)": {
+                    m: 1,
+                    width: "415px",
+                    borderRadius: "10px",
+                    border: "2px 1f6e3c solid",
+                    backgroundColor: "white",
+                  },
+                }}
+                noValidate
+                autoComplete="off"
+              >
+                <TextField
+                  id="outlined-basic"
+                  label="Recipe Name"
+                  variant="outlined"
+                />
+              </Box>
+              <Box
+                className="desc-container"
+                component="form"
+                sx={{
+                  "& .MuiTextField-root": {
+                    m: 1,
+                    width: "415px",
+                  },
+                }}
+                noValidate
+                autoComplete="off"
+              >
+                <div>
+                  <TextField
+                    sx={{
+                      bgcolor: "white",
+                    }}
+                    id="outlined-multiline-static"
+                    label="Descreption"
+                    multiline
+                    rows={8}
+                  />
+                </div>
+              </Box>
+            </div>
+          </div>
+          <div className="ingr-aller">
+            <div className="unit-search">
+              <div className="search-bar">
+                <Stack spacing={3} sx={{ width: 350 }}>
+                  <Autocomplete
+                    multiple
+                    id="tags-standard"
+                    onChange={(e, values) => handleIngredientsChange(values)}
+                    options={ingredients}
+                    getOptionLabel={(ingredient) => ingredient.name}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        variant="standard"
+                        label="Add Ingredients"
+                        placeholder="Which ingredients do you have?"
+                      />
+                    )}
+                  />
+                </Stack>
+              </div>
+              <div className="units">
+                <div className="unit-btn">
+                  <button className="min"> - </button>
+                  <span className="unt"> {} </span>
+                  <button className="pls"> + </button>
+                </div>
+                <div className="search-unit">
+                  <Box sx={{ width: 100 }}>
+                    <FormControl fullWidth>
+                      <InputLabel
+                        variant="standard"
+                        htmlFor="uncontrolled-native"
+                      >
+                        Units
+                      </InputLabel>
+                      <NativeSelect
+                        defaultValue={30}
+                        inputProps={{
+                          name: "age",
+                          id: "uncontrolled-native",
+                        }}
+                      >
+                        <option value={10}>g</option>
+                        <option value={20}>kg</option>
+                        <option value={30}>ml</option>
+                      </NativeSelect>
+                    </FormControl>
+                  </Box>
+                </div>
+              </div>
+            </div>
+            <div className="aller-time">
+              <div className="search-aller">
+                <FormControl sx={{ m: 1, width: 410 }}>
+                  <InputLabel id="demo-multiple-checkbox-label">
+                    Allergies
+                  </InputLabel>
+                  <Select
+                    className="select-aller"
+                    labelId="demo-multiple-checkbox-label"
+                    id="demo-multiple-checkbox"
+                    multiple
+                    value={allergies}
+                    onChange={handleChangeAller}
+                    input={<OutlinedInput label="Allergies" />}
+                    renderValue={(selected) => selected.join(", ")}
+                    MenuProps={MenuProps}
+                  >
+                    {allergiesList
+                      .filter((allergie) => allergie !== "None")
+                      .map((allergie) => (
+                        <MenuItem key={allergie} value={allergie}>
+                          <Checkbox
+                            checked={allergies.indexOf(allergie) > -1}
+                          />
+                          <ListItemText
+                            className="select-aller"
+                            primary={allergie}
+                          />
+                        </MenuItem>
+                      ))}
+                  </Select>
+                </FormControl>
+              </div>
+              <div className="time-input">
+                <Stack
+                  className="time-input"
+                  component="form"
+                  noValidate
+                  spacing={3}
+                >
+                  <TextField
+                    id="time"
+                    label="Cooking Time"
+                    type="time"
+                    defaultValue="07:30"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    inputProps={{
+                      step: 300,
+                    }}
+                    sx={{ width: 150 }}
+                  />
+                </Stack>
+              </div>
+            </div>
+          </div>
+          <div className="sub-cont">
+            <Box
+              className="inst-container"
+              component="form"
+              sx={{
+                "& .MuiTextField-root": {
+                  m: 1,
+                  width: "1060px",
+                },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <div>
+                <TextField
+                  sx={{
+                    bgcolor: "white",
+                  }}
+                  id="outlined-multiline-static"
+                  label="Instractions"
+                  multiline
+                  rows={11}
+                />
+              </div>
+            </Box>
+            <button className="sub-butt" type="submit">
+              Submit
+            </button>
           </div>
         </div>
-        {/* </div> */}
-        {/* </div> */}
       </ThemeProvider>
     </>
   );

@@ -1,21 +1,14 @@
 .community-page {
   display: flex;
-
+  flex-wrap: wrap;
   overflow: scroll;
-  height: 100vh;
-  margin-top: 53px;
-  padding: 120px 40px;
-
-  align-items: center;
-  height: 64vh;
+  padding: 180px 85px;
+  height: 600px;
 }
 
 .maintitle {
-  padding: 0 65px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: 60vh;
-  justify-content: space-evenly;
+  flex-direction: column;
+  display: flex;
 }
 
 .firsttitle {
@@ -33,25 +26,12 @@
   margin-top: 15px;
 }
 
-.form-wrapper {
-  margin-top: 50px;
-}
-
-.row {
+.container-name-des {
   display: flex;
   flex-direction: row;
-}
-
-.form-col {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  width: 100%;
-}
-
-.form-inpt {
-  display: flex;
-  flex-direction: column;
+  margin-top: 35px;
+  justify-content: space-between;
+  width: 1080px;
 }
 
 .container-img {
@@ -90,14 +70,18 @@
   opacity: 0;
 }
 
-.search-bar {
-  margin-top: 25px;
+.ingr-aller {
+  display: flex;
+  flex-direction: row;
+  margin-top: 35px;
+  justify-content: space-between;
+  width: 1080px;
 }
 
 .units {
   display: flex;
-  margin-top: 30px;
-  margin-left: 210px;
+  align-items: center;
+  justify-content: end;
 }
 
 .min {
@@ -113,37 +97,28 @@
   background-color: #ffca40;
   cursor: pointer;
 }
-
 .inst-container {
-  width: 1066px;
-  height: 303px;
-  border-radius: 10px;
-  border: 2px #1f6e3c solid;
-  background-color: white;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
-.reci-name {
-  width: 415px;
-  height: 47px;
-  border-radius: 10px;
-  border: 2px #1f6e3c solid;
-  background-color: white;
-  margin-left: -550px;
-}
-
-.desc-container {
-  width: 415px;
-  height: 213px;
-  border-radius: 10px;
-  border: 2px #1f6e3c solid;
-  background-color: white;
-  margin-left: -550px;
-  margin-top: 35px;
-}
-
-.ingr-aller {
+.time-input {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: end;
+}
+
+.sub-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.sub-butt {
+  border-radius: 100px;
+  border: none;
+  background: #116530;
+  width: 80px;
+  padding: 10px;
+  color: #ffffff;
+  box-shadow: 0 2px 10px -3px #116530;
+  cursor: pointer;
 }
