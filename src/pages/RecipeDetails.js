@@ -1,14 +1,11 @@
 import "./RecipeDetails.css";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { ReactComponent as Clock } from "./clock.svg";
-import IngredientsContext from "../IngredientsContext";
-import Recipes from "../components/Recipes/Recipes";
 
 function RecipeDetails() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
-  //const { ingredients } = useContext(IngredientsContext);
   const [recipeIngredient, setRecipeIngredient] = useState(null);
 
   useEffect(() => {
@@ -46,9 +43,15 @@ function RecipeDetails() {
                 <b> Ingredients</b>
               </div>
               <ul>
-                {recipe.ingredients.map((ingredient, index) => (
-                  <li key={index}> {ingredient.name}</li>
-                ))}
+                {recipe.ingredientsQuantities.map(
+                  (ingredientQuantity, index) => {
+                    return (
+                      <li key={index}>
+                        {` ${ingredientQuantity.quantity} ${ingredientQuantity.unit.name} of ${ingredientQuantity.ingredient.name}`}
+                      </li>
+                    );
+                  }
+                )}
               </ul>
             </div>
             <div className="instru">

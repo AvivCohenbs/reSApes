@@ -1,6 +1,6 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ReactComponent as Profile } from "./Profile.svg";
 import { ReactComponent as Logo } from "./logo.svg";
 import { ReactComponent as Bell } from "./Bell.svg";
@@ -10,7 +10,14 @@ import ClickAwayListener from "@mui/material/ClickAwayListener";
 function Header() {
   const [open, setOpen] = useState(false);
 
-  const [loginContent, setLoginContent] = useState("login");
+  // const [loginContent, setLoginContent] = useState("login");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("email", JSON.stringify(email));
+    localStorage.setItem("password", JSON.stringify(password));
+  }, [email, password]);
 
   const handleClick = () => {
     setOpen((prev) => !prev);
@@ -18,6 +25,23 @@ function Header() {
 
   const handleClickAway = () => {
     setOpen(false);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const body = {
+      password,
+      email,
+    };
+    const res = await fetch("/login", {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const user = await res.json();
+    console.log(user);
   };
 
   return (
@@ -95,18 +119,21 @@ function Header() {
                   {open ? (
                     <Box>
                       <div className="login-container">
-                        <div class="form-login">
-                          <img
+                        <form class="form-login" onSubmit={handleSubmit}>
+                          {/* <img
                             className="img-login"
                             src="http://www.androidpolice.com/wp-content/themes/ap2/ap_resize/ap_resize.php?src=http%3A%2F%2Fwww.androidpolice.com%2Fwp-content%2Fuploads%2F2015%2F10%2Fnexus2cee_Search-Thumb-150x150.png&w=150&h=150&zc=3"
                             alt="img"
-                          />
+                          /> */}
+
+                          <div>SIGN IN</div>
 
                           <input
                             className="input-login"
                             type="email"
                             name="email"
                             placeholder="Email"
+                            onChange={(e) => setEmail(e.target.value)}
                           />
 
                           <input
@@ -114,14 +141,17 @@ function Header() {
                             type="password"
                             name="Password"
                             placeholder="Password"
+                            onChange={(e) => setPassword(e.target.value)}
                           />
 
-                          <button className="button-login">Sign in</button>
+                          <button className="button-login" type="submit">
+                            Sign in
+                          </button>
 
                           {/* <a href="https://www.google.com/">
                             Forgot your password?
                           </a> */}
-                        </div>
+                        </form>
                         {/* {loginContent === "login" ? ( */}
                         {/* <>
                           <div className="intro-text">

@@ -16,8 +16,6 @@ import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
 import MenuItem from "@mui/material/MenuItem";
-import TextareaAutosize from "@mui/material/TextareaAutosize";
-import { green } from "@mui/material/colors";
 
 function Community() {
   const { allergiesList, ingredients } = useContext(IngredientsContext);
@@ -40,9 +38,6 @@ function Community() {
   const handleChange = (event) => {
     setValue(event.target.value);
   };
-  // const handleAllergiesChange = (values) => {
-  //   setAllergiesFilter(values.map((value) => value.name));
-  // };
 
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
@@ -66,7 +61,7 @@ function Community() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <div className="community-page">
+        <form className="community-page">
           <div className="maintitle">
             <div className="firsttitle">Share Your Favorite Recipe With Us</div>
             <div className="sectitle">Add New Recipe</div>
@@ -270,7 +265,7 @@ function Community() {
               Submit
             </button>
           </div>
-        </div>
+        </form>
       </ThemeProvider>
     </>
   );
