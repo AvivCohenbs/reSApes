@@ -1,23 +1,18 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { ReactComponent as Profile } from "./Profile.svg";
 import { ReactComponent as Logo } from "./logo.svg";
 import { ReactComponent as Bell } from "./Bell.svg";
 import Box from "@mui/material/Box";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
+import userContext from "../../UserContext";
 
 function Header() {
   const [open, setOpen] = useState(false);
-
-  // const [loginContent, setLoginContent] = useState("login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    localStorage.setItem("email", JSON.stringify(email));
-    localStorage.setItem("password", JSON.stringify(password));
-  }, [email, password]);
+  const { login, user, logout } = useContext(userContext);
 
   const handleClick = () => {
     setOpen((prev) => !prev);
@@ -29,19 +24,10 @@ function Header() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const body = {
-      password,
-      email,
-    };
-    const res = await fetch("/login", {
-      method: "POST",
-      body: JSON.stringify(body),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const user = await res.json();
-    console.log(user);
+    await login(email, password);
+
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -68,17 +54,13 @@ function Header() {
             <li>
               <Link to="/About">About</Link>{" "}
             </li>
-            <li>
-              <Link className="Bell" to="/notes">
-                <Bell />
-              </Link>
-            </li>
           </ul>
           <Link className="logo" to="/">
             <Logo />
           </Link>
         </div>
       </nav>
+
       <nav className="navbar">
         <div className="navbar-container container">
           <input type="checkbox" name="" id="" />
@@ -87,6 +69,7 @@ function Header() {
             <span className="line line2"></span>
             <span className="line line3"></span>
           </div>
+
           <ul className="menu-itemss">
             <li>
               <Link to="/Favorites">My recipes</Link>{" "}
@@ -100,11 +83,22 @@ function Header() {
             <li>
               <Link to="/About">About</Link>{" "}
             </li>
+            {/* 
             <li>
-              <Link className="Bell" to="/notes">
-                <Bell />
-              </Link>
-            </li>
+              <ClickAwayListener
+                mouseEvent="onMouseDown"
+                touchEvent="onTouchStart"
+                onClickAway={handleClickAway}
+              >
+                <Box>
+                  <button className="Bell" type="button" onClick={handleClick}>
+                    <Bell />
+                  </button>
+                  {open ? <Box></Box> : null}
+                </Box>
+              </ClickAwayListener>
+            </li> */}
+
             <li>
               <ClickAwayListener
                 mouseEvent="onMouseDown"
@@ -119,98 +113,45 @@ function Header() {
                   {open ? (
                     <Box>
                       <div className="login-container">
-                        <form class="form-login" onSubmit={handleSubmit}>
-                          {/* <img
-                            className="img-login"
-                            src="http://www.androidpolice.com/wp-content/themes/ap2/ap_resize/ap_resize.php?src=http%3A%2F%2Fwww.androidpolice.com%2Fwp-content%2Fuploads%2F2015%2F10%2Fnexus2cee_Search-Thumb-150x150.png&w=150&h=150&zc=3"
-                            alt="img"
-                          /> */}
-
-                          <div>SIGN IN</div>
-
-                          <input
-                            className="input-login"
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                            onChange={(e) => setEmail(e.target.value)}
-                          />
-
-                          <input
-                            className="input-login"
-                            type="password"
-                            name="Password"
-                            placeholder="Password"
-                            onChange={(e) => setPassword(e.target.value)}
-                          />
-
-                          <button className="button-login" type="submit">
-                            Sign in
-                          </button>
-
-                          {/* <a href="https://www.google.com/">
-                            Forgot your password?
-                          </a> */}
-                        </form>
-                        {/* {loginContent === "login" ? ( */}
-                        {/* <>
-                          <div className="intro-text">
-                            <div className="signintitle">Sign in</div>
-                            <p className="secotitle">
-                              Stay tuned with our new recipes{" "}
-                            </p>
-                          </div>
-                          <div className="inputs">
-                            <div className="inputin">
-                              <input
-                                type="text"
-                                name="email"
-                                id="email"
-                                required
-                              />
-                              <label for="email">Email</label>
+                        {!user ? (
+                          <form class="form-login" onSubmit={handleSubmit}>
+                            <div>SIGN IN</div>
+                            <input
+                              className="input-login"
+                              type="email"
+                              name="email"
+                              placeholder="Email"
+                              onChange={(e) => setEmail(e.target.value)}
+                              value={email}
+                            />
+                            <input
+                              className="input-login"
+                              type="password"
+                              name="Password"
+                              placeholder="Password"
+                              onChange={(e) => setPassword(e.target.value)}
+                              value={password}
+                            />
+                            <div className="buttons-log">
+                              <button className="button-login" type="submit">
+                                Sign in
+                              </button>
                             </div>
-                            <div className="inputin">
-                              <input
-                                type="password"
-                                name="password"
-                                id="password"
-                                required
-                              />
-                              <label className="passlog" for="password">
-                                Password
-                              </label>
-                            </div>
+                          </form>
+                        ) : (
+                          <div className="user-connect">
+                            <img
+                              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Breezeicons-actions-22-im-user.svg/1200px-Breezeicons-actions-22-im-user.svg.png"
+                              alt="user-img"
+                              className="user-img"
+                            ></img>
+                            <div>Hi,</div>
+                            <div className="email-logout">{user.email} </div>
+                            <button className="button-logout" onClick={logout}>
+                              Log out
+                            </button>
                           </div>
-                          <div
-                            className="forgot"
-                            onClick={() => setLoginContent("forgot")}
-                          >
-                            Forgot Your Password?
-                          </div>
-                          <button
-                            className="butsignin"
-                            onClick={() => setLoginContent("profile")}
-                          >
-                            Sign in
-                          </button>
-                          <p className="join-link">
-                            New at reSApes?{" "}
-                            <div
-                              className="jNow"
-                              onClick={() => setLoginContent("join")}
-                            >
-                              Join now
-                            </div>
-                          </p>
-                        </> */}
-                        {/* ) : loginContent === "join" ? (
-                          <div>join</div>
-                        ) : loginContent === "profile" ? (
-                          <div>profile</div>
-                        ) : loginContent === "forgot" ? (
-                          <div>forgot</div>
-                        ) : null} */}
+                        )}
                       </div>
                     </Box>
                   ) : null}
@@ -218,6 +159,7 @@ function Header() {
               </ClickAwayListener>
             </li>
           </ul>
+
           <Link className="logo" to="/">
             <Logo />
           </Link>
