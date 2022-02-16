@@ -32,6 +32,8 @@
 
 .img-side {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .about {
@@ -82,6 +84,26 @@
   font-size: 18px;
 }
 
+.post_form {
+  display: flex;
+  margin-top: 20px;
+}
+
+.post-input {
+  flex: 1;
+}
+
+.post-comments {
+  display: flex;
+  flex-direction: column;
+  height: 25vh;
+  overflow: scroll;
+}
+
+.add-comment-input {
+  margin-right: 4px;
+}
+
 @media (max-width: 48em) {
   .img-text {
     display: flex;
@@ -107,5 +129,11 @@
     border-radius: 25px;
     height: 200px;
     display: flex;
+  }
+  .post-comments {
+    margin-left: 20px;
+  }
+  .add-comment-input {
+    margin-left: 20px;
   }
 }
