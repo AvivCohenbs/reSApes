@@ -286,10 +286,24 @@
   align-items: center;
 }
 
-.Bell {
+.bell {
   background-color: #116530;
   cursor: pointer;
   border: none;
+}
+
+.notes-container {
+  width: 260px;
+  height: 345px;
+  background: #fff;
+  box-shadow: 0 10px 15px rgb(179 179 179 / 70%);
+  position: absolute;
+  top: 280px;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .user-img {
