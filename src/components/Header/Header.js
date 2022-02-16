@@ -30,6 +30,16 @@ function Header() {
     setPassword("");
   };
 
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const handClick = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const handClickAway = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className="header">
       <nav className="navbar">
@@ -83,21 +93,24 @@ function Header() {
             <li>
               <Link to="/About">About</Link>{" "}
             </li>
-            {/* 
             <li>
               <ClickAwayListener
                 mouseEvent="onMouseDown"
                 touchEvent="onTouchStart"
-                onClickAway={handleClickAway}
+                onClickAway={handClickAway}
               >
                 <Box>
-                  <button className="Bell" type="button" onClick={handleClick}>
+                  <button className="bell" type="button" onClick={handClick}>
                     <Bell />
                   </button>
-                  {open ? <Box></Box> : null}
+                  {isOpen ? (
+                    <Box className="notes-container">
+                      <div>NOTES</div>
+                    </Box>
+                  ) : null}
                 </Box>
               </ClickAwayListener>
-            </li> */}
+            </li>
 
             <li>
               <ClickAwayListener

@@ -89,7 +89,6 @@ function Community() {
                     width: "415px",
                     borderRadius: "10px",
                     border: "2px 1f6e3c solid",
-                    backgroundColor: "white",
                   },
                 }}
                 noValidate
@@ -115,9 +114,9 @@ function Community() {
               >
                 <div>
                   <TextField
-                    sx={{
-                      bgcolor: "white",
-                    }}
+                    // sx={{
+                    //   bgcolor: "white",
+                    // }}
                     id="outlined-multiline-static"
                     label="Descreption"
                     multiline
@@ -151,11 +150,11 @@ function Community() {
               <div className="units">
                 <div className="unit-btn">
                   <button className="min"> - </button>
-                  <span className="unt"> {} </span>
+                  <span className="unt"> {0} </span>
                   <button className="pls"> + </button>
                 </div>
                 <div className="search-unit">
-                  <Box sx={{ width: 100 }}>
+                  <Box sx={{ width: 130 }}>
                     <FormControl fullWidth>
                       <InputLabel
                         variant="standard"
@@ -170,9 +169,26 @@ function Community() {
                           id: "uncontrolled-native",
                         }}
                       >
-                        <option value={10}>g</option>
-                        <option value={20}>kg</option>
-                        <option value={30}>ml</option>
+                        <option value={10}>Inch</option>
+                        <option value={20}>Tablespoons</option>
+                        <option value={30}>Tablespoon</option>
+                        <option value={30}>Cups</option>
+                        <option value={30}>Cup</option>
+                        <option value={30}>Teaspoons</option>
+                        <option value={30}>Pounds</option>
+                        <option value={30}>Pound</option>
+                        <option value={30}>Sheets</option>
+                        <option value={30}>Package</option>
+                        <option value={30}>Ounces</option>
+                        <option value={30}>Ounce</option>
+                        <option value={30}>Liter</option>
+                        <option value={30}>GR</option>
+                        <option value={30}>Cans</option>
+                        <option value={30}>Can</option>
+                        <option value={30}>Bunches</option>
+                        <option value={30}>Bunch</option>
+                        <option value={30}>Kurt</option>
+                        <option value={30}>Unit</option>
                       </NativeSelect>
                     </FormControl>
                   </Box>
@@ -222,15 +238,15 @@ function Community() {
                   <TextField
                     id="time"
                     label="Cooking Time"
-                    type="time"
-                    defaultValue="07:30"
+                    type="number"
+                    placeholder="120 Minutes 🕓"
                     InputLabelProps={{
                       shrink: true,
                     }}
                     inputProps={{
-                      step: 300,
+                      step: 1,
                     }}
-                    sx={{ width: 150 }}
+                    sx={{ width: 266 }}
                   />
                 </Stack>
               </div>
@@ -251,11 +267,11 @@ function Community() {
             >
               <div>
                 <TextField
-                  sx={{
-                    bgcolor: "white",
-                  }}
+                  // sx={{
+                  //   bgcolor: "white",
+                  // }}
                   id="outlined-multiline-static"
-                  label="Instractions"
+                  label="Instructions"
                   multiline
                   rows={11}
                 />
