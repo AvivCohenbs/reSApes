@@ -118,7 +118,7 @@ function Community() {
                     //   bgcolor: "white",
                     // }}
                     id="outlined-multiline-static"
-                    label="Descreption"
+                    label="Description"
                     multiline
                     rows={8}
                   />
