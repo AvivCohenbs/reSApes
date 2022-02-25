@@ -1,6 +1,6 @@
 import Recipe from "../Recipe/Recipe";
 import "./Recipes.css";
-import React from "react";
+import React, { useState } from "react";
 import Switch from "@mui/material/Switch";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import OutlinedInput from "@mui/material/OutlinedInput";
@@ -27,6 +27,14 @@ function Recipes() {
     setVeganFilter,
     setVegetarianFilter,
   } = useContext(IngredientsContext);
+
+  const [recipesDisplay, setRecipesDisplay] = useState([]);
+
+  const [contentFilter, setContentFilter] = useState("popular");
+
+  useEffect(() => {
+    setRecipesDisplay(recipes.slice(0, 5));
+  }, [recipes]);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -156,10 +164,31 @@ function Recipes() {
             </div>
           </div>
 
-          <div className="popular"> Popular Recipes</div>
+          <div className="pop-all">
+            <div
+              className={`${contentFilter === "popular" ? "active" : ""}`}
+              onClick={() => {
+                // setState('popular')
+                setContentFilter("popular");
+                setRecipesDisplay(recipes.slice(0, 5));
+              }}
+            >
+              {" "}
+              <span className="pop-margin">Popular Recipes</span>
+            </div>
+            <div
+              className={`${contentFilter === "all-rec" ? "active" : ""}`}
+              onClick={() => {
+                setContentFilter("all-rec");
+                setRecipesDisplay(recipes);
+              }}
+            >
+              All Recipes
+            </div>
+          </div>
 
           <div className="recipes-dsgn">
-            {recipes.map(
+            {recipesDisplay.map(
               ({
                 _id: id,
                 title,

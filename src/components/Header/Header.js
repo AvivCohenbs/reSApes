@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import React, { useState, useContext } from "react";
 import { ReactComponent as Profile } from "./Profile.svg";
 import { ReactComponent as Logo } from "./logo.svg";
-import { ReactComponent as Bell } from "./Bell.svg";
+// import { ReactComponent as Bell } from "./Bell.svg";
 import Box from "@mui/material/Box";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import userContext from "../../UserContext";
@@ -32,13 +32,13 @@ function Header() {
 
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const handClick = () => {
-    setIsOpen((prev) => !prev);
-  };
+  // const handClick = () => {
+  //   setIsOpen((prev) => !prev);
+  // };
 
-  const handClickAway = () => {
-    setIsOpen(false);
-  };
+  // const handClickAway = () => {
+  //   setIsOpen(false);
+  // };
 
   return (
     <div className="header">
@@ -93,7 +93,7 @@ function Header() {
             <li>
               <Link to="/About">About</Link>{" "}
             </li>
-            <li>
+            {/* <li>
               <ClickAwayListener
                 mouseEvent="onMouseDown"
                 touchEvent="onTouchStart"
@@ -110,7 +110,7 @@ function Header() {
                   ) : null}
                 </Box>
               </ClickAwayListener>
-            </li>
+            </li> */}
 
             <li>
               <ClickAwayListener

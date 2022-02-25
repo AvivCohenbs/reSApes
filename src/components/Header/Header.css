@@ -62,146 +62,6 @@
   margin-right: 30px;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    opacity: 0.95;
-  }
-
-  .navbar-container input[type="checkbox"],
-  .navbar-container .hamburger-lines {
-    display: block;
-  }
-
-  .navbar-container {
-    display: block;
-    position: relative;
-    height: 120px;
-  }
-
-  .navbar-container input[type="checkbox"] {
-    position: absolute;
-    display: block;
-    height: 32px;
-    width: 30px;
-    top: 20px;
-    left: 20px;
-    z-index: 5;
-    opacity: 0;
-  }
-
-  .navbar-container .hamburger-lines {
-    display: block;
-    height: 23px;
-    width: 35px;
-    position: absolute;
-    top: 17px;
-    left: 20px;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .navbar-container .hamburger-lines .line {
-    display: block;
-    height: 4px;
-    width: 100%;
-    border-radius: 10px;
-    background: #fefbf3;
-  }
-
-  .navbar-container .hamburger-lines .line1 {
-    transform-origin: 0% 0%;
-    transition: transform 0.4s ease-in-out;
-  }
-
-  .navbar-container .hamburger-lines .line2 {
-    transition: transform 0.2s ease-in-out;
-  }
-
-  .navbar-container .hamburger-lines .line3 {
-    transform-origin: 0% 100%;
-    transition: transform 0.4s ease-in-out;
-  }
-
-  .navbar .menu-itemss {
-    padding-top: 100px;
-    background: #116530;
-    height: 100vh;
-    max-width: 190px;
-    transform: translate(-150%);
-    display: flex;
-    flex-direction: column;
-    padding-left: 10px;
-    transition: transform 0.5s ease-in-out;
-    box-shadow: 1px 0px 10px 0px;
-  }
-
-  .navbar .menu-itemss li {
-    list-style: none;
-    margin-left: 15px;
-    margin-top: 35px;
-  }
-
-  .logo {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-  }
-
-  .navbar-container input[type="checkbox"]:checked ~ .menu-itemss {
-    transform: translateX(0);
-  }
-
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-    transform: rotate(35deg);
-  }
-
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-    transform: scaleY(0);
-  }
-
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-    transform: rotate(-35deg);
-  }
-}
-
-@media (max-width: 500px) {
-  html {
-    font-size: 65%;
-  }
-
-  .testimonial-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .logo {
-    position: absolute;
-    right: 65px;
-  }
-
-  .navbar .menu-itemss li {
-    font-size: 15pt;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1200px) {
-  .img-container h3 {
-    font-size: 1.5rem;
-  }
-
-  .img-container .btn {
-    font-size: 0.7rem;
-  }
-}
-
-@media (orientation: landscape) and (max-height: 500px) {
-  .showcase-area {
-    height: 50vmax;
-  }
-}
-
 .profile {
   background-color: #116530;
   cursor: pointer;
@@ -311,4 +171,144 @@
   display: flex;
   width: 64px;
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    opacity: 0.95;
+  }
+
+  .navbar-container input[type="checkbox"],
+  .navbar-container .hamburger-lines {
+    display: block;
+  }
+
+  .navbar-container {
+    display: block;
+    position: relative;
+    height: 120px;
+  }
+
+  .navbar-container input[type="checkbox"] {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 30px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    opacity: 0;
+  }
+
+  .navbar-container .hamburger-lines {
+    display: block;
+    height: 23px;
+    width: 35px;
+    position: absolute;
+    top: 42px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .navbar-container .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #fefbf3;
+  }
+
+  .navbar-container .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .navbar .menu-itemss {
+    padding-top: 100px;
+    background: #116530;
+    height: 100vh;
+    max-width: 190px;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 1px 0px 10px 0px;
+  }
+
+  .navbar .menu-itemss li {
+    list-style: none;
+    margin-left: 15px;
+    margin-top: 35px;
+  }
+
+  .logo {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .menu-itemss {
+    transform: translateX(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(35deg);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-35deg);
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 65%;
+  }
+
+  .testimonial-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    position: absolute;
+    right: 6px;
+  }
+
+  .navbar .menu-itemss li {
+    font-size: 15pt;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .img-container h3 {
+    font-size: 1.5rem;
+  }
+
+  .img-container .btn {
+    font-size: 0.7rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .showcase-area {
+    height: 50vmax;
+  }
 }

@@ -86,7 +86,7 @@
 
 .post_form {
   display: flex;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .post-input {
@@ -96,12 +96,17 @@
 .post-comments {
   display: flex;
   flex-direction: column;
-  height: 25vh;
+  height: 21vh;
   overflow: scroll;
 }
 
 .add-comment-input {
   margin-right: 4px;
+}
+
+.leave-comment {
+  margin-top: 13px;
+  font-weight: bolder;
 }
 
 @media (max-width: 48em) {

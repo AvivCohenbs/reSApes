@@ -36,3 +36,15 @@
 .titles-about {
   margin-top: 30px;
 }
+
+@media (max-width: 48em) {
+  .main-title-about {
+    padding: 0;
+  }
+  .first-title-about {
+    padding: 0;
+  }
+  .second-title-about {
+    padding: 0;
+  }
+}

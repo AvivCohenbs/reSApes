@@ -13,12 +13,9 @@
   padding: 120px 40px;
 }
 
-.popular {
-  color: black;
-  font-size: 14pt;
-  margin-bottom: 38px;
-  font-weight: bold;
-  margin: 18px 59px;
+.all-rec div:focus {
+  color: #ffca40;
+  outline: none;
 }
 
 .switches {
@@ -174,6 +171,30 @@
   line-height: 1.2;
   display: flex;
   font-weight: bolder;
+}
+
+.pop-all {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 60px;
+  color: black;
+  font-size: 14pt;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.pop-margin {
+  margin-right: 15px;
+}
+
+.pop-all div:hover {
+  color: #116530;
+  transition: color 0.3s ease-in-out;
+}
+.pop-all div.active {
+  color: #116530;
 }
 
 @media (max-width: 48em) {

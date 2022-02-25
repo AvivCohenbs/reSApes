@@ -1,16 +1,43 @@
 import "./RecipeDetails.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
 import { ReactComponent as Clock } from "./clock.svg";
 import Comments from "../components/Comments";
 import { Button, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import List from "@mui/material/List";
+import userContext from "../UserContext";
 
 function RecipeDetails() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
   const [recipeIngredient, setRecipeIngredient] = useState(null);
+  const [comment, setComment] = useState("");
+  const [content, setContent] = useState("");
+  const [isPending, setIsPending] = useState("false");
+
+  const { user } = useContext(userContext);
+
+  const handleChangeComment = (event) => {
+    setComment(event.target.value);
+  };
+
+  const handleClickComment = async (e) => {
+    e.preventDefault();
+    const addComment = { user: user._id, content: comment };
+    console.log(addComment);
+
+    fetch(`/recipes/${id}/comment`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(addComment),
+    })
+      .then((response) => response.json())
+      .then((newComment) => {
+        setRecipe({ ...recipe, comments: [...recipe.comments, newComment] });
+      });
+  };
 
   useEffect(() => {
     fetch(`/recipes/${id}`)
@@ -81,21 +108,25 @@ function RecipeDetails() {
               </div>
               <div className="img-side">
                 <img className="imgdet" src={recipe.image} alt="img" />
-                <div className="post-comments">
-                  <Comments />
-                  <Comments />
-                  <Comments />
-                  <Comments />
-                  <Comments />
-                </div>
-                <form className="post_form">
+
+                <div className="leave-comment">LEAVE A COMMENT</div>
+
+                <List className="post-comments">
+                  {recipe.comments.map((comment) => {
+                    return <Comments comment={comment} />;
+                  })}
+                </List>
+
+                <form className="post_form" onSubmit={handleClickComment}>
                   <div className="add-comment-input">
                     <TextField
+                      onChange={handleChangeComment}
                       label="Add comment"
                       size="small"
                       variant="outlined"
                       placeholder="Add comment"
                       className="post-input"
+                      type="text"
                       sx={{
                         width: "350px",
                       }}
@@ -122,4 +153,5 @@ function RecipeDetails() {
     </>
   );
 }
+
 export default RecipeDetails;

@@ -17,6 +17,7 @@ import { getLocalUser, setLocalUser } from "./utils/localStorage";
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [ingredients, setIngredients] = useState([]);
+  const [units, setUnits] = useState([]);
   const [allergies, setAllergies] = useState([]);
   const [ingredientsFilter, setIngredientsFilter] = useState([]);
   const [total, setTotal] = useState(0);
@@ -43,6 +44,7 @@ function App() {
         "Content-Type": "application/json",
       },
     });
+
     const { user } = await res.json();
     setUser(user);
     setLocalUser(user);
@@ -53,29 +55,24 @@ function App() {
     setLocalUser("");
   };
 
-  const getRecipes = useCallback(() =>
-    // allergies = [],
-    // ingredients = [],
-    // vegan = false,
-    // Vegetarian = false
-    {
-      const allergiesQuery = allergies.length
-        ? `allergies=${allergies.join(",")}`
-        : "";
-      const ingridentsQuery = ingredientsFilter.length
-        ? `ingredients=${ingredientsFilter.join(",")}`
-        : "";
-      const veganQuery = veganFilter ? "vegan=true" : "";
-      const vegetarianQuery = vegetarianFilter ? "vegetarian=true" : "";
+  const getRecipes = useCallback(() => {
+    const allergiesQuery = allergies.length
+      ? `allergies=${allergies.join(",")}`
+      : "";
+    const ingridentsQuery = ingredientsFilter.length
+      ? `ingredients=${ingredientsFilter.join(",")}`
+      : "";
+    const veganQuery = veganFilter ? "vegan=true" : "";
+    const vegetarianQuery = vegetarianFilter ? "vegetarian=true" : "";
 
-      fetch(
-        `/recipes?${allergiesQuery}&${ingridentsQuery}&${veganQuery}&${vegetarianQuery}`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setRecipes(data);
-        });
-    }, [allergies, ingredientsFilter, veganFilter, vegetarianFilter]);
+    fetch(
+      `/recipes?${allergiesQuery}&${ingridentsQuery}&${veganQuery}&${vegetarianQuery}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setRecipes(data);
+      });
+  }, [allergies, ingredientsFilter, veganFilter, vegetarianFilter]);
 
   const addIngredient = useCallback((ingredient) => {
     setIngredientsFilter((prevFilter) => [...prevFilter, ingredient]);
@@ -90,6 +87,14 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setIngredients(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("/units")
+      .then((response) => response.json())
+      .then((data) => {
+        setUnits(data);
       });
   }, []);
 
@@ -112,6 +117,7 @@ function App() {
                 setVegetarianFilter,
                 veganFilter,
                 vegetarianFilter,
+                units,
               }}
             >
               <Header />
