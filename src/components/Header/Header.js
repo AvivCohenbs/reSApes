@@ -30,7 +30,9 @@ function Header() {
     setPassword("");
   };
 
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [contentMainFilter, setContentMainFilter] = useState("");
+
+  // const [isOpen, setIsOpen] = React.useState(false);
 
   // const handClick = () => {
   //   setIsOpen((prev) => !prev);
@@ -81,16 +83,36 @@ function Header() {
           </div>
 
           <ul className="menu-itemss">
-            <li>
-              <Link to="/Favorites">My recipes</Link>{" "}
+            <li
+              className={`${contentMainFilter === "myfav" ? "active" : ""}`}
+              onClick={() => {
+                setContentMainFilter("myfav");
+              }}
+            >
+              <Link to="/Favorites">My recipes</Link>
             </li>
-            <li>
+            <li
+              className={`${contentMainFilter === "tiptricks" ? "active" : ""}`}
+              onClick={() => {
+                setContentMainFilter("tiptricks");
+              }}
+            >
               <Link to="/Tips">Tips and Tricks</Link>{" "}
             </li>
-            <li>
+            <li
+              className={`${contentMainFilter === "communiy" ? "active" : ""}`}
+              onClick={() => {
+                setContentMainFilter("communiy");
+              }}
+            >
               <Link to="/Community">Community</Link>
             </li>
-            <li>
+            <li
+              className={`${contentMainFilter === "about" ? "active" : ""}`}
+              onClick={() => {
+                setContentMainFilter("about");
+              }}
+            >
               <Link to="/About">About</Link>{" "}
             </li>
             {/* <li>

@@ -168,7 +168,6 @@ function Recipes() {
             <div
               className={`${contentFilter === "popular" ? "active" : ""}`}
               onClick={() => {
-                // setState('popular')
                 setContentFilter("popular");
                 setRecipesDisplay(recipes.slice(0, 5));
               }}

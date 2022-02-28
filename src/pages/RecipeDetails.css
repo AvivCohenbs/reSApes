@@ -135,9 +135,7 @@
     height: 200px;
     display: flex;
   }
-  .post-comments {
-    margin-left: 20px;
-  }
+
   .add-comment-input {
     margin-left: 20px;
   }

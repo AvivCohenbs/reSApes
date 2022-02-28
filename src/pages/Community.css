@@ -128,7 +128,10 @@
   box-shadow: 0 2px 10px -3px #116530;
   cursor: pointer;
   margin-top: 22px;
-  margin-left: 975px;
+}
+.button-submit {
+  display: flex;
+  justify-content: center;
 }
 
 .unit-search {
@@ -164,7 +167,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
   margin-left: 15px;
 }
 
@@ -217,4 +219,80 @@
   display: flex;
   flex-direction: row;
   margin-top: 80px;
+}
+
+@media (max-width: 48em) {
+  .firsttitle {
+    font-size: 23px;
+  }
+  .container-name-des {
+    display: flex;
+    flex-direction: column;
+  }
+  .community-page {
+    width: 39em;
+    padding-left: 7px;
+    overflow-x: hidden;
+  }
+  .container-img {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 170px;
+  }
+
+  .switch-veg {
+    margin-top: 70px;
+  }
+
+  .sectitle {
+    font-size: 19px;
+  }
+  .container-title {
+    font-size: 15px;
+    margin-top: 50px;
+  }
+
+  .add-time {
+    padding-left: 6px;
+    margin-top: 80px;
+  }
+  .add-name {
+    padding-left: 6px;
+  }
+  .add-desc {
+    padding-left: 6px;
+  }
+  .add-difficulty {
+    padding-left: 5px;
+    margin-bottom: 15px;
+  }
+  .list-title {
+    padding-left: 4px;
+    font-size: 16px;
+  }
+
+  .instructions-title {
+    padding-left: 4px;
+    font-size: 16px;
+  }
+
+  .add-quantity {
+    width: 72px;
+  }
+  .add-unit {
+    width: 72px;
+  }
+  .add-ingredient {
+    width: 72px;
+  }
+  .instru-list {
+    width: 370px;
+  }
+  .sub-butt {
+    margin-bottom: 50px;
+  }
+  .button-submit {
+    margin-left: 300px;
+  }
 }

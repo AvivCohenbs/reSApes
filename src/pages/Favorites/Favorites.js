@@ -114,12 +114,7 @@ function Favorites() {
             You have {total} recipes in your list{" "}
           </div>
           <span className="items">{items}</span>
-          {/* <div className="reset"> */}
-          {/* <button onClick={() => setFavorites(!favorites)}>
-              Delete all recipes from your list
-            </button> */}
 
-          {/* <div> */}
           <div className="reset">
             <Button
               onClick={() => setFavorites(!favorites)}

@@ -118,15 +118,19 @@
 
 @media (max-width: 48em) {
   .title-fav {
-    padding: 0 5px;
+    padding: 0;
   }
   .second-title-fav {
-    padding: 0 5px;
+    padding: 0;
   }
   .items {
     height: 570px;
   }
   .reset {
-    padding: 0 5px;
+    padding: 0;
+    margin-top: 9px;
+  }
+  .items {
+    height: 470px;
   }
 }

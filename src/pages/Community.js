@@ -28,9 +28,11 @@ function Community() {
   const [instructions, setInstructions] = useState([""]);
   const [vegan, setVegan] = useState(false);
   const [vegetarian, setVegetarian] = useState(false);
-  const [ingredient, setIngredient] = useState([
-    { Quantity: "", Unit: "", Ingredients: "" },
-  ]);
+  const [ingredient, setIngredient] = useState([]);
+  const [selectedIngredient, setSelectedIngredient] = useState(null);
+  const [selectedUnit, setSelectedUnit] = useState(null);
+  const [selectedQty, setSelectedQty] = useState(0);
+  const [image, setImage] = useState("");
 
   const handelDifficultyChange = (event) => {
     console.log(event.target.value);
@@ -61,7 +63,14 @@ function Community() {
   };
 
   const handleAddClick = () => {
-    setIngredient([...ingredient, { Quantity: "", Unit: "", Ingredients: "" }]);
+    setIngredient([
+      ...ingredient,
+      {
+        Quantity: selectedQty,
+        Unit: selectedUnit,
+        Ingredient: selectedIngredient,
+      },
+    ]);
   };
 
   const handleRemoveInstru = (index) => {
@@ -88,17 +97,17 @@ function Community() {
       difficulty,
       description,
       instructions,
-      ingredients: ingredient,
+      ingredientsQuantities: ingredient,
       vegan,
       vegetarian,
     };
     console.log("addRecipe", addRecipe);
 
-    // fetch("/recipes", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(addRecipe),
-    // });
+    fetch("/recipes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(addRecipe),
+    });
   };
 
   const theme = createTheme({
@@ -108,7 +117,7 @@ function Community() {
       },
     },
   });
-
+  console.log(ingredient);
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -126,7 +135,14 @@ function Community() {
                 </span>
                 <div className="upload-img">
                   <Upload />
-                  <input type="file" id="img" name="img" accept="image/*" />
+                  <input
+                    enctype="multipart/form-data"
+                    type="file"
+                    id="img"
+                    name="img"
+                    accept="image/*"
+                    onChange={(e) => setImage(e.target.value)}
+                  />
                 </div>
               </div>
               <div className="switch-veg">
@@ -185,7 +201,7 @@ function Community() {
                 noValidate
                 autoComplete="off"
               >
-                <div>
+                <div className="add-desc">
                   <TextField
                     // error={!description.length}
                     onChange={(e) => setDecription(e.target.value)}
@@ -222,6 +238,78 @@ function Community() {
 
           <div className="add-inputList">
             <div className="list-title">List your ingredients</div>
+            <div className="Qua-uni-ingre">
+              <div className="add-quantity">
+                <TextField
+                  sx={{ width: 130 }}
+                  id="standard-basic"
+                  label="Quantity"
+                  variant="standard"
+                  placeholder="Add Quantity"
+                  type="number"
+                  min="0"
+                  max="20"
+                  step="0.1"
+                  name="Quantity"
+                  value={selectedQty}
+                  onChange={(e) => {
+                    setSelectedQty(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="add-unit">
+                <Stack spacing={3} sx={{ width: 130 }}>
+                  <Autocomplete
+                    onChange={(e, value) => {
+                      setSelectedUnit(value);
+                    }}
+                    autoWidth
+                    id="tags-standard"
+                    options={units}
+                    getOptionLabel={(unit) => unit.name}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        variant="standard"
+                        label="Unit"
+                        placeholder="Choose Unit"
+                      />
+                    )}
+                  />
+                </Stack>
+              </div>
+              <div className="add-ingredient">
+                <Stack spacing={3} sx={{ width: 130 }}>
+                  <Autocomplete
+                    onChange={(e, value) => {
+                      setSelectedIngredient(value);
+                    }}
+                    id="tags-standard"
+                    options={ingredients}
+                    getOptionLabel={(ingredient) => ingredient.name}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        variant="standard"
+                        label="Add Ingredient"
+                        placeholder="Choose Ingredient"
+                      />
+                    )}
+                  />
+                </Stack>
+              </div>
+              <div className="btn-box">
+                <Fab
+                  className="add-button"
+                  onClick={handleAddClick}
+                  color="primary"
+                  aria-label="add"
+                  size="small"
+                >
+                  <AddIcon />
+                </Fab>
+              </div>
+            </div>
             {ingredient.map((x, i) => {
               return (
                 <div className="Qua-uni-ingre">
@@ -247,6 +335,7 @@ function Community() {
                     <Stack spacing={3} sx={{ width: 130 }}>
                       <Autocomplete
                         autoWidth
+                        defaultValue={x.Unit}
                         id="tags-standard"
                         onChange={(e, value) =>
                           handleInputChange("Unit", value.name, i)
@@ -267,6 +356,7 @@ function Community() {
                   <div className="add-ingredient">
                     <Stack spacing={3} sx={{ width: 130 }}>
                       <Autocomplete
+                        defaultValue={x.Ingredient}
                         id="tags-standard"
                         onChange={(e, value) =>
                           handleInputChange("Ingredients", value.name, i)
@@ -285,22 +375,12 @@ function Community() {
                     </Stack>
                   </div>
                   <div className="btn-box">
-                    {ingredient.length !== 1 && (
+                    {ingredient.length !== 0 && (
                       <Button
                         sx={{ color: "#ffca40" }}
                         onClick={() => handleRemoveClick(i)}
                         startIcon={<DeleteIcon />}
                       ></Button>
-                    )}
-                    {ingredient.length - 1 === i && (
-                      <Fab
-                        onClick={handleAddClick}
-                        color="primary"
-                        aria-label="add"
-                        size="small"
-                      >
-                        <AddIcon />
-                      </Fab>
                     )}
                   </div>
                 </div>
@@ -360,9 +440,11 @@ function Community() {
                 })}
               </div>
             </Box>
-            <button className="sub-butt" type="submit">
-              Submit
-            </button>
+            <div className="button-submit">
+              <button className="sub-butt" type="submit">
+                Submit
+              </button>
+            </div>
           </div>
         </form>
       </ThemeProvider>

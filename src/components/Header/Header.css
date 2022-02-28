@@ -39,20 +39,18 @@
   font-size: 1.2rem;
 }
 
-.menu-itemss a {
+.menu-itemss li:hover {
+  color: #ffca40;
+  transition: color 0.3s ease-in-out;
+}
+.menu-itemss li.active {
+  color: #ffca40;
+}
+
+.menu-itemss li {
   text-decoration: none;
   color: #fefbf3;
   transition: color 0.3s ease-in-out;
-}
-
-.menu-itemss a:hover {
-  color: #ffca40;
-  transition: color 0.3s ease-in-out;
-}
-
-.menu-itemss a:focus {
-  color: #ffca40;
-  outline: none;
 }
 
 .logo {
@@ -85,6 +83,7 @@
 .form-login {
   padding: 0 30px;
   text-align: center;
+  color: #116530;
 }
 
 .img-login {
@@ -144,6 +143,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: black;
 }
 
 .bell {
@@ -187,6 +187,12 @@
     display: block;
     position: relative;
     height: 120px;
+  }
+
+  .login-container {
+    top: 270px;
+    left: 310px;
+    width: 245px;
   }
 
   .navbar-container input[type="checkbox"] {

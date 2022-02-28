@@ -14,9 +14,6 @@ function RecipeDetails() {
   const [recipe, setRecipe] = useState(null);
   const [recipeIngredient, setRecipeIngredient] = useState(null);
   const [comment, setComment] = useState("");
-  const [content, setContent] = useState("");
-  const [isPending, setIsPending] = useState("false");
-
   const { user } = useContext(userContext);
 
   const handleChangeComment = (event) => {
