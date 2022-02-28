@@ -89,7 +89,11 @@ function Recipe({ title, time, image, id, difficulty, button }) {
     <div className="recipe-recipe">
       <div className="recipe-card">
         <div className="recipe-image">
-          <img className="imgrec" src={image} alt="img" />
+          <img
+            className="imgrec"
+            src={`http://localhost:9000/images/${image}`}
+            alt="img"
+          />
         </div>
       </div>
       <div className="recipe-info">

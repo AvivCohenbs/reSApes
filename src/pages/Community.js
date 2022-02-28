@@ -32,7 +32,7 @@ function Community() {
   const [selectedIngredient, setSelectedIngredient] = useState(null);
   const [selectedUnit, setSelectedUnit] = useState(null);
   const [selectedQty, setSelectedQty] = useState(0);
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
 
   const handelDifficultyChange = (event) => {
     console.log(event.target.value);
@@ -97,16 +97,25 @@ function Community() {
       difficulty,
       description,
       instructions,
-      ingredientsQuantities: ingredient,
+      image,
+      ingredientsQuantities: JSON.stringify(ingredient),
       vegan,
       vegetarian,
     };
-    console.log("addRecipe", addRecipe);
+    console.log("image", image);
+    const data = new FormData();
+    for (const prop in addRecipe) {
+      data.append(prop, addRecipe[prop]);
+    }
+
+    for (const value of data.values()) {
+      console.log("form data", value);
+    }
 
     fetch("/recipes", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(addRecipe),
+      // headers: { "Content-Type": "application/json" },
+      body: data,
     });
   };
 
@@ -138,10 +147,10 @@ function Community() {
                   <input
                     enctype="multipart/form-data"
                     type="file"
-                    id="img"
-                    name="img"
+                    id="image"
+                    name="image"
                     accept="image/*"
-                    onChange={(e) => setImage(e.target.value)}
+                    onChange={(e) => setImage(e.target.files[0])}
                   />
                 </div>
               </div>
