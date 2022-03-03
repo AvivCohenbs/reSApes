@@ -33,7 +33,7 @@ function Recipes() {
   const [contentFilter, setContentFilter] = useState("popular");
 
   useEffect(() => {
-    setRecipesDisplay(recipes.slice(0, 5));
+    setRecipesDisplay(recipes.slice(0, 12));
   }, [recipes]);
 
   useEffect(() => {

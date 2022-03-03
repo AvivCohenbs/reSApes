@@ -1,5 +1,4 @@
 import "./Recipe.css";
-// import { ReactComponent as Button } from "./button.svg";
 import { Link } from "react-router-dom";
 import { ReactComponent as Timeclock } from "./Timeclock.svg";
 import { ReactComponent as Cook } from "./Cook.svg";

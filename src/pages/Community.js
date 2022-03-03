@@ -25,7 +25,8 @@ function Community() {
   const [time, setTime] = useState(0);
   const [difficulty, setDifficulty] = useState("");
   const [description, setDecription] = useState("");
-  const [instructions, setInstructions] = useState([""]);
+  const [instructions, setInstructions] = useState([]);
+  const [instruction, setInstruction] = useState(null);
   const [vegan, setVegan] = useState(false);
   const [vegetarian, setVegetarian] = useState(false);
   const [ingredient, setIngredient] = useState([]);
@@ -71,6 +72,7 @@ function Community() {
         Ingredient: selectedIngredient,
       },
     ]);
+    setSelectedQty(0);
   };
 
   const handleRemoveInstru = (index) => {
@@ -80,7 +82,9 @@ function Community() {
   };
 
   const handleAddInstru = () => {
-    setInstructions([...instructions, ""]);
+    setInstructions([...instructions, instruction]);
+    setInstruction(null);
+    setInstruction("");
   };
 
   const handleChangeInstru = (index, value) => {
@@ -102,19 +106,20 @@ function Community() {
       vegan,
       vegetarian,
     };
-    console.log("image", image);
+
     const data = new FormData();
     for (const prop in addRecipe) {
-      data.append(prop, addRecipe[prop]);
-    }
-
-    for (const value of data.values()) {
-      console.log("form data", value);
+      if (Array.isArray(addRecipe[prop])) {
+        addRecipe[prop].forEach((propValue) => {
+          data.append(prop, propValue);
+        });
+      } else {
+        data.append(prop, addRecipe[prop]);
+      }
     }
 
     fetch("/recipes", {
       method: "POST",
-      // headers: { "Content-Type": "application/json" },
       body: data,
     });
   };
@@ -126,7 +131,7 @@ function Community() {
       },
     },
   });
-  console.log(ingredient);
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -138,10 +143,18 @@ function Community() {
           <div className="container-name-des">
             <div className="container-img">
               <div className="container-items">
-                <span className="container-title">
-                  {" "}
-                  Upload a stimulating image
-                </span>
+                {!image ? (
+                  <span className="container-title">
+                    {" "}
+                    Upload a stimulating image
+                  </span>
+                ) : (
+                  <img
+                    src={URL.createObjectURL(image)}
+                    alt=""
+                    style={{ width: "100%" }}
+                  />
+                )}
                 <div className="upload-img">
                   <Upload />
                   <input
@@ -412,37 +425,48 @@ function Community() {
             >
               <div>
                 <div className="instructions-title">Add your instructions</div>
+                <div className="instru-list">
+                  <TextField
+                    style={{ width: 900 }}
+                    value={instruction}
+                    onChange={(e) => setInstruction(e.target.value)}
+                    id="outlined-multiline-static"
+                    label=" Add Instruction"
+                    multiline
+                    rows={1}
+                  />
+                  <div className="btn-box">
+                    <Fab
+                      sx={{ ml: 2 }}
+                      onClick={handleAddInstru}
+                      color="primary"
+                      aria-label="add"
+                      size="small"
+                    >
+                      <AddIcon />
+                    </Fab>
+                  </div>
+                </div>
                 {instructions.map((x, i) => {
                   return (
                     <div className="instru-list">
                       {i + 1}.
                       <TextField
                         style={{ width: 900 }}
+                        value={x}
                         onChange={(e) => handleChangeInstru(i, e.target.value)}
                         id="outlined-multiline-static"
                         label="Instruction"
                         multiline
                         rows={1}
+                        InputLabelProps={{ shrink: true }}
                       />
                       <div className="btn-box">
-                        {instructions.length !== 1 && (
-                          <Button
-                            sx={{ color: "#ffca40" }}
-                            onClick={() => handleRemoveInstru(i)}
-                            startIcon={<DeleteIcon />}
-                          ></Button>
-                        )}
-                        {instructions.length - 1 === i && (
-                          <Fab
-                            sx={{ ml: 2 }}
-                            onClick={handleAddInstru}
-                            color="primary"
-                            aria-label="add"
-                            size="small"
-                          >
-                            <AddIcon />
-                          </Fab>
-                        )}
+                        <Button
+                          sx={{ color: "#ffca40" }}
+                          onClick={() => handleRemoveInstru(i)}
+                          startIcon={<DeleteIcon />}
+                        ></Button>
                       </div>
                     </div>
                   );

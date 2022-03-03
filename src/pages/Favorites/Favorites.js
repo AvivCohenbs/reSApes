@@ -63,7 +63,11 @@ function Favorites() {
       <div key={id} className="recipe-fav-card">
         <div className="recipe-fav-img">
           <div className="recipe-fav-image">
-            <img className="imgrec-fav" src={value.image} alt="av"></img>{" "}
+            <img
+              className="imgrec-fav"
+              src={`http://localhost:9000/images/${recipe.image}`}
+              alt="av"
+            />
           </div>
         </div>
         <div className="recipe-info-fav">
@@ -116,19 +120,21 @@ function Favorites() {
           <span className="items">{items}</span>
 
           <div className="reset">
-            <Button
-              onClick={() => setFavorites(!favorites)}
-              variant="contained"
-              sx={{
-                bgcolor: "#116530",
-                minWidth: "30px",
-                height: "25px",
-                boxShadow: "none",
-                fontSize: "0.85rem",
-              }}
-            >
-              Delete all recipes from your list
-            </Button>
+            {!!total && (
+              <Button
+                onClick={() => setFavorites(!favorites)}
+                variant="contained"
+                sx={{
+                  bgcolor: "#116530",
+                  minWidth: "30px",
+                  height: "25px",
+                  boxShadow: "none",
+                  fontSize: "0.85rem",
+                }}
+              >
+                Delete all recipes from your list
+              </Button>
+            )}
           </div>
         </div>
       </ThemeProvider>

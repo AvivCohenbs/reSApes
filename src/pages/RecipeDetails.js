@@ -104,7 +104,13 @@ function RecipeDetails() {
                 ))}
               </div>
               <div className="img-side">
-                <img className="imgdet" src={recipe.image} alt="img" />
+                <div>
+                  <img
+                    className="imgdet"
+                    src={`http://localhost:9000/images/${recipe.image}`}
+                    alt="img"
+                  />
+                </div>
 
                 <div className="leave-comment">LEAVE A COMMENT</div>
 
