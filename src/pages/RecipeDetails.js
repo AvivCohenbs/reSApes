@@ -1,13 +1,14 @@
 import "./RecipeDetails.css";
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
-import { ReactComponent as Clock } from "./clock.svg";
 import Comments from "../components/Comments";
+import { ReactComponent as Timeclock } from "./Timeclock.svg";
 import { Button, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import List from "@mui/material/List";
 import userContext from "../UserContext";
+import { ReactComponent as Cook } from "./Cook.svg";
 
 function RecipeDetails() {
   const { id } = useParams();
@@ -27,7 +28,7 @@ function RecipeDetails() {
 
     fetch(`/recipes/${id}/comment`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", id: user._id },
       body: JSON.stringify(addComment),
     })
       .then((response) => response.json())
@@ -63,9 +64,14 @@ function RecipeDetails() {
                 <div className="titledet">{recipe.title}</div>
                 <div className="rat-tim">
                   <div>
-                    <div>
-                      <Clock />
+                    <div className="time-diff">
+                      <Timeclock />
                       <span className="res-min">{recipe.time} min</span>
+                      <div className="cook-recipe-difficulty">
+                        <Cook />
+
+                        <span className="difficulty">{recipe.difficulty}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -98,7 +104,7 @@ function RecipeDetails() {
                 </div>
                 {recipe.instructions.map((step, index) => (
                   <div key={index}>
-                    <h3>Step {index + 1}</h3>
+                    <h3 className="step-by-step"> Step {index + 1}</h3>
                     <p>{step}</p>
                   </div>
                 ))}

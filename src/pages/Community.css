@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   overflow: scroll;
-  padding: 180px 85px;
+  padding: 145px 85px;
   height: 600px;
 }
 
@@ -118,6 +118,9 @@
   flex-direction: column;
 }
 
+.btn-box {
+  margin-top: 12px;
+}
 .sub-butt {
   border-radius: 100px;
   border: none;
@@ -132,6 +135,8 @@
 .button-submit {
   display: flex;
   justify-content: center;
+  margin-left: 200px;
+  margin-top: 10px;
 }
 
 .unit-search {
@@ -175,6 +180,7 @@
   color: #116530;
   font-weight: bolder;
   font-size: large;
+  margin-bottom: 18px;
 }
 
 .instructions-title {
@@ -184,6 +190,11 @@
   margin-left: 15px;
   margin-bottom: 15px;
   margin-top: 20px;
+}
+
+.add-icon-style {
+  margin-left: 6px;
+  margin-top: 13px;
 }
 
 .instru-list {

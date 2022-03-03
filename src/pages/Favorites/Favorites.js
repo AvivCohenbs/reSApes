@@ -8,6 +8,7 @@ import { ReactComponent as Cook } from "./Cook.svg";
 import Heart from "react-heart";
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function Favorites() {
   const [total, setTotal] = useContext(TotalContext);
@@ -65,13 +66,13 @@ function Favorites() {
           <div className="recipe-fav-image">
             <img
               className="imgrec-fav"
-              src={`http://localhost:9000/images/${recipe.image}`}
+              src={`http://localhost:9000/images/${value.image}`}
               alt="av"
             />
           </div>
         </div>
         <div className="recipe-info-fav">
-          <h3 className="recipe-title-fav">{value.title}</h3>{" "}
+          <div className="recipe-title-fav">{value.title}</div>{" "}
           <div>
             <Link to={`/recipes/${id}`}>
               <Button
@@ -81,7 +82,8 @@ function Favorites() {
                   width: "12px",
                   height: "25px",
                   boxShadow: "none",
-                  fontSize: "0.85rem",
+                  fontSize: "0.70rem",
+                  borderRadius: 10,
                 }}
               >
                 Start
@@ -112,30 +114,25 @@ function Favorites() {
     <>
       <ThemeProvider theme={theme}>
         <div className="fav-page">
-          <div className="title-fav"> My Favorites 🖤</div>
-          <div className="second-title-fav">
-            {" "}
-            You have {total} recipes in your list{" "}
+          <div className="title-and-remove">
+            <div className="title-fav"> My Favorites </div>
+            <div>
+              {!!total && (
+                <div onClick={() => setFavorites(!favorites)} className="reset">
+                  <DeleteIcon /> Remove All
+                </div>
+              )}
+            </div>
           </div>
-          <span className="items">{items}</span>
-
-          <div className="reset">
-            {!!total && (
-              <Button
-                onClick={() => setFavorites(!favorites)}
-                variant="contained"
-                sx={{
-                  bgcolor: "#116530",
-                  minWidth: "30px",
-                  height: "25px",
-                  boxShadow: "none",
-                  fontSize: "0.85rem",
-                }}
-              >
-                Delete all recipes from your list
-              </Button>
+          <div>
+            {!total && (
+              <div className="second-title-fav">
+                {" "}
+                You have 0 recipes in your list{" "}
+              </div>
             )}
           </div>
+          <span className="items">{items}</span>
         </div>
       </ThemeProvider>
     </>

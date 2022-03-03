@@ -17,6 +17,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import UserContext from "../UserContext";
 
 function Community() {
   const { ingredients, units } = useContext(IngredientsContext);
@@ -34,7 +35,8 @@ function Community() {
   const [selectedUnit, setSelectedUnit] = useState(null);
   const [selectedQty, setSelectedQty] = useState(0);
   const [image, setImage] = useState(null);
-
+  const { user } = useContext(UserContext);
+  console.log(user);
   const handelDifficultyChange = (event) => {
     console.log(event.target.value);
     setDifficulty(event.target.value);
@@ -118,9 +120,12 @@ function Community() {
       }
     }
 
-    fetch("/recipes", {
+    await fetch("/recipes", {
       method: "POST",
       body: data,
+      headers: {
+        id: user?._id,
+      },
     });
   };
 
@@ -321,15 +326,18 @@ function Community() {
                 </Stack>
               </div>
               <div className="btn-box">
-                <Fab
-                  className="add-button"
-                  onClick={handleAddClick}
-                  color="primary"
-                  aria-label="add"
-                  size="small"
-                >
-                  <AddIcon />
-                </Fab>
+                <div className="add-icon-style">
+                  <Fab
+                    className="add-button"
+                    onClick={handleAddClick}
+                    color="primary"
+                    aria-label="add"
+                    size="small"
+                  >
+                    {" "}
+                    <AddIcon />{" "}
+                  </Fab>
+                </div>
               </div>
             </div>
             {ingredient.map((x, i) => {

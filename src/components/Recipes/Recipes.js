@@ -94,15 +94,14 @@ function Recipes() {
               </b>
             </span>
             <span className="workhorse">
-              <br /> Here are our superstar workhorse recipes, <br /> designed
-              and tasted to help you cook a great meal. <br />
-              Add the ingredients you have in your fridge and find the recipe
-              that suits you best!
+              <br /> Here are our superstar workhorse recipes, designed and
+              tasted to help you cook a great meal. Add the ingredients you have
+              in your fridge and find the recipe that suits you best!
             </span>
           </div>
 
           <div className="row-search-switch">
-            <Stack spacing={3} sx={{ width: 500 }}>
+            <Stack spacing={3} sx={{ width: 700 }}>
               <Autocomplete
                 multiple
                 id="tags-standard"

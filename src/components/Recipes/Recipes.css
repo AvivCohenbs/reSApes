@@ -5,7 +5,7 @@
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  height: 40vh;
+  height: 52vh;
   justify-content: space-evenly;
 }
 
@@ -25,6 +25,11 @@
 
 .switch2 {
   padding-left: 5px;
+  margin-top: 14px;
+}
+
+.switch1 {
+  margin-top: 14px;
 }
 
 .cf:before,
@@ -152,12 +157,10 @@
 
 .text {
   display: flex;
-  flex-direction: column;
-  width: 650px;
+  flex-direction: row;
   margin-top: 20px;
-  font-size: 25px;
   padding: 0 65px;
-  font-family: "Anton", sans-serif;
+  justify-content: space-between;
 }
 
 .change-color {
@@ -165,12 +168,14 @@
   line-height: 1.4;
   color: #116530;
   font-weight: bolder;
+  font-size: 44px;
 }
 
 .workhorse {
   line-height: 1.2;
   display: flex;
-  font-weight: bolder;
+  margin-right: 300px;
+  width: 298px;
 }
 
 .pop-all {
@@ -178,11 +183,13 @@
   flex-direction: row;
   align-items: center;
   margin-left: 60px;
-  color: black;
-  font-size: 14pt;
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 25px;
+  margin-top: 18px;
+  color: #969d9c;
+  font-size: 12pt;
+  font-weight: bold;
 }
 
 .pop-margin {
@@ -190,11 +197,11 @@
 }
 
 .pop-all div:hover {
-  color: #116530;
+  color: #ffca40;
   transition: color 0.3s ease-in-out;
 }
 .pop-all div.active {
-  color: #116530;
+  color: #ffca40;
 }
 
 @media (max-width: 48em) {
@@ -204,6 +211,10 @@
     padding: 0 5px;
     font-size: 18px;
     width: 400px;
+  }
+
+  .change-color {
+    font-size: 30px;
   }
 
   .row-search-switch {
@@ -217,6 +228,9 @@
     width: 120px;
   }
   .workhorse {
-    width: 337px;
+    line-height: 1.2;
+    display: flex;
+    width: 370px;
+    line-height: 1.3;
   }
 }

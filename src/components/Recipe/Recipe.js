@@ -96,7 +96,7 @@ function Recipe({ title, time, image, id, difficulty, button }) {
         </div>
       </div>
       <div className="recipe-info">
-        <h3 className="recipe-title">{title}</h3>{" "}
+        <div className="recipe-title">{title}</div>{" "}
         <div>
           <Link to={`/recipes/${id}`}>
             <Button
@@ -106,7 +106,8 @@ function Recipe({ title, time, image, id, difficulty, button }) {
                 width: "12px",
                 height: "25px",
                 boxShadow: "none",
-                fontSize: "0.85rem",
+                fontSize: "0.70rem",
+                borderRadius: 10,
               }}
             >
               Start

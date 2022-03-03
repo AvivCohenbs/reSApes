@@ -1,9 +1,8 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
-import React, { useState, useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
+import React, { useState, useContext, useEffect } from "react";
 import { ReactComponent as Profile } from "./Profile.svg";
 import { ReactComponent as Logo } from "./logo.svg";
-// import { ReactComponent as Bell } from "./Bell.svg";
 import Box from "@mui/material/Box";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import userContext from "../../UserContext";
@@ -13,6 +12,7 @@ function Header() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, user, logout } = useContext(userContext);
+  const { pathname } = useLocation();
 
   const handleClick = () => {
     setOpen((prev) => !prev);
@@ -32,15 +32,19 @@ function Header() {
 
   const [contentMainFilter, setContentMainFilter] = useState("");
 
-  // const [isOpen, setIsOpen] = React.useState(false);
-
-  // const handClick = () => {
-  //   setIsOpen((prev) => !prev);
-  // };
-
-  // const handClickAway = () => {
-  //   setIsOpen(false);
-  // };
+  useEffect(() => {
+    let route = "";
+    if (pathname.includes("Community")) {
+      route = "community";
+    } else if (pathname.includes("Favorites")) {
+      route = "myfav";
+    } else if (pathname.includes("Tips")) {
+      route = "tiptricks";
+    } else if (pathname.includes("About")) {
+      route = "about";
+    }
+    setContentMainFilter(route);
+  }, [pathname]);
 
   return (
     <div className="header">
@@ -83,56 +87,22 @@ function Header() {
           </div>
 
           <ul className="menu-itemss">
-            <li
-              className={`${contentMainFilter === "myfav" ? "active" : ""}`}
-              onClick={() => {
-                setContentMainFilter("myfav");
-              }}
-            >
+            <li className={`${contentMainFilter === "myfav" ? "active" : ""}`}>
               <Link to="/Favorites">My recipes</Link>
             </li>
             <li
               className={`${contentMainFilter === "tiptricks" ? "active" : ""}`}
-              onClick={() => {
-                setContentMainFilter("tiptricks");
-              }}
             >
               <Link to="/Tips">Tips and Tricks</Link>{" "}
             </li>
             <li
-              className={`${contentMainFilter === "communiy" ? "active" : ""}`}
-              onClick={() => {
-                setContentMainFilter("communiy");
-              }}
+              className={`${contentMainFilter === "community" ? "active" : ""}`}
             >
               <Link to="/Community">Community</Link>
             </li>
-            <li
-              className={`${contentMainFilter === "about" ? "active" : ""}`}
-              onClick={() => {
-                setContentMainFilter("about");
-              }}
-            >
+            <li className={`${contentMainFilter === "about" ? "active" : ""}`}>
               <Link to="/About">About</Link>{" "}
             </li>
-            {/* <li>
-              <ClickAwayListener
-                mouseEvent="onMouseDown"
-                touchEvent="onTouchStart"
-                onClickAway={handClickAway}
-              >
-                <Box>
-                  <button className="bell" type="button" onClick={handClick}>
-                    <Bell />
-                  </button>
-                  {isOpen ? (
-                    <Box className="notes-container">
-                      <div>NOTES</div>
-                    </Box>
-                  ) : null}
-                </Box>
-              </ClickAwayListener>
-            </li> */}
 
             <li>
               <ClickAwayListener
