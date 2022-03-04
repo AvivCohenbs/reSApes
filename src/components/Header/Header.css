@@ -65,6 +65,7 @@
   background-color: #116530;
   cursor: pointer;
   border: none;
+  margin-bottom: 24px;
 }
 
 .login-container {

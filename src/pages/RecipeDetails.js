@@ -120,12 +120,6 @@ function RecipeDetails() {
 
                 <div className="leave-comment">LEAVE A COMMENT</div>
 
-                <List className="post-comments">
-                  {recipe.comments.map((comment) => {
-                    return <Comments comment={comment} />;
-                  })}
-                </List>
-
                 <form className="post_form" onSubmit={handleClickComment}>
                   <div className="add-comment-input">
                     <TextField
@@ -154,6 +148,12 @@ function RecipeDetails() {
                     Sent
                   </Button>
                 </form>
+
+                <List className="post-comments">
+                  {recipe.comments.map((comment) => {
+                    return <Comments comment={comment} />;
+                  })}
+                </List>
               </div>
             </div>
           )}
