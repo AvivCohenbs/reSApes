@@ -10,7 +10,7 @@ function Tips() {
   return (
     <div className="tips-page">
       <div className="text-left">
-        <div className="title-page">Tips and Tricks</div>
+        <div className="title-page">Cooking Tips & Tricks</div>
         <div className="title-tips">
           We've compiled this list of tips to make <br /> every time in the
           kitchen a successful one. Check ‘em out!
@@ -19,7 +19,194 @@ function Tips() {
         <div className="two-accordions">
           <div className="p">
             <div className="acor">
-              <Accordion sx={{ width: 200 }}>
+              <Accordion sx={{ width: 600 }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                  sx={{ backgroundColor: "#fefbf3" }}
+                >
+                  <Typography>
+                    <div className="titles-acor">
+                      <b> Tips for Keeping Your Kitchen Clean</b>
+                    </div>
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
+                  <Typography>
+                    <ul className="paragraph">
+                      <li>Keep it minimal</li>
+                      <li>Start with a clean kitchen</li>
+                      <li>Clean while you wait</li>
+                      <li>Let the water out of the sink right away</li>
+                      <li>Wipe out the sink after washing dishes</li>
+                      <li> Clean up spills ASAP</li>
+                      <li>Clean as you go</li>
+                      <li>Have a compost/trash bowl</li>
+                      <li>A place for everything</li>
+                      <li> Have set days and times for doing things</li>
+                    </ul>
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion sx={{ width: 600 }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                  sx={{ backgroundColor: "#fefbf3" }}
+                >
+                  <Typography>
+                    <div className="titles-acor">
+                      <b> Tips if you feel hopeless in the kitchen </b>
+                    </div>
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
+                  <Typography>
+                    <div className="paragraph">
+                      {" "}
+                      <ul className="paragraph">
+                        <li>Start with one or two basic cookbooks</li>
+                        <li>Keep the fancy equipment to a minimum</li>
+                        <li>Don't go off-recipe until you're more confident</li>
+                        <li>Good knives are a must</li>
+                        <li>Start a collection of herbs and spices</li>
+                        <li>Cook in bulk</li>
+                        <li>Invest in a set of basic pans</li>
+                        <li>Don't get frustrated</li>
+                      </ul>
+                    </div>
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion sx={{ width: 600 }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                  sx={{ backgroundColor: "#fefbf3" }}
+                >
+                  <Typography>
+                    <div className="titles-acor">
+                      <b> Tips to Help You Cook Faster </b>
+                    </div>
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
+                  <Typography>
+                    <div className="paragraph">
+                      <ul>
+                        <li>
+                          Take one minute to mentally walk through what you're
+                          cooking
+                        </li>
+                        <li>Set up appliances and heat the oven</li>
+                        <li>Get the water boiling immediately</li>
+                        <li>
+                          Load a pan with ingredients from the pantry or fridge
+                        </li>
+                        <li>Clean your produce efficiently</li>
+                        <li>Figure out your prepping order and multitask</li>
+                      </ul>
+                    </div>
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+
+              <Accordion sx={{ width: 600 }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                  sx={{ backgroundColor: "#fefbf3" }}
+                >
+                  <Typography>
+                    <div className="titles-acor">
+                      <b>Tip for storing leafy greens to keep them fresh </b>
+                    </div>
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
+                  <Typography>
+                    <div className="paragraph">
+                      Leafy greens stay fresh longer if they're rinsed, wrapped
+                      in a paper towel or tea towel, and refrigerated in a
+                      container or sealed plastic bag. You can do this with
+                      lettuce greens, bok choy, Swiss chard, kale and spinach.
+                    </div>
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion sx={{ width: 600 }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                  sx={{ backgroundColor: "#fefbf3" }}
+                >
+                  <Typography>
+                    <div className="titles-acor">
+                      <b>Tips for storing meat and poultry </b>
+                    </div>
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
+                  <Typography>
+                    <div className="paragraph">
+                      <ul>
+                        <li>
+                          Store raw meat and poultry in clean, sealed containers
+                          on the bottom shelf of the fridge
+                        </li>
+                        <li>
+                          Follow any storage instructions on the label and do
+                          not eat meat after its use by date
+                        </li>
+                        <li>
+                          Keep cooked meat separate from raw meat and
+                          ready-to-eat foods in general
+                        </li>
+                      </ul>
+                    </div>
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion sx={{ width: 600 }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                  sx={{ backgroundColor: "#fefbf3" }}
+                >
+                  <Typography>
+                    <div className="titles-acor">
+                      <b>Tips for Freezing Fresh Fish</b>
+                    </div>
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
+                  <Typography>
+                    <div className="paragraph">
+                      <ul>
+                        <li>
+                          If you don't plan to eat the fish within a couple of
+                          days, freeze it instead
+                        </li>
+                        <li>Remove the fish from the store packaging</li>
+                        <li>
+                          Rinse it under cold water and use paper towels to dry
+                          it
+                        </li>
+                        <li>Put the fish in freezer bags or containers</li>
+                        <li>Label and date the bags or containers</li>
+                        <li>Put in a freezer set at zero degrees or colder</li>
+                      </ul>
+                    </div>
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion sx={{ width: 600 }}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
@@ -28,21 +215,46 @@ function Tips() {
                 >
                   <Typography>
                     <div className="titles-acor">
-                      <b> Tip 1</b>
+                      <b> Egg preparation tips</b>
                     </div>
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
                   <Typography>
-                    <div className="paragraph">
-                      Set up your workspace by gathering clean tools, bowls and
-                      utensils. And make sure to keep a trashcan within arm’s
-                      reach.
-                    </div>
+                    <ul className="paragraph">
+                      <li>
+                        {" "}
+                        To create an egg wash, whisk together a large egg with
+                        one tablespoon of water until smooth. Use as a glue to
+                        seal pastries, then brush on top for a glossy appearance
+                      </li>
+                      <li>Learn all the different ways to cook an egg</li>
+                      <li>
+                        When poaching an egg, add a teaspoon of white vinegar to
+                        simmering water to help keep the yolk from breaking
+                      </li>
+                      <li>
+                        {" "}
+                        For a great hardboiled egg every time, bring your pot to
+                        a boil and then turn off the heat. Let your eggs sit in
+                        the heated pot for 12 minutes and then transfer to cold
+                        water
+                      </li>
+                      <li>
+                        Crack eggs on a paper towel on the counter — no shells
+                        and easy cleanup!
+                      </li>
+                      <li>
+                        Make an ideal sunny-side egg by covering your pan with a
+                        lid and letting the steam cook your egg. No flipping
+                        required
+                      </li>
+                    </ul>
                   </Typography>
                 </AccordionDetails>
               </Accordion>
-              <Accordion sx={{ width: 200 }}>
+
+              <Accordion sx={{ width: 600 }}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel2a-content"
@@ -51,21 +263,32 @@ function Tips() {
                 >
                   <Typography>
                     <div className="titles-acor">
-                      <b> Tip 2</b>
+                      <b>Tips to Do Pasta Right</b>
                     </div>
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
                   <Typography>
                     <div className="paragraph">
-                      To create an egg wash, whisk together a large egg with one
-                      tablespoon of water until smooth. Use as a glue to seal
-                      pastries, then brush on top for a glossy appearance.
+                      <ul>
+                        <li>Use a big enough pot</li>
+                        <li>Use plenty of water</li>
+                        <li>Season the pasta water</li>
+                        <li>Let the water come to a boil first</li>
+                        <li>Stir right away — and every couple minutes</li>
+                        <li>
+                          Don't rely solely on the cooking time on your pasta's
+                          package
+                        </li>
+                        <li>Cook your pasta to just before al dente</li>
+                        <li>Reserve the pasta water</li>
+                      </ul>
                     </div>
                   </Typography>
                 </AccordionDetails>
               </Accordion>
-              <Accordion sx={{ width: 200 }}>
+
+              <Accordion sx={{ width: 600 }}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel2a-content"
@@ -74,21 +297,28 @@ function Tips() {
                 >
                   <Typography>
                     <div className="titles-acor">
-                      <b>Tip 3 </b>
+                      <b>The best onion cutting tips to prevent crying </b>
                     </div>
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
                   <Typography>
                     <div className="paragraph">
-                      Peel tomatoes with ease! Cut an X in the top, and then
-                      simmer in a pot of hot water for 15 to 30 seconds. Cool
-                      down and the skin will fall right off.
+                      <ul>
+                        <li>Chill your onions</li>
+                        <li>Fan away the fumes</li>
+                        <li>Cut under cold water</li>
+                        <li>Sharpen that knife</li>
+                        <li>Work on your knife skills</li>
+                        <li>Cut near an open flame</li>
+                        <li>Cut off the top of the onion</li>
+                        <li>Wear goggles</li>
+                      </ul>
                     </div>
                   </Typography>
                 </AccordionDetails>
               </Accordion>
-              <Accordion sx={{ width: 200 }}>
+              <Accordion sx={{ width: 600 }}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel2a-content"
@@ -97,370 +327,50 @@ function Tips() {
                 >
                   <Typography>
                     <div className="titles-acor">
-                      <b>Tip 4 </b>
+                      <b>
+                        The best tips to prevent burning food on the stovetop{" "}
+                      </b>
                     </div>
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
                   <Typography>
                     <div className="paragraph">
-                      Get comfortable! Wear comfy clothes and an apron when you
-                      work in the kitchen and you won’t have to worry about
-                      getting dirty.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 5 </b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      Invest in a baking scale. Scales are not only an accurate
-                      way to measure your cooking ingredients, but they
-                      streamline the entire process.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 6 </b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      Always read and re-read your recipes before you start
-                      cooking.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 7 </b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">Clean as you go.</div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 8</b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      Use 2 skewers instead of 1 when grilling or roasting to
-                      prevent your food from spinning.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 9 </b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      Learn and practice the rule of thumb to check the
-                      readiness of steak.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 10 </b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      To prevent butter from over-browning in your pan, add a
-                      little bit of lemon juice.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-            </div>
-          </div>
-          <div className="p2">
-            <div className="acor">
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b> Tip 11</b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      Embrace salt. Don’t be afraid to use salt; it pulls the
-                      flavors out of your dishes. Cook with kosher salt and
-                      season with sea salt.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b> Tip 12</b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      No luck finding shallots? Replace with a combination of
-                      onions and garlic.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 13 </b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      After handling garlic, rub your fingers on stainless
-                      steel, like your sink, to get rid of the odor.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 14 </b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      Ovens can lie. Place a second thermometer in your oven to
-                      ensure proper preheating temperatures.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 15 </b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      Ignore cooking times. Check your dishes by using your own
-                      senses (smell, taste, touch) to decide when they are done.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 16 </b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      The most versatile and important tool is a sharp chef’s
-                      knife.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 17 </b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      Learn all the different ways to cook an egg.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 18</b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      When poaching an egg, add a teaspoon of white vinegar to
-                      simmering water to help keep the yolk from breaking.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 19 </b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      Always taste your food before seasoning.
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ width: 200 }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                  sx={{ backgroundColor: "#fefbf3" }}
-                >
-                  <Typography>
-                    <div className="titles-acor">
-                      <b>Tip 20 </b>
-                    </div>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ backgroundColor: "#fefbf3" }}>
-                  <Typography>
-                    <div className="paragraph">
-                      Keep your spices away from sources of heat like the stove
-                      or lights. Herbs and spices can lose their flavor when
-                      exposed to humidity and heat.
+                      <ul>
+                        <li>
+                          Turn down the heat. Once you get used to your pots and
+                          stove top you’ll realize that “medium-high” only needs
+                          to be at “medium” on your stove top for the same
+                          results — especially on electric stove tops and if you
+                          let the pot heat up quickly
+                        </li>
+                        <li>
+                          Practice with what you’re cooking. When you cook
+                          something, actually record how long you’re cooking it.
+                          If it burns, don’t cook it so long next time
+                        </li>
+                        <li>Stir things regularly, as the recipe calls for</li>
+                        <li>
+                          Use cooking oils, olive oil is great for transferring
+                          the heat to the food and adding flavor
+                        </li>
+                        <li>
+                          Cover the pot and check it more often. When you cover
+                          the pot it can help cook things quicker by keeping the
+                          heat and steam in, it’ll cook more of the food that is
+                          not in contact with the stove, so you won’t have to
+                          cook things as long to get it cooked thoroughly
+                        </li>
+                        <li>Cook smaller things. it cooks better</li>
+                        <li>
+                          Use the oven, too. Before you get started, preheat the
+                          oven to 425 or so. Sear the outsides of the food on
+                          medium-high for about 3–5 minutes per side. Then
+                          transfer oven safe pan to oven for 8–10 minutes
+                          (depending on the size of the food). Make sure it’s
+                          cooked to a safe temperature
+                        </li>
+                      </ul>
                     </div>
                   </Typography>
                 </AccordionDetails>

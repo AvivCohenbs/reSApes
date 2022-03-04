@@ -39,11 +39,6 @@
   border-radius: 45px;
 }
 
-.two-accordions {
-  display: flex;
-  flex-direction: row;
-}
-
 .img-cheers {
   display: flex;
   padding-top: 20px;
