@@ -90,7 +90,7 @@ function RecipeDetails() {
                     {recipe.ingredientsQuantities.map(
                       (ingredientQuantity, index) => {
                         return (
-                          <li key={index}>
+                          <li key={index} className="list-ing">
                             {` ${ingredientQuantity.quantity} ${ingredientQuantity.unit.name} of ${ingredientQuantity.ingredient.name}`}
                           </li>
                         );
