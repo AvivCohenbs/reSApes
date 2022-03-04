@@ -72,6 +72,20 @@
   object-fit: cover;
 }
 
+ul {
+  list-style: none;
+}
+
+ul .li-tips::before {
+  content: "\2022";
+  color: #116530;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  line-height: 1.5;
+}
+
 @media (max-width: 48em) {
   .p {
     display: flex;
