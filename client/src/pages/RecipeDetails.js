@@ -26,7 +26,7 @@ function RecipeDetails() {
     const addComment = { user: user._id, content: comment };
     console.log(addComment);
 
-    fetch(`/recipes/${id}/comment`, {
+    fetch(`/api/recipes/${id}/comment`, {
       method: "POST",
       headers: { "Content-Type": "application/json", id: user._id },
       body: JSON.stringify(addComment),
@@ -38,7 +38,7 @@ function RecipeDetails() {
   };
 
   useEffect(() => {
-    fetch(`/recipes/${id}`)
+    fetch(`/api/recipes/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setRecipe(data);
@@ -113,7 +113,7 @@ function RecipeDetails() {
                 <div>
                   <img
                     className="imgdet"
-                    src={`http://localhost:9000/images/${recipe.image}`}
+                    src={`/api/images/${recipe.image}`}
                     alt="img"
                   />
                 </div>

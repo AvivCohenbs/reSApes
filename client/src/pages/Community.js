@@ -120,7 +120,7 @@ function Community() {
       }
     }
 
-    await fetch("/recipes", {
+    await fetch("/api/recipes", {
       method: "POST",
       body: data,
       headers: {

@@ -52,6 +52,8 @@ const app = express();
 
 app.use(express.json());
 
+app.use(express.static("client/build"));
+
 app.use("/images", express.static("images"));
 
 const imageStorage = multer.diskStorage({
@@ -101,7 +103,7 @@ const auth = async (req, res, next) => {
   }
 };
 
-app.get("/recipes", async (req, res) => {
+app.get("/api/recipes", async (req, res) => {
   const { term, allergies, ingredients, vegan, vegetarian } = req.query;
   console.log(req.headers);
   let allergiesIds = new Set();
@@ -181,7 +183,7 @@ app.get("/recipes", async (req, res) => {
   }
 });
 
-app.get("/recipes/:id", async (req, res) => {
+app.get("/api/recipes/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const recipe = await Recipe.findById(id)
@@ -203,50 +205,55 @@ app.get("/recipes/:id", async (req, res) => {
   }
 });
 
-app.post("/recipes", auth, imageUpload.single("image"), async (req, res) => {
-  const {
-    title,
-    time,
-    difficulty,
-    description,
-    // image,
-    instructions,
-    vegan,
-    vegetarian,
-    ingredientsQuantities = [],
-    comments = [],
-  } = req.body;
+app.post(
+  "/api/recipes",
+  auth,
+  imageUpload.single("image"),
+  async (req, res) => {
+    const {
+      title,
+      time,
+      difficulty,
+      description,
+      // image,
+      instructions,
+      vegan,
+      vegetarian,
+      ingredientsQuantities = [],
+      comments = [],
+    } = req.body;
 
-  const ingredients = [];
+    const ingredients = [];
 
-  const ingrQty = JSON.parse(ingredientsQuantities).map((ing) => {
-    ingredients.push(ing.Ingredient._id);
-    return {
-      ingredient: ing.Ingredient._id,
-      quantity: ing.Quantity,
-      unit: ing.Unit._id,
-    };
-  });
+    const ingrQty = JSON.parse(ingredientsQuantities).map((ing) => {
+      ingredients.push(ing.Ingredient._id);
+      return {
+        ingredient: ing.Ingredient._id,
+        quantity: ing.Quantity,
+        unit: ing.Unit._id,
+      };
+    });
 
-  const recipe = new Recipe({
-    title,
-    time,
-    difficulty,
-    description,
-    image: req.file.filename,
-    instructions,
-    ingredients,
-    vegan,
-    vegetarian,
-    ingredientsQuantities: ingrQty,
-    comments,
-  });
-  await recipe.save();
+    const recipe = new Recipe({
+      title,
+      time,
+      difficulty,
+      description,
+      image: req.file.filename,
+      instructions,
+      ingredients,
+      vegan,
+      vegetarian,
+      ingredientsQuantities: ingrQty,
+      comments,
+    });
+    await recipe.save();
 
-  res.send(recipe);
-});
+    res.send(recipe);
+  }
+);
 
-app.post("/recipes/:id/comment", auth, async (req, res) => {
+app.post("/api/recipes/:id/comment", auth, async (req, res) => {
   const { user, content } = req.body;
 
   const { id } = req.params;
@@ -264,7 +271,7 @@ app.post("/recipes/:id/comment", auth, async (req, res) => {
   res.send(await comment.populate("user"));
 });
 
-app.delete("/recipes/:id", async (req, res) => {
+app.delete("/api/recipes/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const recipe = await Recipe.findByIdAndDelete(id);
@@ -274,7 +281,7 @@ app.delete("/recipes/:id", async (req, res) => {
   }
 });
 
-app.get("/ingredients", async (req, res) => {
+app.get("/api/ingredients", async (req, res) => {
   try {
     res.send(await Ingredient.find());
   } catch (e) {
@@ -282,7 +289,7 @@ app.get("/ingredients", async (req, res) => {
   }
 });
 
-app.post("/ingredients", async (req, res) => {
+app.post("/api/ingredients", async (req, res) => {
   const { name, allergie } = req.body;
   const ingredient = new Ingredient({
     name,
@@ -292,7 +299,7 @@ app.post("/ingredients", async (req, res) => {
   res.send(ingredient);
 });
 
-app.delete("/ingredients/:id", async (req, res) => {
+app.delete("/api/ingredients/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const ingredient = await Ingredient.findByIdAndDelete(id);
@@ -302,7 +309,7 @@ app.delete("/ingredients/:id", async (req, res) => {
   }
 });
 
-app.get("/units", async (req, res) => {
+app.get("/api/units", async (req, res) => {
   try {
     res.send(await Unit.find());
   } catch (e) {
@@ -310,7 +317,7 @@ app.get("/units", async (req, res) => {
   }
 });
 
-app.post("/units", async (req, res) => {
+app.post("/api/units", async (req, res) => {
   const { name } = req.body;
   const unit = new Unit({
     name,
@@ -319,7 +326,7 @@ app.post("/units", async (req, res) => {
   res.send(unit);
 });
 
-app.delete("/units/:id", async (req, res) => {
+app.delete("/api/units/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const unit = await Unit.findByIdAndDelete(id);
@@ -329,7 +336,7 @@ app.delete("/units/:id", async (req, res) => {
   }
 });
 
-app.get("/users", async (req, res) => {
+app.get("/api/users", async (req, res) => {
   try {
     res.send(await User.find());
   } catch (e) {
@@ -337,7 +344,7 @@ app.get("/users", async (req, res) => {
   }
 });
 
-app.post("/users", async (req, res) => {
+app.post("/api/users", async (req, res) => {
   const { email, password } = req.body;
   const user = new User({
     email,
@@ -347,7 +354,7 @@ app.post("/users", async (req, res) => {
   res.send(user);
 });
 
-app.delete("/users/:id", async (req, res) => {
+app.delete("/api/users/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const user = await User.findByIdAndDelete(id);
@@ -357,7 +364,7 @@ app.delete("/users/:id", async (req, res) => {
   }
 });
 
-app.get("/comments", async (req, res) => {
+app.get("/api/comments", async (req, res) => {
   try {
     res.send(await Comment.find().populate("user"));
   } catch (e) {
@@ -365,7 +372,7 @@ app.get("/comments", async (req, res) => {
   }
 });
 
-app.delete("/recipes/:id/comment/:commentId", async (req, res) => {
+app.delete("/api/recipes/:id/comment/:commentId", async (req, res) => {
   const { id } = req.params;
   try {
     const comment = await Comment.findByIdAndDelete(id);
@@ -375,7 +382,7 @@ app.delete("/recipes/:id/comment/:commentId", async (req, res) => {
   }
 });
 
-app.put("/recipes/:id", async (req, res) => {
+app.put("/api/recipes/:id", async (req, res) => {
   const { id } = req.params;
   const { commentContent, userId } = req.body;
   const body = req.body;
@@ -383,7 +390,7 @@ app.put("/recipes/:id", async (req, res) => {
   res.send(recipe);
 });
 
-app.put("/ingredients/:id", async (req, res) => {
+app.put("/api/ingredients/:id", async (req, res) => {
   const { id } = req.params;
   const body = req.body;
   const ingredient = await Ingredient.findByIdAndUpdate(id, body, {
@@ -392,28 +399,28 @@ app.put("/ingredients/:id", async (req, res) => {
   res.send(ingredient);
 });
 
-app.put("/units/:id", async (req, res) => {
+app.put("/api/units/:id", async (req, res) => {
   const { id } = req.params;
   const body = req.body;
   const unit = await Unit.findByIdAndUpdate(id, body, { new: true });
   res.send(unit);
 });
 
-app.put("/users/:id", async (req, res) => {
+app.put("/api/users/:id", async (req, res) => {
   const { id } = req.params;
   const { favoriteId } = req.body;
   const user = await User.findByIdAndUpdate(id, body, { new: true });
   res.send(user);
 });
 
-app.put("/comments/:id", async (req, res) => {
+app.put("/api/comments/:id", async (req, res) => {
   const { id } = req.params;
   const body = req.body;
   const comment = await Comment.findByIdAndUpdate(id, body, { new: true });
   res.send(comment);
 });
 
-app.get("/recipes/:id", async (req, res) => {
+app.get("/api/recipes/:id", async (req, res) => {
   const { id } = req.params;
   const recipe = await Recipe.findById(id);
   recipe.ingredients.map((ingredient) => {
@@ -422,12 +429,12 @@ app.get("/recipes/:id", async (req, res) => {
   res.send(recipe);
 });
 
-app.get("/initRecipes", async (req, res) => {
+app.get("/api/initRecipes", async (req, res) => {
   await initRecipes();
   res.send("DONE!");
 });
 
-app.post("/login", async (req, res) => {
+app.post("/api/login", async (req, res) => {
   // YES -> res.send({"success": true}) -> on CLIENT: redirect to community, save on cookie ("")
   const { email, password } = req.body;
   const user = await User.findOne({ email, password });
@@ -439,7 +446,7 @@ app.post("/login", async (req, res) => {
 });
 
 app.post(
-  "/uploadImage",
+  "/api/uploadImage",
   imageUpload.single("image"),
   (req, res) => {
     console.log("req.file", req.file);
@@ -479,6 +486,10 @@ async function initDB() {
     await Ingredient.insertMany(mappedIngredients);
   }
 }
+
+app.get("*", (req, res) => {
+  res.sendFile(__dirname + "/client/build/index.html");
+});
 
 const { DB_USER, DB_PASS, DB_HOST, DB_NAME } = process.env;
 
