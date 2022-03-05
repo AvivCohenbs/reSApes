@@ -209,7 +209,6 @@ function Community() {
                   autoComplete="off"
                 >
                   <TextField
-                    // error={!title.length}
                     onChange={(e) => setTitle(e.target.value)}
                     id="outlined-basic"
                     label="Recipe Name"
@@ -230,7 +229,6 @@ function Community() {
               >
                 <div className="add-desc">
                   <TextField
-                    // error={!description.length}
                     onChange={(e) => setDecription(e.target.value)}
                     id="outlined-multiline-static"
                     label="Description"

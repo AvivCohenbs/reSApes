@@ -168,7 +168,7 @@ function Recipes() {
               className={`${contentFilter === "popular" ? "active" : ""}`}
               onClick={() => {
                 setContentFilter("popular");
-                setRecipesDisplay(recipes.slice(0, 5));
+                setRecipesDisplay(recipes.slice(0, 12));
               }}
             >
               {" "}
