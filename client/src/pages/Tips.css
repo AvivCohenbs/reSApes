@@ -30,21 +30,21 @@
 
 .img-salad {
   display: flex;
-  padding-top: 17px;
+  padding-top: 25px;
   width: 400px;
   border-radius: 45px;
 }
 
 .img-cheers {
   display: flex;
-  padding-top: 20px;
+  padding-top: 25px;
   width: 400px;
   border-radius: 45px;
 }
 
 .img-table {
   display: flex;
-  padding-top: 20px;
+  padding-top: 25px;
   width: 400px;
   border-radius: 45px;
 }
