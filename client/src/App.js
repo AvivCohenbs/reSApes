@@ -37,7 +37,7 @@ function App() {
       email,
       password,
     };
-    const res = await fetch("/login", {
+    const res = await fetch("/api/login", {
       method: "POST",
       body: JSON.stringify(body),
       headers: {
@@ -66,7 +66,7 @@ function App() {
     const vegetarianQuery = vegetarianFilter ? "vegetarian=true" : "";
 
     fetch(
-      `/recipes?${allergiesQuery}&${ingridentsQuery}&${veganQuery}&${vegetarianQuery}`
+      `/api/recipes?${allergiesQuery}&${ingridentsQuery}&${veganQuery}&${vegetarianQuery}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -83,7 +83,7 @@ function App() {
   }, [getRecipes]);
 
   useEffect(() => {
-    fetch("/ingredients")
+    fetch("/api/ingredients")
       .then((response) => response.json())
       .then((data) => {
         setIngredients(data);
@@ -91,7 +91,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch("/units")
+    fetch("/api/units")
       .then((response) => response.json())
       .then((data) => {
         setUnits(data);
