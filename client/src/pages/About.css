@@ -50,4 +50,11 @@
   .second-title-about {
     padding: 0;
   }
+  .about-page {
+    padding: 120px 50px;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: scroll;
+  }
 }

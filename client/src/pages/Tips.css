@@ -90,10 +90,7 @@ ul .li-tips::before {
     width: 400px;
     padding: 0 20px;
     font-size: 15px;
-  }
-
-  .p2 {
-    margin-left: -25px;
+    overflow-x: hidden;
   }
 
   .tips-page {
@@ -124,15 +121,19 @@ ul .li-tips::before {
   .title-page {
     display: flex;
     flex-direction: row;
-    font-size: 30px;
-
-    padding: 0 20px;
+    padding: 0 33px;
+    font-size: 32px;
   }
   .title-tips {
     display: flex;
     flex-direction: row;
-    font-size: 20px;
-    padding: 0 20px;
+    font-size: 18px;
+    padding: 0 33px;
+    font-size: 21px;
+    line-height: 40px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-left: 4px;
   }
   .text-left {
     display: flex;
