@@ -1,7 +1,7 @@
 .container {
   max-width: 1319px;
   width: 100%;
-  margin: 0 150px;
+  margin: auto;
 }
 
 .navbar input[type="checkbox"],
