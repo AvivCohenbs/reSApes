@@ -12,32 +12,10 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 function Favorites() {
   const [total, setTotal] = useContext(TotalContext);
-  const [favorites, setFavorites] = useContext(FavContext);
-  const [recipe, setRecipe] = useState(0);
+  const [favorites, addFav, removeFav] = useContext(FavContext);
 
   const isFavorite = (id) => {
-    return favorites[id];
-  };
-
-  const removeRecipe = (id) => {
-    recipe > 0 && setRecipe(recipe - 1);
-
-    let newFavorite;
-
-    const currentRecipe = favorites[id];
-
-    if (!currentRecipe) return;
-
-    currentRecipe.amount = currentRecipe.amount - 1;
-
-    if (currentRecipe.amount === 0) {
-      newFavorite = { ...favorites };
-      delete newFavorite[id];
-    } else {
-      newFavorite = { ...favorites, [id]: currentRecipe };
-    }
-
-    setFavorites(newFavorite);
+    return favorites.find((fav) => fav._id === id);
   };
 
   const getTotal = (favorite) => {
@@ -98,7 +76,12 @@ function Favorites() {
           </div>
 
           <div style={{ width: "1.2rem", opacity: "0.6" }}>
-            <Heart isActive={isFavorite(id)} onClick={() => removeRecipe(id)} />
+            <Heart
+              isActive={isFavorite(value._id)}
+              onClick={() =>
+                isFavorite(value._id) ? removeFav(value._id) : addFav(value._id)
+              }
+            />
           </div>
 
           <div className="cook-difficulty-fav">
@@ -116,22 +99,15 @@ function Favorites() {
         <div className="fav-page">
           <div className="title-and-remove">
             <div className="title-fav"> My Favorites </div>
-            <div>
-              {!!total && (
-                <div onClick={() => setFavorites(!favorites)} className="reset">
-                  <DeleteIcon /> Remove All
-                </div>
-              )}
-            </div>
           </div>
-          <div>
-            {!total && (
+          {!favorites.length && (
+            <div>
               <div className="second-title-fav">
                 {" "}
                 You have 0 recipes in your list{" "}
               </div>
-            )}
-          </div>
+            </div>
+          )}
           <span className="items">{items}</span>
         </div>
       </ThemeProvider>

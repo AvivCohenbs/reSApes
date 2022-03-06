@@ -21,10 +21,10 @@ function App() {
   const [allergies, setAllergies] = useState([]);
   const [ingredientsFilter, setIngredientsFilter] = useState([]);
   const [total, setTotal] = useState(0);
-  const [favorites, setFavorites] = useState([]);
   const [veganFilter, setVeganFilter] = useState(false);
   const [vegetarianFilter, setVegetarianFilter] = useState(false);
   const [user, setUser] = useState(getLocalUser());
+  const [favorites, setFavorites] = useState(user ? user.favorites : []);
 
   const allergiesList = useMemo(() => {
     return ingredients
@@ -47,12 +47,47 @@ function App() {
 
     const { user } = await res.json();
     setUser(user);
+    console.log("favorites", favorites);
+    setFavorites(user.favorites);
     setLocalUser(user);
   };
 
   const logout = () => {
     setUser();
     setLocalUser("");
+  };
+
+  const addFav = async (recipeId) => {
+    const body = JSON.stringify({
+      recipeId,
+    });
+    const res = await fetch(`/api/user/${user._id}/favorites`, {
+      method: "POST",
+      body,
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const newUser = await res.json();
+
+    setFavorites(newUser.favorites);
+    setUser(newUser);
+    setLocalUser(newUser);
+  };
+
+  const removeFav = async (recipeId) => {
+    const body = JSON.stringify({
+      recipeId,
+    });
+    const res = await fetch(`/api/user/${user._id}/favorites`, {
+      method: "DELETE",
+      body,
+      headers: { "Content-Type": "application/json" },
+    });
+    const newUser = await res.json();
+
+    setFavorites(newUser.favorites);
+    setUser(newUser);
+    setLocalUser(newUser);
   };
 
   const getRecipes = useCallback(() => {
@@ -101,7 +136,7 @@ function App() {
   return (
     <div className="pages">
       <UserContext.Provider value={{ user, login, logout }}>
-        <FavContext.Provider value={[favorites, setFavorites]}>
+        <FavContext.Provider value={[favorites, addFav, removeFav]}>
           <TotalContext.Provider value={[total, setTotal]}>
             <IngredientsContext.Provider
               value={{

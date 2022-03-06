@@ -275,10 +275,15 @@ app.post("/api/user/:userId/favorites", async (req, res) => {
   const { recipeId } = req.body;
   const { userId } = req.params;
   const recipe = await Recipe.findById(recipeId);
+  console.log(req.body, recipe);
   if (recipe) {
-    const user = await User.findByIdAndUpdate(userId, {
-      $addToSet: { favorites: recipe._id },
-    });
+    const user = await User.findByIdAndUpdate(
+      userId,
+      {
+        $addToSet: { favorites: recipe._id },
+      },
+      { new: true }
+    ).populate("favorites");
     res.json(user);
   } else {
     res.status(403).json({ error: "cant add recipe" });
@@ -290,9 +295,13 @@ app.delete("/api/user/:userId/favorites", async (req, res) => {
   const { userId } = req.params;
   const recipe = await Recipe.findById(recipeId);
   if (recipe) {
-    const user = await User.findByIdAndUpdate(userId, {
-      $pull: { favorites: recipe._id },
-    });
+    const user = await User.findByIdAndUpdate(
+      userId,
+      {
+        $pull: { favorites: recipe._id },
+      },
+      { new: true }
+    ).populate("favorites");
     res.json(user);
   } else {
     res.status(403).json({ error: "cant remove recipe" });
