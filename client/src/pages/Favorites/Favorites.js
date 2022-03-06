@@ -66,7 +66,7 @@ function Favorites() {
           <div className="recipe-fav-image">
             <img
               className="imgrec-fav"
-              src={`/api/images/${value.image}`}
+              src={`/images/${value.image}`}
               alt="av"
             />
           </div>

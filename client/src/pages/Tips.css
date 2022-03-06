@@ -25,30 +25,26 @@
   letter-spacing: 1px;
   margin-bottom: 25px;
   margin-top: 10px;
-}
-
-.p2 {
-  margin-left: 60px;
-  padding-bottom: 140px;
+  margin-left: 4px;
 }
 
 .img-salad {
   display: flex;
-  padding-top: 17px;
+  padding-top: 25px;
   width: 400px;
   border-radius: 45px;
 }
 
 .img-cheers {
   display: flex;
-  padding-top: 20px;
+  padding-top: 25px;
   width: 400px;
   border-radius: 45px;
 }
 
 .img-table {
   display: flex;
-  padding-top: 20px;
+  padding-top: 25px;
   width: 400px;
   border-radius: 45px;
 }
@@ -56,7 +52,7 @@
 .p {
   display: flex;
   flex-direction: column;
-  padding-bottom: 140px;
+  padding-bottom: 120px;
 }
 
 .text-left {
@@ -64,6 +60,7 @@
   flex-direction: column;
   overflow: scroll;
   margin-top: 13px;
+  margin-right: 80px;
 }
 
 .images-tips {
@@ -93,10 +90,7 @@ ul .li-tips::before {
     width: 400px;
     padding: 0 20px;
     font-size: 15px;
-  }
-
-  .p2 {
-    margin-left: -25px;
+    overflow-x: hidden;
   }
 
   .tips-page {
@@ -127,15 +121,19 @@ ul .li-tips::before {
   .title-page {
     display: flex;
     flex-direction: row;
-    font-size: 30px;
-
-    padding: 0 20px;
+    padding: 0 33px;
+    font-size: 32px;
   }
   .title-tips {
     display: flex;
     flex-direction: row;
-    font-size: 20px;
-    padding: 0 20px;
+    font-size: 18px;
+    padding: 0 33px;
+    font-size: 21px;
+    line-height: 40px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-left: 4px;
   }
   .text-left {
     display: flex;

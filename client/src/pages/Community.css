@@ -2,8 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   overflow: scroll;
-  padding: 145px 85px;
-  height: 600px;
+  padding: 145px 142px;
+  height: 681px;
 }
 
 .maintitle {
@@ -241,7 +241,6 @@
     flex-direction: column;
   }
   .community-page {
-    width: 39em;
     padding-left: 7px;
     overflow-x: hidden;
   }
