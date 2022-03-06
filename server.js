@@ -93,12 +93,12 @@ const auth = async (req, res, next) => {
     try {
       const user = await User.findById(id);
       if (!user) {
-        res.status(403).send();
+        res.status(403).json({ error: "cant log in" });
       } else {
         next();
       }
     } catch (err) {
-      res.status(403).send();
+      res.status(403).json({ error: "cant log in" });
     }
   }
 };
@@ -269,6 +269,34 @@ app.post("/api/recipes/:id/comment", auth, async (req, res) => {
   await recipe.save();
 
   res.send(await comment.populate("user"));
+});
+
+app.post("/api/user/:userId/favorites", async (req, res) => {
+  const { recipeId } = req.body;
+  const { userId } = req.params;
+  const recipe = await Recipe.findById(recipeId);
+  if (recipe) {
+    const user = await User.findByIdAndUpdate(userId, {
+      $addToSet: { favorites: recipe._id },
+    });
+    res.json(user);
+  } else {
+    res.status(403).json({ error: "cant add recipe" });
+  }
+});
+
+app.delete("/api/user/:userId/favorites", async (req, res) => {
+  const { recipeId } = req.body;
+  const { userId } = req.params;
+  const recipe = await Recipe.findById(recipeId);
+  if (recipe) {
+    const user = await User.findByIdAndUpdate(userId, {
+      $pull: { favorites: recipe._id },
+    });
+    res.json(user);
+  } else {
+    res.status(403).json({ error: "cant remove recipe" });
+  }
 });
 
 app.delete("/api/recipes/:id", async (req, res) => {
