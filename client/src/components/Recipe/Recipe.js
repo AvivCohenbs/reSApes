@@ -88,7 +88,7 @@ function Recipe({ title, time, image, id, difficulty, button }) {
     <div className="recipe-recipe">
       <div className="recipe-card">
         <div className="recipe-image">
-          <img className="imgrec" src={`/api/images/${image}`} alt="img" />
+          <img className="imgrec" src={`/images/${image}`} alt="img" />
         </div>
       </div>
       <div className="recipe-info">

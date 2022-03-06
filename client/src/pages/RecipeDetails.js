@@ -113,7 +113,7 @@ function RecipeDetails() {
                 <div>
                   <img
                     className="imgdet"
-                    src={`/api/images/${recipe.image}`}
+                    src={`/images/${recipe.image}`}
                     alt="img"
                   />
                 </div>
