@@ -150,7 +150,7 @@ function Header() {
                               alt="user-img"
                               className="user-img"
                             ></img>
-                            <div>Hi,</div>
+                            <div>Hello,</div>
                             <div className="email-logout">{user.email} </div>
                             <button className="button-logout" onClick={logout}>
                               Log out
