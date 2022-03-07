@@ -3,7 +3,6 @@
   margin-bottom: 0.5em;
   padding: 0 65px;
   margin-top: 0.3em;
-  font-family: "Europa Bold", sans-serif;
   font-weight: bolder;
   color: #116530;
 }
@@ -11,7 +10,7 @@
 .first-title-about {
   opacity: 1;
   font-size: 1.2em;
-  font-family: "Europa Bold", sans-serif;
+
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #b2b3b4;

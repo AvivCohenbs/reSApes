@@ -15,7 +15,7 @@ import IngredientsContext from "../../IngredientsContext";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
-import { ReactComponent as Mainimage } from "./Mainimage.svg";
+import { ReactComponent as Homeingredients } from "./Homeingredients.svg";
 
 function Recipes() {
   const {
@@ -102,7 +102,7 @@ function Recipes() {
               </span>
             </div>
             <div className="mainImage">
-              <Mainimage />
+              <Homeingredients />
             </div>
           </div>
 
