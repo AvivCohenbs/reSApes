@@ -524,7 +524,7 @@ async function initDB() {
   }
 }
 
-app.get("*", (req, res) => {
+app.get(!`/api${"*"}` && "*", (req, res) => {
   res.sendFile(__dirname + "/client/build/index.html");
 });
 
