@@ -104,7 +104,7 @@
   margin-top: 45px;
   justify-content: space-between;
   margin: 0 40px;
-  margin-top: 25px;
+  margin-top: 70px;
   padding-left: 23px;
   padding-right: 10px;
 }
@@ -168,7 +168,7 @@
   line-height: 1.4;
   color: #116530;
   font-weight: bolder;
-  font-size: 80px;
+  font-size: 67px;
   font-weight: bolder;
   font-family: "Bebas Neue", cursive;
 }
@@ -178,7 +178,7 @@
   display: flex;
   margin-right: 167px;
   width: 475px;
-  font-size: 26px;
+  font-size: 22px;
   margin-bottom: 13px;
   margin-top: 13px;
 }
@@ -192,7 +192,7 @@
 .mainImage {
   margin-left: 772px;
   position: fixed;
-  top: 51px;
+  top: 40px;
 }
 
 .pop-all {
