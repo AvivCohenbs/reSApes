@@ -5,7 +5,7 @@
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  height: 58vh;
+  height: 25vh;
   justify-content: space-evenly;
 }
 
@@ -179,6 +179,8 @@
   margin-right: 167px;
   width: 475px;
   font-size: 26px;
+  margin-bottom: 13px;
+  margin-top: 13px;
 }
 
 .mainTitles-mainImage {
