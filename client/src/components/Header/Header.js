@@ -44,6 +44,7 @@ function Header() {
       route = "about";
     }
     setContentMainFilter(route);
+    console.log(route);
   }, [pathname]);
 
   return (

@@ -157,11 +157,14 @@
 
 .text {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 20px;
   padding: 0 65px;
-  justify-content: space-between;
   font-family: "Poppins", sans-serif;
+}
+
+.mainImage {
+  margin-top: 40px;
 }
 
 .change-color {
@@ -169,14 +172,22 @@
   line-height: 1.4;
   color: #116530;
   font-weight: bolder;
-  font-size: 44px;
+  font-size: 80px;
+  font-weight: bolder;
+  font-family: "Bebas Neue", cursive;
 }
 
 .workhorse {
   line-height: 1.2;
   display: flex;
   margin-right: 300px;
-  width: 298px;
+  width: 475px;
+  font-size: 26px;
+}
+
+.mainTitles-mainImage {
+  display: flex;
+  flex-direction: row;
 }
 
 .pop-all {

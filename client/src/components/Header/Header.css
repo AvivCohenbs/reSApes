@@ -38,6 +38,9 @@
   margin-left: 1.5rem;
   margin-top: 1.5rem;
   font-size: 1.2rem;
+  color: #fefbf3;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
 .menu-itemss li:hover {
@@ -46,12 +49,6 @@
 }
 .menu-itemss li.active {
   color: #ffca40;
-}
-
-.menu-itemss li {
-  text-decoration: none;
-  color: #fefbf3;
-  transition: color 0.3s ease-in-out;
 }
 
 .logo {

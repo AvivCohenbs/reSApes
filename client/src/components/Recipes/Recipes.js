@@ -15,6 +15,7 @@ import IngredientsContext from "../../IngredientsContext";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
+import { ReactComponent as Mainimage } from "./Mainimage.svg";
 
 function Recipes() {
   const {
@@ -86,18 +87,23 @@ function Recipes() {
     <>
       <ThemeProvider theme={theme}>
         <div className="recipes-wrapper">
-          <div className="text">
-            <span className="change-color">
-              <b>
-                We know the deal.
-                <br /> We feel your pain.{" "}
-              </b>
-            </span>
-            <span className="workhorse">
-              <br /> Here are our superstar workhorse recipes, designed and
-              tasted to help you cook a great meal. Add the ingredients you have
-              in your fridge and find the recipe that suits you best!
-            </span>
+          <div className="mainTitles-mainImage">
+            <div className="text">
+              <span className="change-color">
+                <b>
+                  We know the deal.
+                  <br /> We feel your pain.{" "}
+                </b>
+              </span>
+              <span className="workhorse">
+                Here are our superstar workhorse recipes, designed and tasted to
+                help you cook a great meal. <br /> Add the ingredients you have
+                in your fridge and find the recipe that suits you best!
+              </span>
+            </div>
+            <div className="mainImage">
+              <Mainimage />
+            </div>
           </div>
 
           <div className="row-search-switch">
