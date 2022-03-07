@@ -163,10 +163,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-.mainImage {
-  margin-top: 40px;
-}
-
 .change-color {
   display: flex;
   line-height: 1.4;
@@ -180,7 +176,7 @@
 .workhorse {
   line-height: 1.2;
   display: flex;
-  margin-right: 300px;
+  margin-right: 167px;
   width: 475px;
   font-size: 26px;
 }
@@ -188,6 +184,13 @@
 .mainTitles-mainImage {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.mainImage {
+  margin-left: 772px;
+  position: fixed;
+  top: 51px;
 }
 
 .pop-all {
