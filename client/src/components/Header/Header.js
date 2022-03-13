@@ -1,6 +1,6 @@
 import "./Header.css";
 import { Link, useLocation } from "react-router-dom";
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useMemo } from "react";
 import { ReactComponent as Profile } from "./Profile.svg";
 import { ReactComponent as Logo } from "./logo.svg";
 import Box from "@mui/material/Box";
@@ -30,21 +30,19 @@ function Header() {
     setPassword("");
   };
 
-  const [contentMainFilter, setContentMainFilter] = useState("");
-
-  useEffect(() => {
-    let route = "";
+  const route = useMemo(() => {
+    let internalRoute = "";
     if (pathname.includes("Community")) {
-      route = "community";
+      internalRoute = "community";
     } else if (pathname.includes("Favorites")) {
-      route = "myfav";
+      internalRoute = "myfav";
     } else if (pathname.includes("Tips")) {
-      route = "tiptricks";
+      internalRoute = "tiptricks";
     } else if (pathname.includes("About")) {
-      route = "about";
+      internalRoute = "about";
     }
-    setContentMainFilter(route);
-    console.log(route);
+
+    return internalRoute;
   }, [pathname]);
 
   return (
@@ -88,20 +86,16 @@ function Header() {
           </div>
 
           <ul className="menu-itemss">
-            <li className={`${contentMainFilter === "myfav" ? "active" : ""}`}>
+            <li className={`${route === "myfav" ? "active" : ""}`}>
               <Link to="/Favorites">My recipes</Link>
             </li>
-            <li
-              className={`${contentMainFilter === "tiptricks" ? "active" : ""}`}
-            >
+            <li className={`${route === "tiptricks" ? "active" : ""}`}>
               <Link to="/Tips">Tips and Tricks</Link>{" "}
             </li>
-            <li
-              className={`${contentMainFilter === "community" ? "active" : ""}`}
-            >
+            <li className={`${route === "community" ? "active" : ""}`}>
               <Link to="/Community">Community</Link>
             </li>
-            <li className={`${contentMainFilter === "about" ? "active" : ""}`}>
+            <li className={`${route === "about" ? "active" : ""}`}>
               <Link to="/About">About</Link>{" "}
             </li>
 

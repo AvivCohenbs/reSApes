@@ -33,7 +33,7 @@
   margin-bottom: 30px;
 }
 
-.menu-itemss li {
+.menu-itemss li > a {
   list-style: none;
   margin-left: 1.5rem;
   margin-top: 1.5rem;
@@ -43,11 +43,11 @@
   transition: color 0.3s ease-in-out;
 }
 
-.menu-itemss li:hover {
+.menu-itemss li > a:hover {
   color: #ffca40;
   transition: color 0.3s ease-in-out;
 }
-.menu-itemss li.active {
+.menu-itemss li.active > a {
   color: #ffca40;
 }
 
