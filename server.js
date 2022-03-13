@@ -5,6 +5,7 @@ import { readFile } from "fs/promises";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
+const __dirname = path.resolve(path.dirname(""));
 dotenv.config();
 
 const Ingredient = mongoose.model("Ingredient", {
