@@ -119,7 +119,7 @@
 }
 
 .fav-page {
-  padding: 120px 112px;
+  padding: 0 55px;
 }
 
 .items {
@@ -136,12 +136,14 @@
 @media (max-width: 48em) {
   .title-fav {
     font-size: 30px;
+    z-index: -1;
   }
   .second-title-fav {
     padding: 0;
   }
   .items {
     height: 598px;
+    padding: 0 55px;
   }
   .reset {
     padding: 0;
@@ -157,6 +159,6 @@
     text-align: center;
   }
   .fav-page {
-    padding: 120px 0;
+    padding: 0;
   }
 }

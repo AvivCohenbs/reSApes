@@ -47,124 +47,89 @@ function Header() {
 
   return (
     <div className="header">
-      <nav className="navbar">
-        <div className="navbar-container container">
-          <input type="checkbox" name="" id="" />
-          <div className="hamburger-lines">
-            <span className="line line1"></span>
-            <span className="line line2"></span>
-            <span className="line line3"></span>
-          </div>
-
-          <ul className="menu-itemss">
-            <li>
-              <Link to="/Favorites">My recipes</Link>{" "}
-            </li>
-            <li>
-              <Link to="/Tips">Tips and Tricks</Link>{" "}
-            </li>
-            <li>
-              <Link to="/Community">Community</Link>
-            </li>
-            <li>
-              <Link to="/About">About</Link>{" "}
-            </li>
-          </ul>
-          <Link className="logo" to="/">
-            <Logo />
-          </Link>
-        </div>
-      </nav>
-
-      <nav className="navbar">
-        <div className="navbar-container container">
-          <input type="checkbox" name="" id="" />
-          <div className="hamburger-lines">
-            <span className="line line1"></span>
-            <span className="line line2"></span>
-            <span className="line line3"></span>
-          </div>
-
-          <ul className="menu-itemss">
-            <li className={`${route === "myfav" ? "active" : ""}`}>
-              <Link to="/Favorites">My recipes</Link>
-            </li>
-            <li className={`${route === "tiptricks" ? "active" : ""}`}>
-              <Link to="/Tips">Tips and Tricks</Link>{" "}
-            </li>
-            <li className={`${route === "community" ? "active" : ""}`}>
-              <Link to="/Community">Community</Link>
-            </li>
-            <li className={`${route === "about" ? "active" : ""}`}>
-              <Link to="/About">About</Link>{" "}
-            </li>
-
-            <li>
-              <ClickAwayListener
-                mouseEvent="onMouseDown"
-                touchEvent="onTouchStart"
-                onClickAway={handleClickAway}
-              >
+      <Link className="logo" to="/">
+        <Logo />
+      </Link>{" "}
+      <input className="menu-btn" type="checkbox" id="menu-btn" />
+      <div className="menu-icon-position">
+        <label className="menu-icon" for="menu-btn">
+          <span className="navicon"></span>
+        </label>
+      </div>
+      <ul className="menu">
+        <li className={`${route === "myfav" ? "active" : ""}`}>
+          {" "}
+          <Link to="/Favorites">My recipes</Link>{" "}
+        </li>
+        <li className={`${route === "tiptricks" ? "active" : ""}`}>
+          <Link to="/Tips">Tips and Tricks</Link>{" "}
+        </li>
+        <li className={`${route === "community" ? "active" : ""}`}>
+          <Link to="/Community">Community</Link>
+        </li>
+        <li className={`${route === "about" ? "active" : ""}`}>
+          <Link to="/About">About</Link>{" "}
+        </li>
+        <li>
+          <ClickAwayListener
+            mouseEvent="onMouseDown"
+            touchEvent="onTouchStart"
+            onClickAway={handleClickAway}
+          >
+            <Box>
+              <button className="profile" onClick={handleClick}>
+                {" "}
+                <Profile />
+              </button>
+              {open ? (
                 <Box>
-                  <button className="profile" onClick={handleClick}>
-                    {" "}
-                    <Profile />
-                  </button>
-                  {open ? (
-                    <Box>
-                      <div className="login-container">
-                        {!user ? (
-                          <form class="form-login" onSubmit={handleSubmit}>
-                            <div>SIGN IN</div>
-                            <input
-                              className="input-login"
-                              type="email"
-                              name="email"
-                              placeholder="Email"
-                              onChange={(e) => setEmail(e.target.value)}
-                              value={email}
-                            />
-                            <input
-                              className="input-login"
-                              type="password"
-                              name="Password"
-                              placeholder="Password"
-                              onChange={(e) => setPassword(e.target.value)}
-                              value={password}
-                            />
-                            <div className="buttons-log">
-                              <button className="button-login" type="submit">
-                                Sign in
-                              </button>
-                            </div>
-                          </form>
-                        ) : (
-                          <div className="user-connect">
-                            <img
-                              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Breezeicons-actions-22-im-user.svg/1200px-Breezeicons-actions-22-im-user.svg.png"
-                              alt="user-img"
-                              className="user-img"
-                            ></img>
-                            <div>Hello,</div>
-                            <div className="email-logout">{user.email} </div>
-                            <button className="button-logout" onClick={logout}>
-                              Log out
-                            </button>
-                          </div>
-                        )}
+                  <div className="login-container">
+                    {!user ? (
+                      <form className="form-login" onSubmit={handleSubmit}>
+                        <div>SIGN IN</div>
+                        <input
+                          className="input-login"
+                          type="email"
+                          name="email"
+                          placeholder="Email"
+                          onChange={(e) => setEmail(e.target.value)}
+                          value={email}
+                        />
+                        <input
+                          className="input-login"
+                          type="password"
+                          name="Password"
+                          placeholder="Password"
+                          onChange={(e) => setPassword(e.target.value)}
+                          value={password}
+                        />
+                        <div className="buttons-log">
+                          <button className="button-login" type="submit">
+                            Sign in
+                          </button>
+                        </div>
+                      </form>
+                    ) : (
+                      <div className="user-connect">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Breezeicons-actions-22-im-user.svg/1200px-Breezeicons-actions-22-im-user.svg.png"
+                          alt="user-img"
+                          className="user-img"
+                        ></img>
+                        <div>Hello,</div>
+                        <div className="email-logout">{user.email} </div>
+                        <button className="button-logout" onClick={logout}>
+                          Log out
+                        </button>
                       </div>
-                    </Box>
-                  ) : null}
+                    )}
+                  </div>
                 </Box>
-              </ClickAwayListener>
-            </li>
-          </ul>
-
-          <Link className="logo" to="/">
-            <Logo />
-          </Link>
-        </div>
-      </nav>
+              ) : null}
+            </Box>
+          </ClickAwayListener>
+        </li>{" "}
+      </ul>
     </div>
   );
 }

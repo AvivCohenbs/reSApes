@@ -12,7 +12,7 @@ function Tips() {
       <div className="text-left">
         <div className="title-page">Cooking Tips & Tricks</div>
         <div className="title-tips">
-          We've compiled this list of tips to make <br /> every time in the
+          We've compiled this list of tips to make every time <br /> in the
           kitchen a successful one. Check ‘em out!
         </div>
 
