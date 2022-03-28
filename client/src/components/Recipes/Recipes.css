@@ -5,7 +5,9 @@
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  height: 28vh;
+  height: 30vh;
+  width: 1499px;
+  margin-left: 27px;
   justify-content: space-evenly;
 }
 
