@@ -240,4 +240,20 @@ a {
   .profile {
     margin-left: 0;
   }
+  .login-container {
+    width: 217px;
+    height: 231px;
+    margin-left: 280px;
+    background: #fff;
+    box-shadow: 0 10px 15px hsl(0deg 0% 70% / 70%);
+    position: absolute;
+    top: 280px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    z-index: 3;
+  }
 }

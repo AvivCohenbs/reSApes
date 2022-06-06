@@ -161,6 +161,7 @@ ul .list-ing::before {
     display: flex;
     flex-direction: column;
     font-size: 15px;
+    height: 948px;
   }
 
   .titledet {
@@ -173,12 +174,12 @@ ul .list-ing::before {
     height: 120px;
     width: 180px;
     display: flex;
-    margin-left: 10px;
   }
 
   .img-side {
     display: flex;
     flex-direction: column;
+    margin-left: 70px;
   }
   .post-comments {
     height: 50px;
