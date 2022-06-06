@@ -124,7 +124,7 @@
 
 .items {
   overflow: scroll;
-  height: 737px;
+  height: 718px;
   display: flex;
   flex-direction: row;
   align-items: center;
