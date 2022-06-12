@@ -241,19 +241,18 @@ a {
     margin-left: 0;
   }
   .login-container {
-    width: 217px;
-    height: 231px;
-    margin-left: 280px;
+    width: 197px;
+    height: 244px;
     background: #fff;
-    box-shadow: 0 10px 15px hsl(0deg 0% 70% / 70%);
+    box-shadow: 0 10px 15pxhsl(0deg 0% 70%/70%);
     position: absolute;
-    top: 280px;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
     border-radius: 7px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     z-index: 3;
+    margin-left: 226px;
   }
 }

@@ -270,11 +270,11 @@
   }
   .recipes-dsgn {
     overflow: scroll;
-    height: 498px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    height: 52vh;
+    width: 347px;
+    height: 33vh;
     justify-content: space-evenly;
   }
 }
