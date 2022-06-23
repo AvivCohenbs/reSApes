@@ -85,6 +85,10 @@
   margin-top: 30px;
 }
 
+.menu{
+overflow: hidden;
+}
+
 .menu li > a:hover {
   color: #ffca40;
   transition: color 0.3s ease-in-out;
