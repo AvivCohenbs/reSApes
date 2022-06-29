@@ -123,8 +123,7 @@ ul .li-tips::before {
   .title-page {
     display: flex;
     flex-direction: row;
-    padding: 0 33px;
-    font-size: 32px;
+    padding: 0 20px;
   }
   .title-tips {
     display: flex;
@@ -143,6 +142,7 @@ ul .li-tips::before {
     width: 100%;
     font-size: large;
     padding-bottom: 10px;
+    overflow-x: hidden;
   }
   .images-tips {
     border-radius: 25px;
