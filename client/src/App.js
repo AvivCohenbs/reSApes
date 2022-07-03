@@ -25,6 +25,7 @@ function App() {
   const [vegetarianFilter, setVegetarianFilter] = useState(false);
   const [user, setUser] = useState(getLocalUser());
   const [favorites, setFavorites] = useState(user ? user.favorites : []);
+  // add content filter
 
   const allergiesList = useMemo(() => {
     return ingredients
@@ -99,6 +100,7 @@ function App() {
       : "";
     const veganQuery = veganFilter ? "vegan=true" : "";
     const vegetarianQuery = vegetarianFilter ? "vegetarian=true" : "";
+    // add popular call via contentFilter
 
     fetch(
       `/api/recipes?${allergiesQuery}&${ingridentsQuery}&${veganQuery}&${vegetarianQuery}`
@@ -141,6 +143,7 @@ function App() {
             <IngredientsContext.Provider
               value={{
                 ingredients,
+                // add content filter
                 recipes,
                 getRecipes,
                 allergiesList,

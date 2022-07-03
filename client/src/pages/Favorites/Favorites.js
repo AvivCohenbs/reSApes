@@ -37,9 +37,9 @@ function Favorites() {
     },
   });
 
-  const items = Object.entries(favorites).map(([id, value]) => {
+  const items = favorites.map((value) => {
     return (
-      <div key={id} className="recipe-fav-card">
+      <div key={value._id} className="recipe-fav-card">
         <div className="recipe-fav-img">
           <div className="recipe-fav-image">
             <img
@@ -52,7 +52,7 @@ function Favorites() {
         <div className="recipe-info-fav">
           <div className="recipe-title-fav">{value.title}</div>{" "}
           <div>
-            <Link to={`/recipes/${id}`}>
+            <Link to={`/recipes/${value._id}`}>
               <Button
                 variant="contained"
                 sx={{

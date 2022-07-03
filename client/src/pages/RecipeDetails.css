@@ -6,7 +6,6 @@
   flex-direction: column;
   margin-top: 53px;
   object-fit: cover;
-  min-width: 450px;
 }
 
 .rat-tim {
@@ -161,8 +160,8 @@ ul .list-ing::before {
     display: flex;
     flex-direction: column;
     font-size: 15px;
-    height: 948px;
-  }
+    height: 757px;
+    }
 
   .titledet {
     font-size: 30px;
@@ -171,9 +170,9 @@ ul .list-ing::before {
 
   .imgdet {
     border-radius: 25px;
-    height: 120px;
-    width: 180px;
-    display: flex;
+    height: 126px;
+    width: 80%;
+    margin-top: 10px;
   }
 
   .img-side {
@@ -184,4 +183,9 @@ ul .list-ing::before {
   .post-comments {
     height: 50px;
   }
+
+  .add-comment-input {
+    margin-right: 4px;
+    width: 62%;
+}
 }
